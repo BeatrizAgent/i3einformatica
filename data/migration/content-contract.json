@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Campos que contenido debe completar para que los bloques presenten información útil, localizable y validable.",
+  "storage": {
+    "authoritative": "PostgreSQL: pages, pageTranslations y media privado/optimizado.",
+    "importSource": "data/audit/site-audit.json",
+    "editorialRule": "El snapshot se importa y se revisa; nunca se re-scrapea silenciosamente al publicar."
+  },
+  "page": {
+    "required": ["key", "locale", "localizedPath", "title", "seoTitle", "seoDescription", "status", "blocks"],
+    "localePolicy": "ES y EN se importan; EN queda in_review. ca, eu, gl, pt, fr y de nacen machine_draft.",
+    "blockModel": {
+      "hero": { "required": ["eyebrow", "title", "intro", "primaryCta.label", "primaryCta.href"], "optional": ["secondaryCta", "assetId"] },
+      "featureGrid": { "required": ["heading", "items[].title", "items[].text"], "optional": ["intro", "items[].assetId", "items[].href"] },
+      "richSections": { "required": ["items[].heading", "items[].body"], "optional": ["items[].assetId", "items[].items"] },
+      "successStories": { "required": ["items[].title", "items[].summary", "items[].assetId", "items[].href"], "optional": ["items[].sector", "items[].service", "items[].result"] },
+      "logoGrid": { "required": ["items[].assetId", "items[].name", "items[].relationship"], "optional": ["heading"] },
+      "ctaBand": { "required": ["title", "text", "cta.label", "cta.href"] }
+    }
+  },
+  "sharedEntities": {
+    "contactDetails": {
+      "required": ["officialPhone", "email", "locations[].name", "locations[].address", "locations[].mapUrl"],
+      "qualityRule": "Un solo teléfono oficial por contexto. Resolver conflicto 934 58 80 23 vs 900 923 330 antes de publicación."
+    },
+    "stat": {
+      "required": ["value", "label", "sourceNote", "verifiedAt"],
+      "qualityRule": "Prohibido usar placeholders, +0 o cifras sin evidencia."
+    },
+    "successStory": {
+      "required": ["slug", "title", "clientDisplayName", "summary", "challenge", "approach", "result", "assetId", "publicationApproval"],
+      "qualityRule": "No publicar marca, resultado ni logo sin aprobación marketing/legal."
+    },
+    "media": {
+      "required": ["assetId", "alt", "role", "licenseStatus"],
+      "roles": ["brand", "hero", "content", "logo", "icon", "decorative", "social"],
+      "qualityRule": "alt describe propósito, no nombre de fichero; decorative usa alt vacío."
+    }
+  },
+  "forms": {
+    "contact": {
+      "fields": [
+        { "id": "name", "type": "text", "required": true, "autocomplete": "name" },
+        { "id": "email", "type": "email", "required": true, "autocomplete": "email" },
+        { "id": "phone", "type": "tel", "required": false, "autocomplete": "tel" },
+        { "id": "message", "type": "textarea", "required": false },
+        { "id": "privacyConsent", "type": "checkbox", "required": true }
+      ],
+      "legacyFieldsToDrop": ["post_id", "form_id", "referer_title", "queried_id", "website"]
+    },
+    "jobs": {
+      "fields": ["firstName", "lastName", "email", "cvFile", "privacyConsent"],
+      "requirements": ["CV privado", "adjunto escaneado", "retención aprobada por DPO"],
+      "legacyAnomaly": "Validar si DNI es necesario; tipo email en EN es incorrecto."
+    },
+    "complaint": {
+      "fields": ["reportMode", "reportType", "observations", "attachment"],
+      "requirements": ["identidad y contacto opcionales", "reportMode y reportType obligatorios", "adjunto privado y en cuarentena"],
+      "reviewNeeded": "Comparar opciones ES/EN con jurídico antes de publicar."
+    }
+  },
+  "publicationChecks": [
+    "Cada H1, title y description tienen texto limpio sin HTML residual ni mojibake.",
+    "Cada bloque con CTA tiene label y href localizados.",
+    "Cada asset tiene licenciaStatus aprobado o no se publica.",
+    "Cada formulario define consentimiento, destinatario, retención y estado de error/success.",
+    "Toda ruta activa dispone de canonical y alternates válidos."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 2,
+  "pageId": "home",
+  "family": "home",
+  "templateVariant": "landing-reference",
+  "editorialStatus": "in_review",
+  "assets": [],
+  "locales": {
+    "es": { "path": "/", "seo": { "title": "i3e Informática", "description": "Tecnología segura, estable y preparada para crecer." }, "hero": { "eyebrow": "i3e Informática", "title": "Impulsamos tu organización con sistemas IT seguros y escalables", "intro": "Analizamos tus sistemas, corregimos riesgos y aplicamos soluciones que mantienen tu actividad en marcha.", "cta": { "label": "Contactar", "routeId": "contact" } }, "blocks": [] },
+    "en": { "path": "/en/", "seo": { "title": "i3e IT", "description": "Secure, stable technology built to help organizations grow." }, "hero": { "eyebrow": "i3e IT", "title": "Powering your organization with secure and scalable IT systems", "intro": "We assess your systems, reduce risk and apply solutions that keep your operations moving.", "cta": { "label": "Contact", "routeId": "contact" } }, "blocks": [] }
+  }
+}

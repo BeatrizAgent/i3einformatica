@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 2,
+  "pageId": "join-team",
+  "family": "jobs",
+  "templateVariant": "trust-led-form",
+  "editorialStatus": "in_review",
+  "assets": [{ "assetId": "jobs_culture", "role": "hero", "alt": "Cultura de trabajo de i3e Informática", "licenseStatus": "pending" }],
+  "locales": {
+    "es": { "path": "/unete-al-equipo", "seo": { "title": "Únete al equipo | i3e Informática", "description": "Forma parte de un equipo técnico cercano, exigente y orientado a resolver." }, "hero": { "eyebrow": "Únete al equipo", "title": "Tu próximo reto puede empezar aquí", "intro": "Buscamos personas que disfruten entendiendo problemas, trabajando en equipo y aportando valor técnico.", "assetId": "jobs_culture", "cta": { "label": "Enviar candidatura", "routeId": "jobs" } }, "blocks": [{ "id": "culture", "type": "split_media", "eyebrow": "Cultura", "title": "Cercanía para hacer mejor trabajo técnico", "intro": "Valoramos la responsabilidad, la curiosidad y la capacidad de explicar bien las decisiones.", "assetId": "jobs_culture" }, { "id": "jobs-form", "type": "form", "eyebrow": "Candidatura", "title": "Cuéntanos tu próximo paso", "intro": "Adjunta tu CV y revisaremos tu perfil para futuras oportunidades." }] },
+    "en": { "path": "/en/join-the-team", "seo": { "title": "Join the team | i3e IT", "description": "Join a close, demanding technical team focused on solving real problems." }, "hero": { "eyebrow": "Join the team", "title": "Your next challenge can start here", "intro": "We look for people who enjoy understanding problems, working together and bringing technical value.", "assetId": "jobs_culture", "cta": { "label": "Send application", "routeId": "jobs" } }, "blocks": [{ "id": "culture", "type": "split_media", "eyebrow": "Culture", "title": "Closeness helps us do better technical work", "intro": "We value ownership, curiosity and the ability to explain decisions clearly.", "assetId": "jobs_culture" }, { "id": "jobs-form", "type": "form", "eyebrow": "Application", "title": "Tell us about your next step", "intro": "Attach your CV and we will review your profile for future opportunities." }] }
+  }
+}

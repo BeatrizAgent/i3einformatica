@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 2,
+  "pageId": "cybersecurity",
+  "family": "service",
+  "templateVariant": "outcome-led",
+  "editorialStatus": "in_review",
+  "source": {
+    "url": "https://www.i3einformatica.com/ciberseguridad/",
+    "retrievedAt": "2026-07-11",
+    "note": "Contenido y recursos recuperados de la página pública; validar licencias antes de publicar como definitivo."
+  },
+  "assets": [
+    { "assetId": "service_cybersecurity", "role": "hero", "alt": "Protección digital de infraestructura y sistemas", "licenseStatus": "pending" },
+    { "assetId": "cyber_assessment", "role": "content", "alt": "Evaluación y auditoría de seguridad", "licenseStatus": "pending" },
+    { "assetId": "cyber_planning", "role": "content", "alt": "Planificación y estrategia de ciberseguridad", "licenseStatus": "pending" }
+  ],
+  "locales": {
+    "es": {
+      "path": "/ciberseguridad",
+      "seo": { "title": "Ciberseguridad | i3e Informática", "description": "Soluciones de seguridad diseñadas para proteger infraestructuras, prevenir amenazas y garantizar la continuidad del negocio." },
+      "hero": {
+        "eyebrow": "Ciberseguridad",
+        "title": "Ciberseguridad",
+        "intro": "Soluciones de seguridad diseñadas para proteger infraestructuras, prevenir amenazas y garantizar la continuidad del negocio.",
+        "assetId": "service_cybersecurity",
+        "cta": { "label": "Solicitar información", "routeId": "contact" }
+      },
+      "blocks": [
+        {
+          "id": "outcomes",
+          "type": "outcome_grid",
+          "eyebrow": "Protección, detección y respuesta ante amenazas",
+          "title": "Soluciones para identificar, mitigar y responder a ciberataques en tiempo real",
+          "items": [
+            { "title": "Servicios gestionados de ciberseguridad", "summary": "Soluciones externas para garantizar la protección continua de la organización.", "assetId": "service_cybersecurity" },
+            { "title": "Evaluación y auditoría de seguridad", "summary": "Análisis y validación de la seguridad de sistemas y procesos.", "assetId": "cyber_assessment" },
+            { "title": "Formación y concienciación en ciberseguridad", "summary": "Capacitación para fortalecer la cultura de seguridad dentro de la empresa." },
+            { "title": "Planificación y estrategia de ciberseguridad", "summary": "Desarrollo de estrategias para mitigar riesgos y garantizar la continuidad del negocio.", "assetId": "cyber_planning" }
+          ]
+        },
+        {
+          "id": "scope",
+          "type": "split_media",
+          "eyebrow": "Alcance",
+          "title": "Refuerza la seguridad de tu organización",
+          "intro": "Combinamos evaluación, planificación y acompañamiento para convertir la seguridad en una capacidad operativa continua.",
+          "assetId": "cyber_planning",
+          "action": { "label": "Más información", "routeId": "contact" }
+        }
+      ],
+      "cta": { "eyebrow": "Siguiente paso", "title": "Refuerza la seguridad de tu organización", "text": "Ordenemos las prioridades de seguridad y el siguiente paso operativo.", "action": { "label": "Solicitar información", "routeId": "contact" } }
+    },
+    "en": {
+      "path": "/en/cybersecurity",
+      "seo": { "title": "Cybersecurity | i3e IT", "description": "Security solutions designed to protect infrastructure, prevent threats and ensure business continuity." },
+      "hero": {
+        "eyebrow": "Cybersecurity",
+        "title": "Cybersecurity",
+        "intro": "Security solutions designed to protect infrastructure, prevent threats and ensure business continuity.",
+        "assetId": "service_cybersecurity",
+        "cta": { "label": "Request information", "routeId": "contact" }
+      },
+      "blocks": [
+        {
+          "id": "outcomes",
+          "type": "outcome_grid",
+          "eyebrow": "Protection, detection and response to threats",
+          "title": "Solutions to identify, mitigate and respond to cyberattacks in real time",
+          "items": [
+            { "title": "Managed cybersecurity services", "summary": "External solutions to ensure the organization's continuous protection.", "assetId": "service_cybersecurity" },
+            { "title": "Security assessment and audit", "summary": "Analysis and validation of the security of systems and processes.", "assetId": "cyber_assessment" },
+            { "title": "Cybersecurity training and awareness", "summary": "Training to strengthen the security culture within the company." },
+            { "title": "Cybersecurity planning and strategy", "summary": "Strategies to mitigate risks and ensure business continuity.", "assetId": "cyber_planning" }
+          ]
+        },
+        {
+          "id": "scope",
+          "type": "split_media",
+          "eyebrow": "Scope",
+          "title": "Strengthen your organization's security",
+          "intro": "We combine assessment, planning and support to turn security into a continuous operational capability.",
+          "assetId": "cyber_planning",
+          "action": { "label": "More information", "routeId": "contact" }
+        }
+      ],
+      "cta": { "eyebrow": "Next step", "title": "Strengthen your organization's security", "text": "Let us organize your security priorities and the next operational step.", "action": { "label": "Request information", "routeId": "contact" } }
+    }
+  }
+}

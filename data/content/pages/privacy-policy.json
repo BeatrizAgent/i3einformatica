@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 2,
+  "pageId": "privacy-policy",
+  "family": "legal",
+  "templateVariant": "linear-legal",
+  "editorialStatus": "in_review",
+  "assets": [],
+  "locales": {
+    "es": { "path": "/politica-de-privacidad", "seo": { "title": "Política de privacidad | i3e Informática", "description": "Información sobre el tratamiento de datos personales en i3e Informática." }, "hero": { "eyebrow": "Legal", "title": "Política de privacidad", "intro": "Información sobre cómo tratamos los datos personales y qué derechos puedes ejercer.", "cta": { "label": "Contactar", "routeId": "contact" } }, "blocks": [{ "id": "privacy-content", "type": "rich_text", "eyebrow": "Información legal", "title": "Tratamiento de datos personales", "intro": "Texto legal pendiente de revisión jurídica antes de publicación.", "items": [{ "heading": "Responsable", "body": "Pendiente de completar y validar por el responsable legal." }, { "heading": "Finalidades y derechos", "body": "Pendiente de completar con finalidades, base legal, conservación y vías de ejercicio." }] }] },
+    "en": { "path": "/en/privacy-policy", "seo": { "title": "Privacy policy | i3e IT", "description": "Information about personal data processing at i3e IT." }, "hero": { "eyebrow": "Legal", "title": "Privacy policy", "intro": "Information about how we process personal data and the rights you can exercise.", "cta": { "label": "Contact us", "routeId": "contact" } }, "blocks": [{ "id": "privacy-content", "type": "rich_text", "eyebrow": "Legal information", "title": "Personal data processing", "intro": "Legal text pending review before publication.", "items": [{ "heading": "Controller", "body": "To be completed and approved by the legal owner." }, { "heading": "Purposes and rights", "body": "To be completed with purposes, legal basis, retention and exercise channels." }] }] }
+  }
+}

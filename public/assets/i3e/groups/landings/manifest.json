@@ -1,0 +1,17 @@
+{
+  "source": "Chrome DevTools page-assets inventory, 2026-07-11",
+  "policy": "Each entry contains landing-specific images. Shared logo, footer, service icons, client logos, and grain texture stay in their existing shared collections.",
+  "landings": {
+    "microsoft-365": ["edificios.webp", "grandes-empresas-1024x681.webp", "soluciones-1024x768.webp"],
+    "microsoft-365-productos": ["migracion-min.webp", "migracion-sharepoint-min.webp", "copilot-min.webp"],
+    "microsoft-365-soluciones": ["migracion-min.webp"],
+    "ciberseguridad": [],
+    "microsoft-azure": ["infraestructura-migracion-min.webp", "seguridad-min.webp", "microsoft-azure-min.webp"],
+    "infraestructuras-it": ["instalacion-min.webp", "soporte-min.webp", "insfraestructuras-it-min.webp"],
+    "compliance-y-certificaciones": ["compliance-min.webp", "implementacion-iso-min.webp", "implementacion-normativas-min.webp"],
+    "casos-de-exito": ["casos-de-exito-819x1024.webp", "toyota.webp", "adm-publica.webp", "entidad-bancaria.webp"],
+    "sobre-nosotros": ["10.webp"],
+    "unete-al-equipo": ["cultura-organizacional-empresarial.webp"],
+    "contacto": ["contacto-min.webp", "hospi3.webp", "madrid.webp", "mataro2.webp", "celra1-1024x1024.webp"]
+  }
+}

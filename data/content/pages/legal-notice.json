@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 2,
+  "pageId": "legal-notice",
+  "family": "legal",
+  "templateVariant": "linear-legal",
+  "editorialStatus": "in_review",
+  "assets": [],
+  "locales": {
+    "es": { "path": "/aviso-legal", "seo": { "title": "Aviso legal | i3e Informática", "description": "Información legal del sitio web de i3e Informática." }, "hero": { "eyebrow": "Legal", "title": "Aviso legal", "intro": "Información sobre el titular, condiciones de uso y responsabilidades del sitio.", "cta": { "label": "Contactar", "routeId": "contact" } }, "blocks": [{ "id": "legal-content", "type": "rich_text", "eyebrow": "Información legal", "title": "Condiciones del sitio", "intro": "Texto legal pendiente de revisión antes de publicación.", "items": [{ "heading": "Titularidad", "body": "Pendiente de completar con los datos corporativos vigentes." }, { "heading": "Condiciones de uso", "body": "Pendiente de completar y aprobar por el responsable legal." }] }] },
+    "en": { "path": "/en/legal-notice", "seo": { "title": "Legal notice | i3e IT", "description": "Legal information for the i3e IT website." }, "hero": { "eyebrow": "Legal", "title": "Legal notice", "intro": "Information about ownership, terms of use and site responsibilities.", "cta": { "label": "Contact us", "routeId": "contact" } }, "blocks": [{ "id": "legal-content", "type": "rich_text", "eyebrow": "Legal information", "title": "Site terms", "intro": "Legal text pending review before publication.", "items": [{ "heading": "Ownership", "body": "To be completed with current corporate details." }, { "heading": "Terms of use", "body": "To be completed and approved by the legal owner." }] }] }
+  }
+}

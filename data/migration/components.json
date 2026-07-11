@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Contrato de bloques reutilizables para migrar la web original sin copiar markup de WordPress/Elementor.",
+  "sourceOfTruth": [
+    "data/audit/site-audit.json",
+    "docs/migration/component-inventory.md",
+    "DESIGN.md"
+  ],
+  "rules": {
+    "rendering": "Server Component por defecto; usar cliente solo para menú, selector de idioma, consentimiento y formularios.",
+    "locale": "Cada texto visible procede de la traducción de página activa; marcas, teléfonos, direcciones y certificados no se traducen.",
+    "media": "Todo media se resuelve por assetId desde assets.json; nunca por URL WordPress en JSX.",
+    "accessibility": "Contraste AA, foco visible, navegación por teclado y reduced-motion obligatorios.",
+    "responsive": "Mobile primero: 1 columna <768px, 2 columnas 768px+, 3 o 4 solo cuando la tarjeta mantenga legibilidad."
+  },
+  "components": [
+    {
+      "id": "site_header",
+      "category": "shell",
+      "requiredData": ["brandAssetId", "navigation[]", "contactCta", "locale", "localeAlternates"],
+      "variants": ["desktop", "mobile"],
+      "presentation": "Cabecera blanca, regla inferior de 1px, navegación compacta; CTA cuadrado de radio 4px.",
+      "interaction": ["submenú Servicios con teclado", "Escape cierra menú", "idioma enlaza ruta equivalente", "menú móvil con panel limitado y scroll interno"],
+      "accessibility": ["nav con aria-label", "botones con aria-expanded", "foco visible", "sin duplicar navegación visible para lectores de pantalla"],
+      "migrationDecision": "replace",
+      "sourceEvidence": ["/", "/ciberseguridad/"],
+      "target": "src/components/site-shell.tsx"
+    },
+    {
+      "id": "hero",
+      "category": "content",
+      "requiredData": ["eyebrow", "title", "intro", "primaryCta"],
+      "optionalData": ["secondaryCta", "assetId", "assetAlt"],
+      "presentation": "Fondo nav-dark, eyebrow cian, H1 blanco, lead legible y una imagen contextual sin marco ornamental.",
+      "responsive": "Texto primero; imagen baja debajo del texto y ocupa ancho completo en móvil.",
+      "accessibility": ["un único H1", "alt vacío si imagen decorativa", "imagen con dimensiones o fill/sizes para evitar CLS"],
+      "migrationDecision": "improve",
+      "sourceEvidence": ["/", "/ciberseguridad/", "/contacto/"]
+    },
+    {
+      "id": "stat_strip",
+      "category": "proof",
+      "requiredData": ["items[].value", "items[].label"],
+      "constraints": ["3 elementos máximo", "cifra verificable y fecha de evidencia requerida", "no mostrar 0 ni contador falso"],
+      "presentation": "Banda compacta con separadores visibles; conserva tres columnas en móvil si cada etiqueta cabe.",
+      "accessibility": ["valor completo legible sin animación", "animación opcional respeta reduced-motion"],
+      "migrationDecision": "improve",
+      "sourceEvidence": ["/"],
+      "qualityGate": "Bloquear publicación si value es 0, vacío o no tiene sourceNote."
+    },
+    {
+      "id": "logo_grid",
+      "category": "proof",
+      "requiredData": ["items[].assetId", "items[].name", "items[].relationship"],
+      "presentation": "Grid estático alineado, no carrusel automático. Logos con caja normalizada y object-fit contain.",
+      "accessibility": ["alt con nombre y relación si aporta prueba", "alt vacío si el logo es decorativo", "nunca animación continua sin pausa"],
+      "migrationDecision": "improve",
+      "sourceEvidence": ["/", "/ciberseguridad/"]
+    },
+    {
+      "id": "feature_grid",
+      "category": "content",
+      "requiredData": ["heading", "intro", "items[].title", "items[].text"],
+      "optionalData": ["items[].assetId", "items[].href", "items[].eyebrow"],
+      "constraints": ["2-6 tarjetas", "título <= 80 caracteres", "texto <= 240 caracteres", "una acción por tarjeta"],
+      "presentation": "Tarjetas blancas con borde 1px, radio 4-8px y sin sombra en reposo. Priorizar una idea por tarjeta.",
+      "accessibility": ["article por tarjeta", "enlace único envuelve toda la tarjeta si navega", "no anidar enlaces"],
+      "migrationDecision": "improve",
+      "sourceEvidence": ["/", "/ciberseguridad/", "/infraestructuras-it/"]
+    },
+    {
+      "id": "audience_cards",
+      "category": "content",
+      "requiredData": ["items[].title", "items[].text", "items[].assetId", "items[].href"],
+      "constraints": ["exactamente 2 elementos para empresas y PYMEs"],
+      "presentation": "Dos tarjetas de imagen horizontal, imagen 16:9, contenido por debajo; pasan a una columna en móvil.",
+      "migrationDecision": "preserve",
+      "sourceEvidence": ["/"]
+    },
+    {
+      "id": "rich_sections",
+      "category": "editorial",
+      "requiredData": ["sections[].heading", "sections[].body"],
+      "optionalData": ["sections[].level", "sections[].assetId", "sections[].items[]"],
+      "presentation": "Una sección H2 abre tema; H3 solo divide subtema. Alternar texto y prueba visual, no muros de texto.",
+      "accessibility": ["jerarquía H2/H3 sin saltos", "HTML sanitizado", "listas para enumeraciones reales"],
+      "migrationDecision": "improve",
+      "sourceEvidence": ["/ciberseguridad/", "/microsoft-365/", "/sobre-nosotros/"]
+    },
+    {
+      "id": "success_story_grid",
+      "category": "proof",
+      "requiredData": ["items[].title", "items[].summary", "items[].assetId", "items[].href"],
+      "optionalData": ["items[].sector", "items[].service", "items[].result"],
+      "presentation": "Tarjeta enlazable con marca, problema, intervención y resultado. Evitar usar únicamente nombre de cliente como contenido.",
+      "migrationDecision": "improve",
+      "sourceEvidence": ["/", "/casos-de-exito/"]
+    },
+    {
+      "id": "cta_band",
+      "category": "conversion",
+      "requiredData": ["eyebrow", "title", "text", "cta.label", "cta.href"],
+      "constraints": ["una sola acción primaria", "título <= 90 caracteres", "texto <= 220 caracteres"],
+      "presentation": "Banda nav-dark al final de contenido, texto a la izquierda y CTA de alto contraste. No usar como relleno entre secciones legales.",
+      "responsive": "Contenido apilado y CTA a ancho completo en móvil.",
+      "accessibility": ["contraste AA", "CTA con verbo y destino explícitos", "foco cian visible"],
+      "migrationDecision": "improve",
+      "sourceEvidence": ["/", "/ciberseguridad/"]
+    },
+    {
+      "id": "contact_locations",
+      "category": "contact",
+      "requiredData": ["phone", "locations[].name", "locations[].address", "locations[].mapUrl"],
+      "optionalData": ["email", "locations[].kind"],
+      "presentation": "Teléfono dominante y ubicaciones como lista de enlaces; mapa no embebido hasta interacción.",
+      "accessibility": ["tel: y mailto:", "dirección en elemento address", "enlace de mapa describe destino"],
+      "migrationDecision": "improve",
+      "sourceEvidence": ["/contacto/"]
+    },
+    {
+      "id": "submission_form",
+      "category": "form",
+      "requiredData": ["kind", "fields[]", "consent", "submitLabel"],
+      "states": ["idle", "validating", "submitting", "success", "error"],
+      "presentation": "Label siempre visible, ayuda antes del error y resumen de errores al enviar. No repetir CTA genérico junto al formulario.",
+      "accessibility": ["label asociado", "errores por campo", "aria-live para estado", "foco al resumen de error", "consentimiento no preseleccionado"],
+      "migrationDecision": "improve",
+      "sourceEvidence": ["/contacto/", "/unete-al-equipo/", "/denuncias/"]
+    },
+    {
+      "id": "site_footer",
+      "category": "shell",
+      "requiredData": ["brandAssetId", "description", "navigationGroups[]", "contact", "legalLinks[]"],
+      "presentation": "Fondo nav-dark, cuatro columnas en escritorio y una en móvil. Cada grupo de enlaces aparece una vez.",
+      "accessibility": ["títulos de grupo", "enlaces fáciles de escanear", "datos corporativos centralizados"],
+      "migrationDecision": "improve",
+      "sourceEvidence": ["/", "/contacto/", "/ciberseguridad/"],
+      "target": "src/components/site-shell.tsx"
+    },
+    {
+      "id": "cookie_consent",
+      "category": "legal",
+      "requiredData": ["purposeGroups[]", "acceptLabel", "rejectLabel", "settingsLabel", "privacyHref"],
+      "presentation": "Panel corto, acciones Aceptar y Rechazar con igual jerarquía; preferencias reabribles desde footer.",
+      "accessibility": ["control por teclado", "foco contenido", "no cargar analítica antes de consentimiento"],
+      "migrationDecision": "replace",
+      "sourceEvidence": ["/", "/ciberseguridad/", "/contacto/"]
+    }
+  ]
+}

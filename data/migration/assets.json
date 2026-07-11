@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Índice semántico de recursos ya sincronizados. El manifiesto completo conserva URL, hashes y dimensiones.",
+  "manifest": "public/assets/i3e/manifest.json",
+  "root": "/assets/i3e/",
+  "policy": {
+    "delivery": "Servir variantes WebP/SVG locales por assetId; el original queda trazable por sourceUrl en manifest.",
+    "licensing": "licenseStatus pending bloquea publicación pública de logos, casos y fotografías.",
+    "responsive": "Elegir variante por sizes; no cargar el original de 1800px en una tarjeta."
+  },
+  "assets": [
+    { "id": "brand_logo", "path": "/assets/i3e/logo-i3e-25.webp", "role": "brand", "alt": "i3e Informática", "licenseStatus": "pending" },
+    { "id": "home_hero_portal", "path": "/assets/i3e/portail-min.webp", "role": "hero", "alt": "Infraestructura tecnológica conectada", "licenseStatus": "pending", "variants": ["portail-min-300x186.webp", "portail-min-768x476.webp", "portail-min-1024x635.webp"] },
+    { "id": "audience_enterprises", "path": "/assets/i3e/empresas-rect.webp", "role": "content", "alt": "Profesionales trabajando en una gran empresa", "licenseStatus": "pending", "variants": ["empresas-rect-300x169.webp"] },
+    { "id": "audience_smes", "path": "/assets/i3e/pymes-rect.webp", "role": "content", "alt": "Equipo de pequeña empresa trabajando", "licenseStatus": "pending", "variants": ["pymes-rect-300x169.webp"] },
+    { "id": "cyber_protection", "path": "/assets/i3e/proteccion-2-min.webp", "role": "content", "alt": "Protección de infraestructuras y redes", "licenseStatus": "pending", "variants": ["proteccion-2-min-300x276.webp"] },
+    { "id": "cyber_assessment", "path": "/assets/i3e/evaluacion-min.webp", "role": "content", "alt": "Evaluación de riesgos de ciberseguridad", "licenseStatus": "pending", "variants": ["evaluacion-min-300x276.webp"] },
+    { "id": "cyber_planning", "path": "/assets/i3e/planificacion-min.webp", "role": "content", "alt": "Planificación de ciberseguridad", "licenseStatus": "pending", "variants": ["planificacion-min-300x276.webp"] },
+    { "id": "icon_microsoft_365", "path": "/assets/i3e/arcticons-microsoft-365-2.svg", "role": "icon", "alt": "", "licenseStatus": "pending" },
+    { "id": "icon_security", "path": "/assets/i3e/arcticons-security-2.svg", "role": "icon", "alt": "", "licenseStatus": "pending" },
+    { "id": "icon_azure", "path": "/assets/i3e/arcticons-microsoft-azure-2.svg", "role": "icon", "alt": "", "licenseStatus": "pending" },
+    { "id": "icon_infrastructure", "path": "/assets/i3e/arcticons-serverbox-2.svg", "role": "icon", "alt": "", "licenseStatus": "pending" },
+    { "id": "icon_certifications", "path": "/assets/i3e/cert-2.svg", "role": "icon", "alt": "", "licenseStatus": "pending" },
+    { "id": "partner_barracuda", "path": "/assets/i3e/barracuda_authorized_partner_bn.webp", "role": "logo", "alt": "Barracuda Authorized Partner", "licenseStatus": "pending" },
+    { "id": "partner_cisco", "path": "/assets/i3e/cisco_partner_bn.webp", "role": "logo", "alt": "Cisco Partner", "licenseStatus": "pending" },
+    { "id": "partner_hp", "path": "/assets/i3e/hp_gold_partner_bn.webp", "role": "logo", "alt": "HP Gold Partner", "licenseStatus": "pending" },
+    { "id": "partner_paloalto", "path": "/assets/i3e/paloalto_networks_bn.webp", "role": "logo", "alt": "Palo Alto Networks", "licenseStatus": "pending" },
+    { "id": "partner_intel", "path": "/assets/i3e/intel-partner-gold-1-768x768.webp", "role": "logo", "alt": "Intel Partner Gold", "licenseStatus": "pending" },
+    { "id": "partner_epson", "path": "/assets/i3e/logo-epson-partner-768x768.webp", "role": "logo", "alt": "Epson IT Partner", "licenseStatus": "pending" },
+    { "id": "client_toyota", "path": "/assets/i3e/logo-toyota.webp", "role": "logo", "alt": "Toyota", "licenseStatus": "pending" },
+    { "id": "client_opel", "path": "/assets/i3e/logo-opel.webp", "role": "logo", "alt": "Opel", "licenseStatus": "pending" },
+    { "id": "client_tesla", "path": "/assets/i3e/logo-tesla.webp", "role": "logo", "alt": "Tesla", "licenseStatus": "pending" },
+    { "id": "client_hyundai", "path": "/assets/i3e/logo-hyundai.webp", "role": "logo", "alt": "Hyundai", "licenseStatus": "pending" }
+  ],
+  "legacyExternalResources": {
+    "folder": "/assets/i3e/groups/services/icons/legacy-wordpress/",
+    "status": "downloaded_from_official_fallback",
+    "licenseStatus": "pending",
+    "items": [
+      { "id": "legacy_icon_microsoft_365", "path": "/assets/i3e/groups/services/icons/legacy-wordpress/microsoft-365.png", "sourceUrl": "https://www.i3einformatica.com/wp-content/uploads/2025/05/Microsoft-365.png", "sha256": "bb583e906f81e22552dc2800e31adebc5163e18bf7506e345aa6a0587fd01b7a" },
+      { "id": "legacy_icon_cybersecurity", "path": "/assets/i3e/groups/services/icons/legacy-wordpress/ciberseguridad.png", "sourceUrl": "https://www.i3einformatica.com/wp-content/uploads/2025/05/Ciberseguridad.png", "sha256": "416656aad5e8a61c6ebd2b27a455ea9deecf407b5a18b7b29300024091f4fb95" },
+      { "id": "legacy_icon_azure", "path": "/assets/i3e/groups/services/icons/legacy-wordpress/microsoft-azure.png", "sourceUrl": "https://www.i3einformatica.com/wp-content/uploads/2025/05/Microsoft-Azure.png", "sha256": "871b332c6f071cf0dbff30eda7bb805f0dd70916e84cd89ac6aa8a4cca862666" },
+      { "id": "legacy_icon_infrastructure", "path": "/assets/i3e/groups/services/icons/legacy-wordpress/infraestructuras-it.png", "sourceUrl": "https://www.i3einformatica.com/wp-content/uploads/2025/05/Infraestructuras-IT.png", "sha256": "6367f6a6f929f7d50a25354a051e6cfd1c4c7b3905bf776d7adca3d079a6dba5" },
+      { "id": "legacy_icon_compliance", "path": "/assets/i3e/groups/services/icons/legacy-wordpress/compliance-y-certificaciones.png", "sourceUrl": "https://www.i3einformatica.com/wp-content/uploads/2025/05/Compliance-y-Certificaciones.png", "sha256": "f86e2b33f5c4bfaef7bd0ee4e6678e37764f167b4906e51708f6b1edf3401348" }
+    ],
+    "discarded": [
+      { "sourceUrl": "https://i.ytimg.com/vi/ID/hqdefault.jpg", "reason": "Placeholder ID, no corresponde a un vídeo o recurso publicable." }
+    ]
+  },
+  "unmappedAssetRule": "Los demás recursos del manifest no se usan hasta asignar role, alt, page usage y licenseStatus."
+}

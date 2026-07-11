@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 2,
+  "pageId": "about-us",
+  "family": "company",
+  "templateVariant": "trust-led-roadmap",
+  "editorialStatus": "in_review",
+  "source": {
+    "url": "https://www.i3einformatica.com/sobre-nosotros/",
+    "retrievedAt": "2026-07-11",
+    "note": "Contenido recuperado de la página pública y normalizado para la nueva composición. Validar cifras y licencias antes de publicar como definitivo."
+  },
+  "assets": [
+    { "assetId": "company_team", "role": "hero", "alt": "Equipo profesional reunido en una oficina luminosa", "licenseStatus": "pending" },
+    { "assetId": "company_story", "role": "content", "alt": "Equipo técnico colaborando alrededor de una mesa", "licenseStatus": "pending" },
+    { "assetId": "company_partner", "role": "content", "alt": "Profesionales trabajando juntos sobre una solución digital", "licenseStatus": "pending" },
+    { "assetId": "company_strategy", "role": "content", "alt": "Equipo técnico alineando decisiones y estrategia", "licenseStatus": "pending" },
+    { "assetId": "company_iso_9001", "role": "logo", "alt": "Certificación ISO 9001 de i3e Informática", "licenseStatus": "pending" },
+    { "assetId": "company_iso_14001", "role": "logo", "alt": "Certificación ISO 14001 de i3e Informática", "licenseStatus": "pending" },
+    { "assetId": "company_iso_20000", "role": "logo", "alt": "Certificación ISO 20000 de i3e Informática", "licenseStatus": "pending" },
+    { "assetId": "company_iso_27001", "role": "logo", "alt": "Certificación ISO 27001 de i3e Informática", "licenseStatus": "pending" }
+  ],
+  "locales": {
+    "es": {
+      "path": "/sobre-nosotros",
+      "seo": { "title": "Sobre nosotros | i3e Informática", "description": "25 años convirtiendo retos tecnológicos en operaciones estables, seguras y preparadas para crecer." },
+      "hero": {
+        "eyebrow": "Sobre i3e",
+        "title": "Impulsamos la tecnología que mantiene en marcha a las organizaciones",
+        "intro": "Con 25 años de experiencia, en I3e ayudamos a empresas y administraciones públicas a trabajar mejor gracias a soluciones IT pensadas para perdurar: estables, seguras y alineadas con su forma de operar.",
+        "assetId": "company_team",
+        "cta": { "label": "Hablar con el equipo", "routeId": "contact" }
+      },
+      "blocks": [
+        {
+          "id": "proof",
+          "type": "stats",
+          "eyebrow": "Una trayectoria que se puede medir",
+          "title": "Experiencia para decidir con contexto",
+          "intro": "Las cifras visibles en la página pública resumen el alcance de i3e. Las mantenemos separadas del relato para que la confianza no dependa solo de una promesa.",
+          "approvalStatus": "approved",
+          "sourceNote": "Cifras visibles en la página pública revisada el 11/07/2026.",
+          "verifiedAt": "2026-07-11",
+          "items": [
+            { "value": "+25", "label": "años de experiencia", "sourceNote": "Página pública revisada el 11/07/2026.", "verifiedAt": "2026-07-11" },
+            { "value": "+500", "label": "clientes", "sourceNote": "Página pública revisada el 11/07/2026.", "verifiedAt": "2026-07-11" },
+            { "value": "+1000", "label": "proyectos", "sourceNote": "Página pública revisada el 11/07/2026.", "verifiedAt": "2026-07-11" }
+          ]
+        },
+        {
+          "id": "principles",
+          "type": "capability_grid",
+          "eyebrow": "Cómo trabajamos",
+          "title": "Un equipo técnico orientado a negocio",
+          "intro": "Colaboramos con equipos técnicos y responsables de negocio para diseñar soluciones que funcionan desde el primer día.",
+          "items": [
+            { "title": "Escuchamos antes de implementar", "summary": "Priorizamos lo que aporta valor real y alineamos cada solución con tus objetivos de negocio.", "assetId": "company_story", "alt": "Equipo técnico colaborando alrededor de una mesa" },
+            { "title": "Un partner de confianza", "summary": "Proponemos soluciones robustas y sostenibles, establecemos relaciones cercanas y caminamos a tu lado en cada decisión importante.", "assetId": "company_partner", "alt": "Profesionales trabajando juntos sobre una solución digital" },
+            { "title": "Un acompañante estratégico", "summary": "Identificamos oportunidades de mejora, aterrizamos ideas en acciones medibles y proponemos soluciones basadas en datos.", "assetId": "company_strategy", "alt": "Equipo técnico alineando decisiones y estrategia" }
+          ]
+        },
+        {
+          "id": "roadmap",
+          "type": "timeline",
+          "eyebrow": "Historia",
+          "title": "Historia",
+          "intro": "Una línea de tiempo breve para entender de dónde venimos.",
+          "items": [
+            { "year": "2000", "title": "Constitución", "summary": "I3E IT inicia su actividad en el área de recursos humanos, especializada en perfiles IT." },
+            { "year": "2008", "title": "Crecimiento", "summary": "Abrimos nuevas áreas de negocio, con servicios gestionados y proyectos IT a nivel nacional." },
+            { "year": "2010", "title": "Proveedor de servicios IT 360º", "summary": "Nos centramos en los servicios globales de IT en España para consolidar un servicio integral." },
+            { "year": "2020", "title": "¡Cumplimos 20 años!", "summary": "Centramos nuestros esfuerzos en evolucionar, certificarnos y seguir aprendiendo para mantener el nivel de calidad de toda nuestra trayectoria." },
+            { "year": "2025", "title": "¡Cumplimos 25 años!", "summary": "Centramos nuestros esfuerzos en evolucionar, certificarnos y seguir aprendiendo para mantener el nivel de calidad de toda nuestra trayectoria." }
+          ]
+        },
+        {
+          "id": "certifications",
+          "type": "logo_grid",
+          "eyebrow": "Señales de confianza",
+          "title": "La experiencia también se demuestra",
+          "intro": "Certificaciones y alianzas forman parte del marco de trabajo que acompaña a nuestros equipos y clientes.",
+          "items": [
+            { "title": "ISO 9001", "summary": "Gestión de la calidad", "assetId": "company_iso_9001", "alt": "Certificación ISO 9001 de i3e Informática" },
+            { "title": "ISO 14001", "summary": "Gestión ambiental", "assetId": "company_iso_14001", "alt": "Certificación ISO 14001 de i3e Informática" },
+            { "title": "ISO 20000", "summary": "Gestión de servicios IT", "assetId": "company_iso_20000", "alt": "Certificación ISO 20000 de i3e Informática" },
+            { "title": "ISO 27001", "summary": "Seguridad de la información", "assetId": "company_iso_27001", "alt": "Certificación ISO 27001 de i3e Informática" }
+          ]
+        }
+      ],
+      "cta": { "eyebrow": "Siguiente paso", "title": "Cuéntanos qué necesitas mantener en marcha", "text": "Ponemos contexto, criterio técnico y un plan claro sobre la mesa.", "action": { "label": "Contactar con i3e", "routeId": "contact" } }
+    },
+    "en": {
+      "path": "/en/about-us",
+      "seo": { "title": "About us | i3e IT", "description": "25 years turning technology challenges into stable, secure operations ready to grow." },
+      "hero": {
+        "eyebrow": "About i3e",
+        "title": "Driving the technology that keeps organizations up and running",
+        "intro": "With 25 years of experience, at I3e we help companies and public administrations to work better thanks to IT solutions designed to last: stable, secure and aligned with the way they operate.",
+        "assetId": "company_team",
+        "cta": { "label": "Talk to the team", "routeId": "contact" }
+      },
+      "blocks": [
+        {
+          "id": "proof",
+          "type": "stats",
+          "eyebrow": "A track record you can measure",
+          "title": "Experience that adds context to decisions",
+          "intro": "The figures visible on the public page summarise i3e's reach. We keep them separate from the story so trust does not depend on a promise alone.",
+          "approvalStatus": "approved",
+          "sourceNote": "Figures visible on the public page reviewed on 2026-07-11.",
+          "verifiedAt": "2026-07-11",
+          "items": [
+            { "value": "+25", "label": "years of experience", "sourceNote": "Public page reviewed on 2026-07-11.", "verifiedAt": "2026-07-11" },
+            { "value": "+500", "label": "clients", "sourceNote": "Public page reviewed on 2026-07-11.", "verifiedAt": "2026-07-11" },
+            { "value": "+1000", "label": "projects", "sourceNote": "Public page reviewed on 2026-07-11.", "verifiedAt": "2026-07-11" }
+          ]
+        },
+        {
+          "id": "principles",
+          "type": "capability_grid",
+          "eyebrow": "How we work",
+          "title": "A business-oriented technical team",
+          "intro": "We collaborate with technical teams and business managers to design solutions that work from day one.",
+          "items": [
+            { "title": "We listen before implementing", "summary": "We prioritize what brings real value and align each solution with your business objectives.", "assetId": "company_story", "alt": "Technical team collaborating around a table" },
+            { "title": "A reliable partner", "summary": "We propose robust and sustainable solutions, establish close, long-term relationships and walk by your side in every important decision.", "assetId": "company_partner", "alt": "Professionals working together on a digital solution" },
+            { "title": "A strategic companion", "summary": "We identify opportunities for improvement, turn ideas into measurable actions and propose data-driven solutions.", "assetId": "company_strategy", "alt": "Technical team aligning decisions and strategy" }
+          ]
+        },
+        {
+          "id": "roadmap",
+          "type": "timeline",
+          "eyebrow": "Our history",
+          "title": "History",
+          "intro": "A concise timeline to understand where we come from.",
+          "items": [
+            { "year": "2000", "title": "Constitution", "summary": "I3E IT starts its activity in the area of human resources, specialized in IT profiles." },
+            { "year": "2008", "title": "Growth", "summary": "We opened new business areas, with managed services and IT projects nationwide." },
+            { "year": "2010", "title": "360º IT service provider", "summary": "We focused on global IT services in Spain to consolidate a comprehensive service." },
+            { "year": "2020", "title": "We are 20 years old!", "summary": "We focus our efforts on evolving, certifying ourselves and continuing to learn in order to maintain the level of quality of our entire trajectory." },
+            { "year": "2025", "title": "We are 25 years old!", "summary": "We focus our efforts on evolving, certifying ourselves and continuing to learn in order to maintain the level of quality of our entire trajectory." }
+          ]
+        },
+        {
+          "id": "certifications",
+          "type": "logo_grid",
+          "eyebrow": "Signals of trust",
+          "title": "Experience is demonstrated too",
+          "intro": "Certifications and partnerships are part of the framework supporting our teams and clients.",
+          "items": [
+            { "title": "ISO 9001", "summary": "Quality management", "assetId": "company_iso_9001", "alt": "i3e ISO 9001 certification" },
+            { "title": "ISO 14001", "summary": "Environmental management", "assetId": "company_iso_14001", "alt": "i3e ISO 14001 certification" },
+            { "title": "ISO 20000", "summary": "IT service management", "assetId": "company_iso_20000", "alt": "i3e ISO 20000 certification" },
+            { "title": "ISO 27001", "summary": "Information security", "assetId": "company_iso_27001", "alt": "i3e ISO 27001 certification" }
+          ]
+        }
+      ],
+      "cta": { "eyebrow": "Next step", "title": "Tell us what needs to keep moving", "text": "We bring context, technical judgement and a clear plan to the table.", "action": { "label": "Contact i3e", "routeId": "contact" } }
+    }
+  }
+}

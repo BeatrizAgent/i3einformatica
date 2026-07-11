@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 2,
+  "pageId": "cookie-policy",
+  "family": "legal",
+  "templateVariant": "linear-legal",
+  "editorialStatus": "in_review",
+  "assets": [],
+  "locales": {
+    "es": { "path": "/politica-de-cookies", "seo": { "title": "Política de cookies | i3e Informática", "description": "Información sobre las cookies utilizadas y cómo gestionar tus preferencias." }, "hero": { "eyebrow": "Legal", "title": "Política de cookies", "intro": "Información clara sobre cookies, finalidades y preferencias.", "cta": { "label": "Gestionar preferencias", "routeId": "contact" } }, "blocks": [{ "id": "cookies-content", "type": "rich_text", "eyebrow": "Información legal", "title": "Cookies y preferencias", "intro": "Texto legal pendiente de revisión jurídica y configuración final del CMP.", "items": [{ "heading": "Cookies necesarias", "body": "Pendiente de completar con las cookies técnicas y su duración." }, { "heading": "Cookies opcionales", "body": "Pendiente de completar con analítica, consentimiento y proveedor." }] }] },
+    "en": { "path": "/en/cookie-policy", "seo": { "title": "Cookie policy | i3e IT", "description": "Information about cookies used and how to manage preferences." }, "hero": { "eyebrow": "Legal", "title": "Cookie policy", "intro": "Clear information about cookies, purposes and preferences.", "cta": { "label": "Manage preferences", "routeId": "contact" } }, "blocks": [{ "id": "cookies-content", "type": "rich_text", "eyebrow": "Legal information", "title": "Cookies and preferences", "intro": "Legal text pending review and final CMP configuration.", "items": [{ "heading": "Necessary cookies", "body": "To be completed with technical cookies and duration." }, { "heading": "Optional cookies", "body": "To be completed with analytics, consent and provider." }] }] }
+  }
+}

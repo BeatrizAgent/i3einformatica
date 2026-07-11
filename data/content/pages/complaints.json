@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 2,
+  "pageId": "complaints",
+  "family": "complaints",
+  "templateVariant": "sensitive-form",
+  "editorialStatus": "in_review",
+  "assets": [],
+  "locales": {
+    "es": { "path": "/denuncias", "seo": { "title": "Canal de denuncias | i3e Informática", "description": "Canal seguro para comunicar una preocupación o incidencia." }, "hero": { "eyebrow": "Canal de denuncias", "title": "Comunica una preocupación de forma segura", "intro": "Puedes enviar una comunicación con identidad o de forma anónima. Explicaremos el tratamiento antes de enviar.", "cta": { "label": "Iniciar comunicación", "routeId": "complaints" } }, "blocks": [{ "id": "complaint-form", "type": "form", "eyebrow": "Comunicación", "title": "Enviar una comunicación", "intro": "La identidad y el contacto son opcionales. El tipo de reporte y las observaciones ayudan a tramitarlo correctamente." }] },
+    "en": { "path": "/en/complaints", "seo": { "title": "Complaints channel | i3e IT", "description": "A secure channel to report a concern or incident." }, "hero": { "eyebrow": "Complaints channel", "title": "Report a concern securely", "intro": "You may submit a report with your identity or anonymously. We explain data processing before submission.", "cta": { "label": "Start a report", "routeId": "complaints" } }, "blocks": [{ "id": "complaint-form", "type": "form", "eyebrow": "Report", "title": "Submit a report", "intro": "Identity and contact are optional. Report type and observations help us process it correctly." }] }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Composición de páginas a partir de bloques y datos editoriales; no describe el DOM legado.",
+  "routeFamilies": [
+    {
+      "id": "home",
+      "sourcePaths": ["/", "/en/"],
+      "blocks": ["site_header", "hero", "stat_strip", "logo_grid", "audience_cards", "feature_grid", "success_story_grid", "cta_band", "site_footer", "cookie_consent"],
+      "requiredContent": ["hero", "verifiedStats", "partnerLogos", "audiences", "serviceCards", "successStories", "cta"],
+      "uxGoal": "Explicar propuesta de valor y conducir a contacto o a una solución concreta en menos de dos decisiones."
+    },
+    {
+      "id": "service",
+      "sourcePaths": ["/ciberseguridad/", "/infraestructuras-it/", "/microsoft-azure/", "/compliance-y-certificaciones/"],
+      "blocks": ["site_header", "hero", "feature_grid", "rich_sections", "logo_grid", "cta_band", "site_footer", "cookie_consent"],
+      "requiredContent": ["hero", "serviceGroups", "technologyLogos", "cta"],
+      "uxGoal": "Mostrar servicios por resultado de negocio, después detalle técnico y prueba, con un único CTA de contacto."
+    },
+    {
+      "id": "microsoft_365_hub",
+      "sourcePaths": ["/microsoft-365/", "/microsoft-365/producto/", "/microsoft-365/soluciones/"],
+      "blocks": ["site_header", "hero", "feature_grid", "rich_sections", "logo_grid", "cta_band", "site_footer", "cookie_consent"],
+      "requiredContent": ["hero", "productOrSolutionCards", "technologyLogos", "cta"],
+      "uxGoal": "Diferenciar producto, solución y soporte; no mezclar los tres niveles en el mismo grid."
+    },
+    {
+      "id": "success_stories",
+      "sourcePaths": ["/casos-de-exito/", "/en/success-stories/"],
+      "blocks": ["site_header", "hero", "success_story_grid", "cta_band", "site_footer", "cookie_consent"],
+      "requiredContent": ["hero", "successStories", "cta"],
+      "uxGoal": "Permitir comparar casos por sector, reto, servicio y resultado."
+    },
+    {
+      "id": "company",
+      "sourcePaths": ["/sobre-nosotros/", "/en/about-us/"],
+      "blocks": ["site_header", "hero", "stat_strip", "rich_sections", "logo_grid", "cta_band", "site_footer", "cookie_consent"],
+      "requiredContent": ["hero", "verifiedStats", "storySections", "cta"],
+      "uxGoal": "Convertir años de experiencia en señales de confianza verificables."
+    },
+    {
+      "id": "contact",
+      "sourcePaths": ["/contacto/", "/en/contact/"],
+      "blocks": ["site_header", "hero", "submission_form", "contact_locations", "site_footer", "cookie_consent"],
+      "requiredContent": ["hero", "contactForm", "contactDetails", "locations"],
+      "uxGoal": "Enviar una consulta sin ambigüedad ni campos de WordPress visibles."
+    },
+    {
+      "id": "sensitive_form",
+      "sourcePaths": ["/unete-al-equipo/", "/denuncias/"],
+      "blocks": ["site_header", "hero", "submission_form", "site_footer", "cookie_consent"],
+      "requiredContent": ["hero", "formCopy", "formSchema", "privacyAndRetentionNotice"],
+      "uxGoal": "Explicar tratamiento de datos, permitir errores recuperables y mantener adjuntos privados."
+    },
+    {
+      "id": "legal",
+      "sourcePaths": ["/politica-de-privacidad/", "/politica-de-cookies/", "/aviso-legal/"],
+      "blocks": ["site_header", "rich_sections", "site_footer", "cookie_consent"],
+      "requiredContent": ["title", "updatedAt", "legalSections"],
+      "uxGoal": "Lectura lineal y jerarquía legal correcta; sin CTA comercial intercalado."
+    }
+  ],
+  "exclusions": [
+    {
+      "sourcePath": "/sobre-nosotros-pruebas/",
+      "decision": "exclude_until_approved",
+      "reason": "No tiene par EN ni descripción; decidir 301, borrado o publicación antes de importación final."
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Cambios UX que la migración debe resolver, no replicar.",
+  "reviewedSources": [
+    "https://www.i3einformatica.com/",
+    "https://www.i3einformatica.com/ciberseguridad/",
+    "https://www.i3einformatica.com/contacto/"
+  ],
+  "findings": [
+    {
+      "id": "ux-001",
+      "priority": "P0",
+      "surface": "home",
+      "problem": "La home expone Clientes, Partners y Proyectos como +0.",
+      "impact": "Reduce confianza en el primer bloque de prueba social.",
+      "concreteChange": "Ocultar el bloque hasta validar cifras o publicarlo solo con value, sourceNote y verifiedAt.",
+      "rationale": "Una prueba vacía es peor que ninguna prueba.",
+      "acceptance": ["No hay valor 0 ni placeholder", "Cada cifra publicada tiene evidencia editorial"]
+    },
+    {
+      "id": "ux-002",
+      "priority": "P0",
+      "surface": "global",
+      "problem": "Navegación y enlaces de footer aparecen duplicados en la salida semántica del original.",
+      "impact": "Aumenta ruido para lectores de pantalla y dificulta recorrer la página.",
+      "concreteChange": "Mantener una sola navegación activa por breakpoint; ocultar la alternativa con el mecanismo semántico correcto.",
+      "rationale": "La respuesta responsive no debe duplicar destinos en el árbol accesible.",
+      "acceptance": ["Un nav principal por viewport", "Tab no recorre enlaces ocultos"]
+    },
+    {
+      "id": "ux-003",
+      "priority": "P0",
+      "surface": "global",
+      "problem": "Banner de cookies heredado ocupa mucho contenido y presenta ajustes técnicos extensos desde primera carga.",
+      "impact": "Interrumpe tarea principal y complica consentimiento informado.",
+      "concreteChange": "CMP propia con resumen corto, Aceptar/Rechazar equivalentes, ajustes progresivos y enlace para reabrir.",
+      "rationale": "Consentimiento claro necesita igual facilidad para aceptar o rechazar.",
+      "acceptance": ["Analítica no carga antes de consentir", "Rechazar tiene misma prominencia", "Preferencias reabribles"]
+    },
+    {
+      "id": "ux-004",
+      "priority": "P1",
+      "surface": "service pages",
+      "problem": "Ciberseguridad acumula muchos títulos y párrafos homogéneos sin una jerarquía explícita por resultado, servicio y prueba.",
+      "impact": "El comprador B2B tarda en identificar qué servicio encaja con su problema.",
+      "concreteChange": "Agrupar por resultados (prevenir, detectar, responder), limitar cada grupo a 3-6 tarjetas y cerrar con CTA único.",
+      "rationale": "Agrupar por intención reduce lectura lineal y facilita comparación.",
+      "acceptance": ["Cada tarjeta expresa resultado y alcance", "Un CTA principal por página"]
+    },
+    {
+      "id": "ux-005",
+      "priority": "P1",
+      "surface": "contact",
+      "problem": "Formulario conserva campos técnicos WordPress y mensaje sin requisito claro; teléfono de contacto difiere del footer.",
+      "impact": "Aumenta fricción y crea duda sobre dónde contactar.",
+      "concreteChange": "Aplicar schema contact del content-contract y centralizar officialPhone tras decisión de negocio.",
+      "rationale": "Campos y datos consistentes reducen abandonos y errores.",
+      "acceptance": ["No se muestran campos técnicos", "nombre, email y consentimiento validan", "teléfono coherente en header, footer y contacto"]
+    },
+    {
+      "id": "ux-006",
+      "priority": "P1",
+      "surface": "success stories",
+      "problem": "Las tarjetas de caso se limitan a cliente y etiqueta Casos de éxito.",
+      "impact": "No demuestran problema resuelto ni resultado para un prospecto similar.",
+      "concreteChange": "Añadir sector, reto, intervención y resultado aprobado en cada caso.",
+      "rationale": "Un caso debe permitir reconocer relevancia, no solo una marca.",
+      "acceptance": ["Cada caso tiene resumen y resultado", "publicación aprobada por marketing/legal"]
+    },
+    {
+      "id": "ux-007",
+      "priority": "P2",
+      "surface": "content import",
+      "problem": "Snapshot contiene headings con HTML residual y textos con mojibake en varios artefactos.",
+      "impact": "Puede publicar texto roto o estructura de headings inválida.",
+      "concreteChange": "Limpiar durante importación, preservar fuente original y bloquear publicación si el validador detecta HTML residual o mojibake.",
+      "rationale": "La migración debe ser trazable sin heredar errores visibles.",
+      "acceptance": ["Sin caracteres Ã en texto publicado", "H1-H3 secuenciales", "audit snapshot se conserva sin mutar"]
+    }
+  ],
+  "implementationOrder": ["ux-001", "ux-002", "ux-003", "ux-005", "ux-004", "ux-006", "ux-007"]
+}
