@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { assetPath } from "@/lib/public-path";
 import { getAsset, getPageContent, resolveAction } from "@/lib/page-content";
 import type { PageRecord } from "@/lib/content/repository";
 import { TechnologyBand } from "@/components/landing/technology-band";
@@ -44,7 +43,7 @@ export function CybersecurityPage({ page }: { page: PageRecord }) {
           </div>
           {heroImage && (
             <div className="hero-visual" aria-hidden="true">
-              <Image src={assetPath(heroImage.path)} alt="" fill priority sizes="(max-width: 900px) 100vw, 45vw" style={{ objectFit: "cover" }} />
+              <Image src={heroImage.path} alt="" fill priority sizes="(max-width: 900px) 100vw, 45vw" style={{ objectFit: "cover" }} />
             </div>
           )}
         </div>
@@ -103,7 +102,7 @@ export function CybersecurityPage({ page }: { page: PageRecord }) {
                               </div>
                               {itemAsset && (
                                 <div className="relative w-full h-32 mt-4 rounded overflow-hidden">
-                                  <Image src={assetPath(itemAsset.path)} alt={item.title || ""} fill sizes="(max-width: 600px) 100vw, 30vw" style={{ objectFit: "cover" }} />
+                                  <Image src={itemAsset.path} alt={item.title || ""} fill sizes="(max-width: 600px) 100vw, 30vw" style={{ objectFit: "cover" }} />
                                 </div>
                               )}
                             </article>
@@ -121,7 +120,7 @@ export function CybersecurityPage({ page }: { page: PageRecord }) {
                       {splitBlock.assetId && (
                         <div className="relative aspect-video rounded overflow-hidden">
                           <Image
-                            src={assetPath(getAsset(String(splitBlock.assetId))!.path)}
+                            src={getAsset(String(splitBlock.assetId))!.path}
                             alt={splitBlock.title ?? ""}
                             fill
                             sizes="(max-width: 900px) 100vw, 40vw"

@@ -1,6 +1,6 @@
 import { getPageDocument, pageContentById, resolveAction, type ContentLocale } from "@/lib/page-content";
 
-export const locales = ["es", "ca", "eu", "gl", "pt", "en", "fr", "de"] as const;
+export const locales = ["es", "en"] as const;
 export type Locale = (typeof locales)[number];
 export type PublishedLocale = Extract<Locale, ContentLocale>;
 

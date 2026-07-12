@@ -1,4 +1,3 @@
-import { assetPath } from "@/lib/public-path";
 import Image from "next/image";
 import Link from "next/link";
 import { MotionRevealItem, MotionStagger, ScrollReveal } from "@/components/landing/scroll-reveal";
@@ -30,7 +29,7 @@ export function M365Hub({ locale, enabled }: { locale: Locale; enabled: boolean 
 
   const heroCta = resolveAction(content.hero.cta, locale);
   const heroImage = content.hero.assetId ? getAsset(content.hero.assetId) : null;
-  const heroBg = heroImage ? assetPath(heroImage.path) : assetPath("/assets/i3e/edificios.webp");
+  const heroBg = heroImage ? heroImage.path : "/assets/i3e/edificios.webp";
 
   // Get the split_media block for Product & Solutions cards
   const splitBlock = content.blocks.find((b) => b.id === "product-solution");
@@ -44,12 +43,12 @@ export function M365Hub({ locale, enabled }: { locale: Locale; enabled: boolean 
 
   // Map the 4 capabilities to their respective icons
   const capabilityIcons: Record<string, string> = {
-    copilot: assetPath("/assets/i3e/arcticons-microsoft-365-2.svg"),
-    sharepoint: assetPath("/assets/i3e/arcticons-microsoft-365-2.svg"),
-    "teams y colaboración": assetPath("/assets/i3e/arcticons-microsoft-365-2.svg"),
-    "teams and collaboration": assetPath("/assets/i3e/arcticons-microsoft-365-2.svg"),
-    "seguridad y cumplimiento": assetPath("/assets/i3e/arcticons-security-2.svg"),
-    "security and compliance": assetPath("/assets/i3e/arcticons-security-2.svg"),
+    copilot: "/assets/i3e/arcticons-microsoft-365-2.svg",
+    sharepoint: "/assets/i3e/arcticons-microsoft-365-2.svg",
+    "teams y colaboración": "/assets/i3e/arcticons-microsoft-365-2.svg",
+    "teams and collaboration": "/assets/i3e/arcticons-microsoft-365-2.svg",
+    "seguridad y cumplimiento": "/assets/i3e/arcticons-security-2.svg",
+    "security and compliance": "/assets/i3e/arcticons-security-2.svg",
   };
 
   const finalCtaAction = content.cta?.action ? resolveAction(content.cta.action, locale) : null;
@@ -86,7 +85,7 @@ export function M365Hub({ locale, enabled }: { locale: Locale; enabled: boolean 
             <ScrollReveal className="m365-block-card" enabled={enabled}>
               <div className="m365-block-media">
                 <Image
-                  src={assetPath("/assets/i3e/migracion-min.webp")}
+                  src="/assets/i3e/migracion-min.webp"
                   alt="Microsoft 365 Producto"
                   fill
                   sizes="(max-width: 900px) 100vw, 50vw"
@@ -110,7 +109,7 @@ export function M365Hub({ locale, enabled }: { locale: Locale; enabled: boolean 
             <ScrollReveal className="m365-block-card" enabled={enabled}>
               <div className="m365-block-media">
                 <Image
-                  src={assetPath("/assets/i3e/soluciones-1024x768.webp")}
+                  src="/assets/i3e/soluciones-1024x768.webp"
                   alt="Microsoft 365 Soluciones"
                   fill
                   sizes="(max-width: 900px) 100vw, 50vw"
@@ -146,7 +145,7 @@ export function M365Hub({ locale, enabled }: { locale: Locale; enabled: boolean 
                 const itemTitle = item.title || "";
                 const itemSummary = item.summary || "";
                 const itemKey = itemTitle.toLowerCase();
-                const icon = capabilityIcons[itemKey] || assetPath("/assets/i3e/arcticons-microsoft-365-2.svg");
+                const icon = capabilityIcons[itemKey] || "/assets/i3e/arcticons-microsoft-365-2.svg";
                 // Determine target link based on capability
                 const href = (itemKey.includes("seguridad") || itemKey.includes("security") || itemKey.includes("colabora"))
                   ? solutionsHref

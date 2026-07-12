@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { assetPath } from "@/lib/public-path";
 import { getAsset, getPageContent, resolveAction } from "@/lib/page-content";
 import type { PageRecord } from "@/lib/content/repository";
 import { TechnologyBand } from "@/components/landing/technology-band";
@@ -19,7 +18,7 @@ export function InfraPage({ page }: { page: PageRecord }) {
   if (!content) return null;
 
   const heroImage = content.hero.assetId ? getAsset(content.hero.assetId) : null;
-  const heroBg = heroImage ? assetPath(heroImage.path) : assetPath("/assets/i3e/insfraestructuras-it-min.webp");
+  const heroBg = heroImage ? heroImage.path : "/assets/i3e/insfraestructuras-it-min.webp";
   const heroCta = resolveAction(content.hero.cta, locale);
 
   const outcomesBlock = content.blocks.find((b) => b.id === "outcomes");
@@ -70,7 +69,7 @@ export function InfraPage({ page }: { page: PageRecord }) {
                   <article className="curated-card" key={item.title || index}>
                     {itemAsset && (
                       <div className="curated-media">
-                        <Image src={assetPath(itemAsset.path)} alt={item.title || ""} fill sizes="(max-width: 760px) 100vw, 30vw" style={{ objectFit: "cover" }} />
+                        <Image src={itemAsset.path} alt={item.title || ""} fill sizes="(max-width: 760px) 100vw, 30vw" style={{ objectFit: "cover" }} />
                       </div>
                     )}
                     <div className="curated-card-copy">

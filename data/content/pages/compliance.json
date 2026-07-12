@@ -3,10 +3,169 @@
   "pageId": "compliance",
   "family": "service",
   "templateVariant": "outcome-led",
-  "editorialStatus": "in_review",
-  "assets": [{ "assetId": "service_compliance", "role": "hero", "alt": "Implementación de certificaciones ISO", "licenseStatus": "pending" }, { "assetId": "compliance_normatives", "role": "content", "alt": "Aplicación de normativas", "licenseStatus": "pending" }],
+  "editorialStatus": "published",
+  "assets": [
+    { "assetId": "service_compliance", "role": "hero", "alt": "Implementación de certificaciones ISO", "licenseStatus": "approved" },
+    { "assetId": "compliance_normatives", "role": "content", "alt": "Aplicación de normativas", "licenseStatus": "approved" }
+  ],
   "locales": {
-    "es": { "path": "/compliance-y-certificaciones", "seo": { "title": "Compliance y certificaciones | i3e Informática", "description": "Convierte ISO 27001, ENS, NIS2 y RGPD en procesos claros y verificables." }, "hero": { "eyebrow": "Compliance y certificaciones", "title": "Cumplimiento que se puede demostrar", "intro": "Conectamos requisitos normativos, controles técnicos y operación diaria para avanzar con claridad.", "assetId": "service_compliance", "cta": { "label": "Revisar requisitos", "routeId": "contact" } }, "blocks": [{ "id": "outcomes", "type": "outcome_grid", "eyebrow": "Resultados", "title": "Del requisito a la práctica", "items": [{ "title": "Entender", "summary": "Traducimos el marco aplicable a obligaciones concretas." }, { "title": "Implantar", "summary": "Aterrizamos controles, responsables y evidencias." }, { "title": "Mantener", "summary": "Creamos una rutina sostenible de revisión y mejora." , "assetId": "compliance_normatives" }] }, { "id": "capabilities", "type": "capability_grid", "eyebrow": "Ámbitos", "title": "Un lenguaje común entre negocio y tecnología", "items": [{ "title": "ISO 27001", "summary": "Sistema de gestión y mejora continua." }, { "title": "ENS y NIS2", "summary": "Controles y responsabilidades para entornos regulados." }, { "title": "RGPD", "summary": "Privacidad integrada en procesos y sistemas." }] }], "cta": { "eyebrow": "Siguiente paso", "title": "Ordena tu próximo requisito de cumplimiento", "text": "Te ayudamos a convertir la obligación en un plan ejecutable.", "action": { "label": "Contactar", "routeId": "contact" } } },
-    "en": { "path": "/en/compliance-and-certifications", "seo": { "title": "Compliance and certifications | i3e IT", "description": "Turn ISO 27001, ENS, NIS2 and GDPR into clear, verifiable processes." }, "hero": { "eyebrow": "Compliance and certifications", "title": "Compliance you can demonstrate", "intro": "We connect regulatory requirements, technical controls and daily operations so teams can move forward clearly.", "assetId": "service_compliance", "cta": { "label": "Review requirements", "routeId": "contact" } }, "blocks": [{ "id": "outcomes", "type": "outcome_grid", "eyebrow": "Outcomes", "title": "From requirement to practice", "items": [{ "title": "Understand", "summary": "We translate the applicable framework into concrete obligations." }, { "title": "Implement", "summary": "We put controls, owners and evidence into practice." }, { "title": "Maintain", "summary": "We create a sustainable review and improvement routine.", "assetId": "compliance_normatives" }] }, { "id": "capabilities", "type": "capability_grid", "eyebrow": "Areas", "title": "A common language for business and technology", "items": [{ "title": "ISO 27001", "summary": "Management system and continuous improvement." }, { "title": "ENS and NIS2", "summary": "Controls and responsibilities for regulated environments." }, { "title": "GDPR", "summary": "Privacy built into processes and systems." }] }], "cta": { "eyebrow": "Next step", "title": "Organize your next compliance requirement", "text": "We help turn the obligation into an executable plan.", "action": { "label": "Contact us", "routeId": "contact" } } }
+    "es": {
+      "path": "/compliance-y-certificaciones",
+      "seo": { "title": "Compliance y certificaciones | i3e Informática", "description": "Convierte ISO 27001, ENS, NIS2 y RGPD en procesos claros y verificables." },
+      "hero": {
+        "eyebrow": "Compliance y certificaciones",
+        "title": "Cumplimiento que se puede demostrar",
+        "intro": "Conectamos requisitos normativos, controles técnicos y operación diaria para avanzar con claridad.",
+        "assetId": "service_compliance",
+        "cta": { "label": "Revisar requisitos", "routeId": "contact" }
+      },
+      "blocks": [
+        {
+          "id": "outcomes",
+          "type": "outcome_grid",
+          "eyebrow": "Resultados",
+          "title": "Del requisito a la práctica",
+          "items": [
+            { "title": "Entender", "summary": "Traducimos el marco aplicable a obligaciones concretas." },
+            { "title": "Implantar", "summary": "Aterrizamos controles, responsables y evidencias." },
+            { "title": "Mantener", "summary": "Creamos una rutina sostenible de revisión y mejora.", "assetId": "compliance_normatives" }
+          ]
+        },
+        {
+          "id": "capabilities",
+          "type": "capability_grid",
+          "eyebrow": "Ámbitos",
+          "title": "Un lenguaje común entre negocio y tecnología",
+          "intro": "Nota de alcance: i3e Informática realiza consultoría de acompañamiento, implantación y preparación; las certificaciones oficiales son emitidas únicamente por entidades auditoras acreditadas independientes.",
+          "items": [
+            {
+              "title": "ISO 27001",
+              "summary": "Diseño e implantación del Sistema de Gestión de Seguridad de la Información (SGSI). Acompañamos la preparación para la auditoría de certificación oficial.",
+              "details": [
+                "Análisis de brechas (Gap Analysis)",
+                "Evaluación y tratamiento de riesgos",
+                "Elaboración de la Declaración de Aplicabilidad (SoA)",
+                "Soporte en auditoría interna previa"
+              ]
+            },
+            {
+              "title": "ENS y NIS2",
+              "summary": "Adecuación al Esquema Nacional de Seguridad (ENS) en categoría Básica, Media o Alta, y cumplimiento de la directiva NIS2 para la resiliencia en sectores críticos.",
+              "details": [
+                "Categorización de sistemas según el ENS",
+                "Política de seguridad y marco organizativo",
+                "Declaración de conformidad y auditoría",
+                "Alineación con NIS2 y reporte de incidentes"
+              ]
+            },
+            {
+              "title": "RGPD y PCI-DSS",
+              "summary": "Gobernanza de privacidad en el tratamiento de datos personales conforme al RGPD y protección en pasarelas y transacciones bajo el estándar PCI-DSS.",
+              "details": [
+                "Registro de Actividades de Tratamiento (RAT)",
+                "Evaluaciones de Impacto (EIPD) y análisis",
+                "Cumplimiento en pasarelas de pago y tarjetas",
+                "Controles de acceso y cifrado de transacciones"
+              ]
+            },
+            {
+              "title": "Auditoría y Soporte",
+              "summary": "Revisiones periódicas de control, simulacros de incidentes y mantenimiento de evidencias operativas para auditorías externas de seguimiento.",
+              "details": [
+                "Auditorías internas planificadas",
+                "Mantenimiento continuo del SGSI",
+                "Simulacros de continuidad de negocio",
+                "Gestión de no conformidades"
+              ]
+            }
+          ]
+        }
+      ],
+      "cta": {
+        "eyebrow": "Siguiente paso",
+        "title": "Ordena tu próximo requisito de cumplimiento",
+        "text": "Te ayudamos a convertir la obligación en un plan ejecutable.",
+        "action": { "label": "Contactar", "routeId": "contact" }
+      }
+    },
+    "en": {
+      "path": "/en/compliance-and-certifications",
+      "seo": { "title": "Compliance and certifications | i3e IT", "description": "Turn ISO 27001, ENS, NIS2 and GDPR into clear, verifiable processes." },
+      "hero": {
+        "eyebrow": "Compliance and certifications",
+        "title": "Compliance you can demonstrate",
+        "intro": "We connect regulatory requirements, technical controls and daily operations so teams can move forward clearly.",
+        "assetId": "service_compliance",
+        "cta": { "label": "Review requirements", "routeId": "contact" }
+      },
+      "blocks": [
+        {
+          "id": "outcomes",
+          "type": "outcome_grid",
+          "eyebrow": "Outcomes",
+          "title": "From requirement to practice",
+          "items": [
+            { "title": "Understand", "summary": "We translate the applicable framework into concrete obligations." },
+            { "title": "Implement", "summary": "We put controls, owners and evidence into practice." },
+            { "title": "Maintain", "summary": "We create a sustainable review and improvement routine.", "assetId": "compliance_normatives" }
+          ]
+        },
+        {
+          "id": "capabilities",
+          "type": "capability_grid",
+          "eyebrow": "Areas",
+          "title": "A common language for business and technology",
+          "intro": "Scope notice: i3e Informática provides consulting, implementation, and preparation services; official certifications are issued exclusively by independent accredited auditing bodies.",
+          "items": [
+            {
+              "title": "ISO 27001",
+              "summary": "Design and implementation of the Information Security Management System (ISMS). We accompany preparation for the official certification audit.",
+              "details": [
+                "Gap analysis",
+                "Risk assessment and treatment",
+                "Preparation of Statement of Applicability (SoA)",
+                "Pre-audit internal support"
+              ]
+            },
+            {
+              "title": "ENS and NIS2",
+              "summary": "Adequacy to the National Security Scheme (ENS) in Basic, Medium or High category, and compliance with the NIS2 directive for critical sectors.",
+              "details": [
+                "System categorization according to ENS",
+                "Security policy and organizational framework",
+                "Declaration of conformity and audit",
+                "NIS2 alignment and incident reporting"
+              ]
+            },
+            {
+              "title": "GDPR and PCI-DSS",
+              "summary": "Privacy governance in personal data processing according to GDPR, and protection in payment gateways under the PCI-DSS standard.",
+              "details": [
+                "Record of Processing Activities (RoPA)",
+                "Data Protection Impact Assessments (DPIA)",
+                "Payment gateway and card security compliance",
+                "Access control and transaction encryption"
+              ]
+            },
+            {
+              "title": "Audit and Support",
+              "summary": "Periodic control reviews, mock incident drills and maintenance of operational evidence for external follow-up audits.",
+              "details": [
+                "Planned internal audits",
+                "Ongoing maintenance of the ISMS",
+                "Business continuity mock drills",
+                "Non-conformity management"
+              ]
+            }
+          ]
+        }
+      ],
+      "cta": {
+        "eyebrow": "Next step",
+        "title": "Organize your next compliance requirement",
+        "text": "We help turn the obligation into an executable plan.",
+        "action": { "label": "Contact us", "routeId": "contact" }
+      }
+    }
   }
 }

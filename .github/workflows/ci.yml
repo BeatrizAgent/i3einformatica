@@ -24,3 +24,4 @@ jobs:
       - run: pnpm test
       - run: pnpm build
       - run: pnpm export:validate
+      - run: pnpm e2e:validate

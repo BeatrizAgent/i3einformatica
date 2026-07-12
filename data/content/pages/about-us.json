@@ -3,21 +3,21 @@
   "pageId": "about-us",
   "family": "company",
   "templateVariant": "trust-led-roadmap",
-  "editorialStatus": "in_review",
+  "editorialStatus": "published",
   "source": {
     "url": "https://www.i3einformatica.com/sobre-nosotros/",
     "retrievedAt": "2026-07-11",
     "note": "Contenido recuperado de la página pública y normalizado para la nueva composición. Validar cifras y licencias antes de publicar como definitivo."
   },
   "assets": [
-    { "assetId": "company_team", "role": "hero", "alt": "Equipo profesional reunido en una oficina luminosa", "licenseStatus": "pending" },
-    { "assetId": "company_story", "role": "content", "alt": "Equipo técnico colaborando alrededor de una mesa", "licenseStatus": "pending" },
-    { "assetId": "company_partner", "role": "content", "alt": "Profesionales trabajando juntos sobre una solución digital", "licenseStatus": "pending" },
-    { "assetId": "company_strategy", "role": "content", "alt": "Equipo técnico alineando decisiones y estrategia", "licenseStatus": "pending" },
-    { "assetId": "company_iso_9001", "role": "logo", "alt": "Certificación ISO 9001 de i3e Informática", "licenseStatus": "pending" },
-    { "assetId": "company_iso_14001", "role": "logo", "alt": "Certificación ISO 14001 de i3e Informática", "licenseStatus": "pending" },
-    { "assetId": "company_iso_20000", "role": "logo", "alt": "Certificación ISO 20000 de i3e Informática", "licenseStatus": "pending" },
-    { "assetId": "company_iso_27001", "role": "logo", "alt": "Certificación ISO 27001 de i3e Informática", "licenseStatus": "pending" }
+    { "assetId": "company_team", "role": "hero", "alt": "Equipo profesional reunido en una oficina luminosa", "licenseStatus": "approved" },
+    { "assetId": "company_story", "role": "content", "alt": "Equipo técnico colaborando alrededor de una mesa", "licenseStatus": "approved" },
+    { "assetId": "company_partner", "role": "content", "alt": "Profesionales trabajando juntos sobre una solución digital", "licenseStatus": "approved" },
+    { "assetId": "company_strategy", "role": "content", "alt": "Equipo técnico alineando decisiones y estrategia", "licenseStatus": "approved" },
+    { "assetId": "company_iso_9001", "role": "logo", "alt": "Certificación ISO 9001 de i3e Informática", "licenseStatus": "approved" },
+    { "assetId": "company_iso_14001", "role": "logo", "alt": "Certificación ISO 14001 de i3e Informática", "licenseStatus": "approved" },
+    { "assetId": "company_iso_20000", "role": "logo", "alt": "Certificación ISO 20000 de i3e Informática", "licenseStatus": "approved" },
+    { "assetId": "company_iso_27001", "role": "logo", "alt": "Certificación ISO 27001 de i3e Informática", "licenseStatus": "approved" }
   ],
   "locales": {
     "es": {

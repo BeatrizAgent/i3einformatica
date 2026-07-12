@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { assetPath } from "@/lib/public-path";
 
 type TechBandLocale = "es" | "en";
 
@@ -34,7 +33,7 @@ export function TechnologyBand({ locale }: { locale: TechBandLocale }) {
             <div className="tech-band-item" key={tech.name}>
               <div className="tech-band-logo">
                 <Image
-                  src={assetPath(tech.icon)}
+                  src={tech.icon}
                   alt={tech.name}
                   width={tech.icon.endsWith(".svg") ? 36 : 80}
                   height={tech.icon.endsWith(".svg") ? 36 : 36}
