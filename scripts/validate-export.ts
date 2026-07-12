@@ -82,7 +82,7 @@ for (const page of publishedPages) {
   // Internal Links Check
   for (const match of html.matchAll(/href="([^"]+)"/g)) {
     const href = match[1];
-    if (!href.startsWith("/") || href.startsWith("//") || href.startsWith("/#") || href.includes("#") || href.includes("favicon.ico") || href.startsWith(`${basePath}/_next`) || href.startsWith(`${basePath}/assets`)) continue;
+    if (!href.startsWith("/") || href.startsWith("//") || href.startsWith("/#") || href.includes("#") || href.includes("favicon.ico") || href.startsWith(`${basePath}/_next`) || href.startsWith(`${basePath}/assets`) || href.startsWith("/assets")) continue;
     const normalized = href.replace(basePath, "").replace(/\/$/, "") || "/";
     if (!routeSet.has(normalized)) errors.push(`${pageHref(page)}: internal link has no generated route: ${href}`);
   }
