@@ -10,20 +10,20 @@
       "path": "/denuncias",
       "seo": {
         "title": "Buz\u00f3n de denuncias | i3e Inform\u00e1tica",
-        "description": "Canal seguro de denuncias de i3e Inform\u00e1tica con formulario configurable y alternativa postal."
+        "description": "Informaci\u00f3n del canal de denuncias y alternativa postal de i3e Inform\u00e1tica."
       },
       "hero": {
         "eyebrow": "Canal de denuncias",
         "title": "Buz\u00f3n de denuncias",
         "intro": "Comunica cualquier irregularidad o denuncia relacionada con tu puesto de trabajo.",
-        "cta": { "label": "Enviar una denuncia", "routeId": "complaints" }
+        "cta": { "label": "Consultar la alternativa", "routeId": "complaints" }
       },
       "blocks": [{
         "id": "complaint-form",
         "type": "form",
-        "eyebrow": "Formulario de denuncias",
-        "title": "Cu\u00e9ntanos qu\u00e9 ha ocurrido",
-        "intro": "Selecciona el tipo de comunicaci\u00f3n, a\u00f1ade el contexto que consideres necesario y adjunta documentos solo si son relevantes.",
+        "eyebrow": "Canal temporal",
+        "title": "No env\u00edes una denuncia mediante esta web",
+        "intro": "Para proteger la confidencialidad, este sitio est\u00e1tico no recibe informaci\u00f3n, archivos ni comunicaciones de denuncia.",
         "items": [{
           "title": "Alternativa postal",
           "summary": "Si prefieres no utilizar el formulario, puedes dirigir una comunicaci\u00f3n escrita al domicilio social de I3E IT RESOURCES SL.",
@@ -36,20 +36,20 @@
       "path": "/en/complaints",
       "seo": {
         "title": "Whistleblowing channel | i3e IT",
-        "description": "i3e IT's secure whistleblowing channel with a configurable form and postal alternative."
+        "description": "Information about i3e IT's whistleblowing channel and postal alternative."
       },
       "hero": {
         "eyebrow": "Whistleblowing channel",
         "title": "Whistleblowing mailbox",
         "intro": "Report any irregularity or concern related to your workplace.",
-        "cta": { "label": "Send a report", "routeId": "complaints" }
+        "cta": { "label": "View the alternative", "routeId": "complaints" }
       },
       "blocks": [{
         "id": "complaint-form",
         "type": "form",
-        "eyebrow": "Whistleblowing form",
-        "title": "Tell us what happened",
-        "intro": "Choose the type of concern, add the context you consider necessary and attach documents only when relevant.",
+        "eyebrow": "Temporary channel",
+        "title": "Do not submit a report through this website",
+        "intro": "To protect confidentiality, this static site does not receive report content, files, or communications.",
         "items": [{
           "title": "Postal alternative",
           "summary": "If you prefer not to use the form, you may send a written communication to I3E IT RESOURCES SL's registered office.",

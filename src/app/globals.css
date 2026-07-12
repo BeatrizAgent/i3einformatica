@@ -92,6 +92,7 @@
 .azure-focus-stack, .azure-security-stack { display: grid; gap: .55rem; }
 .azure-focus-card, .azure-mini-card { min-width: 0; border: 1px solid rgba(206, 229, 251, .48); background: rgba(15, 55, 96, .28); }
 .azure-focus-card { padding: .9rem 1rem; }
+.azure-focus-media img { object-fit: cover; }
 .azure-focus-card > span { color: var(--action-blue); font: 700 .58rem/1 var(--font-mono); letter-spacing: .08em; }
 .azure-focus-card h3, .azure-mini-card h3 { margin: .55rem 0 .35rem; color: #fff; font-size: .78rem; line-height: 1.2; }
 .azure-focus-card p, .azure-mini-card p { margin: 0; color: rgba(255,255,255,.82); font-size: .65rem; line-height: 1.45; }
@@ -1276,6 +1277,10 @@ tbody th small { font-weight: 400; }
 .curated-rich-text article:first-of-type { border-top: 0; }
 .curated-rich-text article p { max-width: 72ch; margin: 0; }
 .curated-location-grid .curated-media { min-height: 13rem; }
+.curated-pending-notice { margin-top: 2rem; padding: 3rem 2rem; border: 1px dashed #dfe4ea; border-radius: var(--radius); background: #fff; text-align: center; }
+.curated-pending-notice p { margin: 0; color: var(--ink-soft); font-size: 1.05rem; line-height: 1.6; }
+.location-address { margin: .25rem 0 .5rem; font-weight: 600; }
+.location-map-link { display: inline-block; margin-top: .75rem; }
 .curated-stats-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .curated-stat { display: grid; gap: .35rem; padding: 1.5rem; border-top: 2px solid var(--action-blue); background: var(--nav-dark); color: #fff; }
 .curated-stat strong { color: var(--action-blue); font-size: clamp(2rem, 4vw, 3.5rem); }

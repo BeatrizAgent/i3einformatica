@@ -122,8 +122,8 @@ function ProofGrid({ pageId, block, locale }: { pageId: string; block: CuratedBl
           </article>)}
         </div>
       ) : (
-        <div className="curated-pending-notice" style={{ padding: "3rem 2rem", border: "1px dashed #dfe4ea", borderRadius: "8px", textAlign: "center", background: "#fff", marginTop: "2rem" }}>
-          <p style={{ margin: 0, color: "#59606b", fontSize: "1.05rem" }}>
+        <div className="curated-pending-notice">
+          <p>
             {locale === "es"
               ? "Los casos de éxito se encuentran en proceso de validación editorial y legal para garantizar la exactitud de los datos y el cumplimiento de los acuerdos de confidencialidad."
               : "Success stories are currently undergoing editorial and legal validation to ensure data accuracy and compliance with confidentiality agreements."}
@@ -150,9 +150,9 @@ function Locations({ pageId, block, locale }: { pageId: string; block: CuratedBl
       <CuratedImage pageId={pageId} assetId={value(item, "assetId")} alt={title} />
       <div className="curated-card-copy">
         <h3>{title}</h3>
-        {address && <p className="location-address" style={{ fontWeight: 600, margin: "0.25rem 0 0.5rem" }}>{address}</p>}
+        {address && <p className="location-address">{address}</p>}
         <p>{summary}</p>
-        {mapsUrl && <a className="text-link" href={mapsUrl} target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", marginTop: "0.75rem" }}>{locale === "es" ? "Ver en Google Maps" : "View on Google Maps"} &rarr;</a>}
+        {mapsUrl && <a className="text-link location-map-link" href={mapsUrl} target="_blank" rel="noopener noreferrer">{locale === "es" ? "Ver en Google Maps" : "View on Google Maps"} &rarr;</a>}
       </div>
     </article>;
   })}</div></div></section>;

@@ -46,7 +46,7 @@ export function M365Hub({ locale, enabled }: { locale: Locale; enabled: boolean 
       {/* Hero Section */}
       <section className="m365-hero" aria-labelledby="m365-title">
         <div className="m365-hero-background" aria-hidden="true">
-          <Image src={heroBg} alt="" fill priority sizes="100vw" style={{ objectFit: "cover" }} />
+          <Image src={heroBg} alt="" fill priority sizes="100vw" />
           <div className="m365-hero-overlay" />
         </div>
         <div className="shell m365-hero-content">
@@ -77,7 +77,6 @@ export function M365Hub({ locale, enabled }: { locale: Locale; enabled: boolean 
                   alt="Microsoft 365 Producto"
                   fill
                   sizes="(max-width: 900px) 100vw, 50vw"
-                  style={{ objectFit: "cover" }}
                 />
               </div>
               <div className="m365-block-copy">
@@ -101,7 +100,6 @@ export function M365Hub({ locale, enabled }: { locale: Locale; enabled: boolean 
                   alt="Microsoft 365 Soluciones"
                   fill
                   sizes="(max-width: 900px) 100vw, 50vw"
-                  style={{ objectFit: "cover" }}
                 />
               </div>
               <div className="m365-block-copy">

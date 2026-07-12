@@ -44,11 +44,9 @@ export function CookieBanner() {
     const dialog = dialogRef.current;
     if (!dialog) return;
 
-    const handleCancel = (event: Event) => {
-      event.preventDefault();
-    };
+    const handleClose = () => setVisible(false);
 
-    dialog.addEventListener("cancel", handleCancel);
+    dialog.addEventListener("close", handleClose);
 
     if (visible) {
       if (!dialog.open) {
@@ -59,7 +57,7 @@ export function CookieBanner() {
     }
 
     return () => {
-      dialog.removeEventListener("cancel", handleCancel);
+      dialog.removeEventListener("close", handleClose);
       if (dialog.open) {
         dialog.close();
       }
@@ -111,6 +109,7 @@ export function CookieBanner() {
     acceptAll: isEn ? "Accept All" : "Aceptar todas",
     rejectAll: isEn ? "Reject All" : "Rechazar no esenciales",
     configure: isEn ? "Customize" : "Configurar",
+    dismiss: isEn ? "Close for now" : "Cerrar por ahora",
     save: isEn ? "Save Preferences" : "Guardar preferencias",
     back: isEn ? "Back" : "Volver",
     types: {
@@ -153,6 +152,7 @@ export function CookieBanner() {
               <button onClick={handleAcceptAll} className="button">{t.acceptAll}</button>
               <button onClick={handleRejectAll} className="button button-outline">{t.rejectAll}</button>
               <button onClick={() => setShowConfig(true)} className="cookie-banner-config-btn">{t.configure}</button>
+              <button onClick={() => setVisible(false)} className="cookie-banner-dismiss-btn">{t.dismiss}</button>
             </div>
           </div>
         ) : (
@@ -239,7 +239,7 @@ export function CookieBanner() {
         }
 
         .cookie-banner-heading {
-          font-family: var(--font-geist-sans), Arial, sans-serif;
+          font-family: var(--font-title), Arial, sans-serif;
           color: var(--nav-dark);
           font-size: 1.25rem;
           font-weight: 700;
@@ -248,7 +248,7 @@ export function CookieBanner() {
         }
 
         .cookie-banner-text p {
-          font-family: var(--font-inter), Inter, Arial, sans-serif;
+          font-family: var(--font-body), Arial, sans-serif;
           font-size: 0.875rem;
           color: var(--body-text);
           margin: 0 0 1.25rem 0;
@@ -275,7 +275,7 @@ export function CookieBanner() {
         .cookie-banner-config-btn {
           background: transparent;
           border: 0;
-          font-family: var(--font-geist-sans), Arial, sans-serif;
+          font-family: var(--font-title), Arial, sans-serif;
           font-size: 0.78rem;
           font-weight: 700;
           color: var(--secondary);
@@ -288,6 +288,19 @@ export function CookieBanner() {
         .cookie-banner-config-btn:hover {
           color: var(--nav-dark);
         }
+
+        .cookie-banner-dismiss-btn {
+          border: 0;
+          padding: 0.5rem;
+          background: transparent;
+          color: var(--muted);
+          cursor: pointer;
+          font: 600 0.78rem var(--font-title), Arial, sans-serif;
+          text-decoration: underline;
+          text-underline-offset: 0.15em;
+        }
+
+        .cookie-banner-dismiss-btn:hover { color: var(--nav-dark); }
 
         .cookie-banner-options {
           display: grid;
@@ -305,7 +318,7 @@ export function CookieBanner() {
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
-          font-family: var(--font-geist-sans), Arial, sans-serif;
+          font-family: var(--font-title), Arial, sans-serif;
           font-size: 0.9rem;
           font-weight: 600;
           color: var(--nav-dark);
@@ -321,7 +334,7 @@ export function CookieBanner() {
 
         .cookie-option-desc {
           margin: 0;
-          font-family: var(--font-inter), Inter, Arial, sans-serif;
+          font-family: var(--font-body), Arial, sans-serif;
           font-size: 0.8rem;
           color: var(--muted);
           padding-left: 1.6rem;

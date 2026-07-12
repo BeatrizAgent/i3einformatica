@@ -9,15 +9,6 @@ export function ReopenCookies({ label }: { label: string }) {
     <button
       type="button"
       onClick={triggerReopen}
-      style={{
-        background: "none",
-        border: 0,
-        padding: 0,
-        color: "inherit",
-        font: "inherit",
-        textAlign: "left",
-        cursor: "pointer"
-      }}
       className="footer-reopen-cookies-btn"
     >
       {label}

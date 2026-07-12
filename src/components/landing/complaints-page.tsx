@@ -1,6 +1,5 @@
 import type { PageRecord } from "@/lib/content/repository";
 import { getPageContent, type ContentLocale } from "@/lib/page-content";
-import { ComplaintForm } from "@/components/landing/complaint-form";
 
 function localeFor(page: PageRecord): ContentLocale {
   return page.locale === "en" ? "en" : "es";
@@ -36,7 +35,12 @@ export function ComplaintsPage({ page }: { page: PageRecord }) {
           </div>
 
           <p className="complaints-form-intro">{block?.intro}</p>
-          <ComplaintForm locale={locale} />
+          <div className="complaints-warning" role="note">
+            <span className="complaints-warning-icon" aria-hidden="true">!</span>
+            <p>{es
+              ? "Este sitio no recoge denuncias, datos personales ni documentos. El canal digital permanecerá cerrado hasta que exista una infraestructura independiente y segura."
+              : "This site does not collect reports, personal data, or documents. The digital channel will remain closed until independent, secure infrastructure is available."}</p>
+          </div>
 
           <div className="complaints-alternative">
             <div>

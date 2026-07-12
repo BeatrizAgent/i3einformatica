@@ -85,8 +85,8 @@ export function AzurePage({ page }: { page: PageRecord }) {
 
                 return (
                   <article className="azure-focus-card flex flex-col justify-between" key={item.title || index}>
-                    <div className="relative aspect-video w-full rounded overflow-hidden mb-4">
-                      <Image src={imageSrc} alt={item.title || ""} fill sizes="(max-width: 900px) 100vw, 40vw" style={{ objectFit: "cover" }} />
+                    <div className="azure-focus-media relative aspect-video w-full rounded overflow-hidden mb-4">
+                      <Image src={imageSrc} alt={item.title || ""} fill sizes="(max-width: 900px) 100vw, 40vw" />
                     </div>
                     <div>
                       <span>0{index + 1}</span>

@@ -35,12 +35,12 @@ Design system for a precise, trustworthy B2B technology site. The interface must
 | `surface-separator` | `#E5E7EB` | 1px structural rules |
 | `outline` | `#777680` | Secondary borders |
 
-Do not use gradients, large decorative shadows, or pill-shaped controls for core navigation. Cyan is reserved for interaction and emphasis.
+Use tonal overlays only where photography needs legibility; do not use decorative gradients. Avoid large decorative shadows and pill-shaped controls for core navigation. Cyan is reserved for interaction and emphasis.
 
 ## Typography
 
-- Headlines and labels: Geist (`--font-geist-sans`).
-- Body and long-form copy: Inter (`--font-inter`).
+- Headlines and labels: Space Grotesk (`--font-title`).
+- Body and long-form copy: Manrope (`--font-body`).
 - Display: 64px / 72px / 600 / `-0.02em`.
 - Desktop headline: 48px / 56px / 600 / `-0.01em`.
 - Mobile headline: 32px / 40px / 600.
