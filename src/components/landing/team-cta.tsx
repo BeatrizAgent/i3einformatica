@@ -1,4 +1,3 @@
-import { assetPath } from "@/lib/public-path";
 import Image from "next/image";
 import Link from "next/link";
 import type { Locale } from "@/lib/content/repository";
@@ -13,7 +12,7 @@ export function TeamCta({ locale }: { locale: Locale }) {
 
   return (
     <section className="team-cta content-deferred-lg" aria-labelledby="team-cta-title">
-      <Image src={assetPath("/assets/i3e/10.webp")} alt="Equipo reunido en una oficina" fill sizes="100vw" />
+      <Image src="/assets/i3e/10.webp" alt="Equipo reunido en una oficina" fill sizes="100vw" />
       <div className="team-cta-overlay" aria-hidden="true" />
       <div className="shell team-cta-content">
         <p className="eyebrow">{isSpanish ? "Equipo i3e" : "i3e team"}</p>

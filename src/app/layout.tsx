@@ -31,12 +31,19 @@ import { CookieBanner } from "@/components/cookie-banner";
 
 export default async function RootLayout({
   children,
-}: Readonly<{
+  params,
+}: {
   children: React.ReactNode;
-}>) {
+  params: Promise<{ segments?: string[] }>;
+}) {
+  const resolvedParams = await params;
+  const segments = resolvedParams.segments ?? [];
+  const isEn = segments[0] === "en";
+  const lang = isEn ? "en" : "es";
+
   return (
     <html
-      lang="es"
+      lang={lang}
       suppressHydrationWarning
       className={`${titleFont.variable} ${bodyFont.variable} h-full antialiased`}
     >

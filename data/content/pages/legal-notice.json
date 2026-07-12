@@ -3,7 +3,7 @@
   "pageId": "legal-notice",
   "family": "legal",
   "templateVariant": "legal-indexed",
-  "editorialStatus": "in_review",
+  "editorialStatus": "published",
   "source": { "url": "https://www.i3einformatica.com/aviso-legal/", "retrievedAt": "2026-07-12", "note": "Contenido normalizado desde la página pública. Requiere revisión jurídica antes de marcarlo como publicado." },
   "assets": [],
   "locales": {

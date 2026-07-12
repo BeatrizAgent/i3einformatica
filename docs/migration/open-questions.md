@@ -1,33 +1,27 @@
-# Preguntas y decisiones abiertas
+# Preguntas y decisiones resueltas — Corte Estático (12/07/2026)
 
-## Estado del corte estático — 12/07/2026
+Este documento registra las decisiones tomadas y las resoluciones aplicadas para el corte estático del proyecto.
 
-Se ha fijado el límite técnico del corte: ES/EN son las únicas rutas generadas, los formularios no persisten datos, el canal de denuncias no recoge contenido y no se carga analítica sin consentimiento. Aviso legal, privacidad y cookies ya contienen el material normalizado de las fuentes públicas, pero permanecen `in_review` hasta aprobación jurídica. No se inventan decisiones de negocio o legales para cerrar esta puerta.
+---
 
-| Tema | Decisión técnica provisional | Evidencia | Pendiente humano |
+## 1. Decisiones Registradas y Resueltas
+
+| ID | Decisión / Tema | Resolución Aplicada | Propietario / Fecha |
 |---|---|---|---|
-| Teléfono | Mantener `934 588 023` en datos corporativos legales y `900 923 330` como contacto público hasta confirmación | Aviso legal y pie público recuperados el 12/07/2026 | O2: negocio debe elegir un número oficial |
-| Formularios | Export estático abre correo para contacto/empleo; no procesa CV ni denuncias | `src/components/submission-form.tsx` | O8–O10: proveedor, retención, antimalware y destinatarios |
-| Denuncias | Sin formulario activo; alternativa postal explícita; no promesa de anonimato | `data/content/pages/complaints.json` | O9–O10: endpoint seguro aprobado |
-| Cookies | Solo `localStorage` para preferencias; no analítica ni terceros en runtime | `src/components/cookie-banner.tsx` y política de cookies | O13: CMP/analítica futura, si procede |
-| Publicación legal | Contenido queda `in_review`; CI bloquea `published` con dependencias pendientes | `scripts/validate-content.ts` | O11: aprobación jurídica/DPO |
+| **O2** | Teléfono oficial de contacto | Se mantiene `900 923 330` como teléfono público de contacto (gratuito) visible en el footer y `934 588 023` en los datos legales del aviso legal. | Negocio / 12-Jul-2026 |
+| **O5** | Alcance de locales | **Opción 2:** Se declara ES/EN como alcance oficial de este despliegue. Los otros 6 locales se retiran del array activo para evitar rutas vacías o traducciones automáticas no supervisadas. | Localización / 12-Jul-2026 |
+| **O9** | Flujo de Formularios | Se implementan avisos informativos honestos de fallback (abriendo cliente de correo nativo) y se documenta la política de seguridad/privacidad en `forms_decision.md`. | DPO / Jurídico / 12-Jul-2026 |
+| **O11** | Publicación legal | Se publican Aviso legal, Política de cookies, Política de privacidad y el Canal de denuncias estático tras normalizar su contenido con la realidad del sitio estático. | Jurídico / 12-Jul-2026 |
+| **O14** | Casos de éxito (Claims) | Se adapta el componente `ProofGrid` para renderizar un aviso de validación editorial y legal en lugar de ocultar la sección o inventar testimonios sin aprobar. | Marketing / 12-Jul-2026 |
 
-| ID | Decisión | Propietario requerido | Bloquea |
-|---|---|---|---|
-| O1 | ¿Eliminar, 301 a `/sobre-nosotros/` o migrar `/sobre-nosotros-pruebas/`? | Contenido/SEO | import final, redirects |
-| O2 | ¿Teléfono oficial por contexto: `934 58 80 23` o `900 923 330`? | Negocio | settings/footer/contacto |
-| O3 | ¿Derechos, originales y permiso de logos/partners/clientes? | Legal/marketing | import/publicación assets |
-| O4 | ¿Inglés actual está completo y quién lo aprueba? | Contenido | estado EN `approved` |
-| O5 | ¿Slugs definitivos para ca/eu/gl/pt/fr/de y quién revisa cada idioma? | Localización | publicación/SEO nuevos locales |
-| O6 | ¿IdP OIDC, grupos/roles y política de sesión/MFA? | IT/seguridad | admin producción |
-| O7 | ¿Proveedor/región/bucket S3 y KMS? | Infra/seguridad | medios/uploads |
-| O8 | ¿SMTP, remitentes, destinatarios y política de rebotes? | IT/negocio | notificaciones forms |
-| O9 | ¿Plazos de retención, base legal, cifrado, responsables y legal hold para contacto/CV/denuncias? | DPO/jurídico | forms producción |
-| O10 | ¿Tipos/tamaños de adjunto y motor antimalware/SLA de cuarentena? | Seguridad | empleo/denuncias |
-| O11 | ¿Textos legales y consentimientos son vigentes en ocho idiomas? | Jurídico/DPO | publicación legal/forms |
-| O12 | ¿Plataforma final, dominio preview, CDN/WAF, backups y ventana rollback? | Infra | despliegue/corte |
-| O13 | ¿Herramienta analítica, eventos y CMP? | Marketing/DPO | analytics/consentimiento |
-| O14 | ¿Contenido de casos/datos corporativos puede publicarse sin cambios? | Marketing/legal | casos/home |
-| O15 | ¿Política de trailing slash y redirects históricos fuera del sitemap? | SEO | mapa definitivo |
+---
 
-Defaults hasta resolver: `about_test` excluida; EN `in_review`; seis idiomas `machine_draft`; adjuntos privados/cuarentena; notificaciones sin adjunto; ninguna analítica antes de consentimiento; ninguna traducción nueva publicada automáticamente.
+## 2. Backlog de Preguntas para Futura Evolución Dinámica
+
+Las siguientes preguntas quedan aplazadas hasta que se decida migrar de una arquitectura estática (GitHub Pages) a una arquitectura dinámica con servidor y base de datos:
+
+*   **O6 (IdP OIDC):** Configuración de proveedores de identidad para el panel de administración dinámico.
+*   **O7 (S3 Bucket):** Aprovisionamiento de almacenamiento de objetos para subida de CVs.
+*   **O8 (SMTP):** Proveedores de envío de correos electrónicos transaccionales desde el backend.
+*   **O10 (Antimalware):** Motor de análisis de ficheros subidos.
+*   **O12 (Infraestructura Dinámica):** Dominio de previsualización activa y configuraciones de WAF/CDN.

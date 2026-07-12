@@ -4,18 +4,19 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && tsx scripts/post-build.ts",
     "start": "npx serve out",
     "lint": "eslint . --max-warnings=0",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build",
+    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build && pnpm export:validate && pnpm e2e:validate",
     "assets:sync": "tsx scripts/sync-site-assets.ts",
     "audit": "tsx scripts/audit-site.ts",
     "content:validate": "tsx scripts/validate-content.ts",
     "encoding:check": "tsx scripts/validate-encoding.ts",
-    "export:validate": "tsx scripts/validate-export.ts"
+    "export:validate": "tsx scripts/validate-export.ts",
+    "e2e:validate": "tsx scripts/validate-e2e.ts"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",

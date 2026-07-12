@@ -105,15 +105,28 @@ function SplitMedia({ pageId, locale, block }: { pageId: string; locale: Content
   </section>;
 }
 
-function ProofGrid({ pageId, block }: { pageId: string; block: CuratedBlock }) {
-  if (block.approvalStatus !== "approved") return null;
+function ProofGrid({ pageId, block, locale }: { pageId: string; block: CuratedBlock; locale: ContentLocale }) {
+  const isApproved = block.approvalStatus === "approved";
   return <section className="section curated-section" aria-labelledby={`${block.id}-title`}>
-    <div className="shell"><div id={`${block.id}-title`}><Heading block={block} /></div><div className="curated-card-grid">
-      {blockItems(block).map((item, index) => <article className="curated-card curated-proof-card" key={`${block.id}-${index}`}>
-        <CuratedImage pageId={pageId} assetId={value(item, "assetId")} alt={value(item, "title")} />
-        <div className="curated-card-copy"><p className="eyebrow">{value(item, "sector")}</p><h3>{value(item, "title")}</h3><dl><div><dt>Reto</dt><dd>{value(item, "challenge")}</dd></div><div><dt>Intervención</dt><dd>{value(item, "approach")}</dd></div><div><dt>Resultado</dt><dd>{value(item, "result")}</dd></div></dl></div>
-      </article>)}
-    </div></div>
+    <div className="shell">
+      <div id={`${block.id}-title`}><Heading block={block} /></div>
+      {isApproved ? (
+        <div className="curated-card-grid">
+          {blockItems(block).map((item, index) => <article className="curated-card curated-proof-card" key={`${block.id}-${index}`}>
+            <CuratedImage pageId={pageId} assetId={value(item, "assetId")} alt={value(item, "title")} />
+            <div className="curated-card-copy"><p className="eyebrow">{value(item, "sector")}</p><h3>{value(item, "title")}</h3><dl><div><dt>Reto</dt><dd>{value(item, "challenge")}</dd></div><div><dt>Intervención</dt><dd>{value(item, "approach")}</dd></div><div><dt>Resultado</dt><dd>{value(item, "result")}</dd></div></dl></div>
+          </article>)}
+        </div>
+      ) : (
+        <div className="curated-pending-notice" style={{ padding: "3rem 2rem", border: "1px dashed #dfe4ea", borderRadius: "8px", textAlign: "center", background: "#fff", marginTop: "2rem" }}>
+          <p style={{ margin: 0, color: "#59606b", fontSize: "1.05rem" }}>
+            {locale === "es"
+              ? "Los casos de éxito se encuentran en proceso de validación editorial y legal para garantizar la exactitud de los datos y el cumplimiento de los acuerdos de confidencialidad."
+              : "Success stories are currently undergoing editorial and legal validation to ensure data accuracy and compliance with confidentiality agreements."}
+          </p>
+        </div>
+      )}
+    </div>
   </section>;
 }
 
@@ -123,8 +136,22 @@ function RichText({ block }: { block: CuratedBlock }) {
   return <section className="section curated-section" aria-labelledby={`${block.id}-title`}><div className="shell curated-rich-text"><div id={`${block.id}-title`}><Heading block={block} />{block.sourceNote && <p className="content-source-note">{block.sourceNote}</p>}</div>{items.length > 2 && <nav className="legal-index" aria-label="Índice"><strong>Índice</strong><ol>{items.map((item, index) => <li key={`${block.id}-index-${index}`}><a href={`#${itemId(item, index)}`}>{value(item, "heading")}</a></li>)}</ol></nav>}{items.map((item, index) => <article id={itemId(item, index)} key={`${block.id}-${index}`}><h3>{value(item, "heading")}</h3><p>{value(item, "body")}</p></article>)}</div></section>;
 }
 
-function Locations({ pageId, block }: { pageId: string; block: CuratedBlock }) {
-  return <section className="section section-muted curated-section" aria-labelledby={`${block.id}-title`}><div className="shell"><div id={`${block.id}-title`}><Heading block={block} /></div><div className="curated-card-grid curated-location-grid">{blockItems(block).map((item, index) => <article className="curated-card" key={`${block.id}-${index}`}><CuratedImage pageId={pageId} assetId={value(item, "assetId")} alt={value(item, "title")} /><div className="curated-card-copy"><h3>{value(item, "title")}</h3><p>{value(item, "summary")}</p></div></article>)}</div></div></section>;
+function Locations({ pageId, block, locale }: { pageId: string; block: CuratedBlock; locale: ContentLocale }) {
+  return <section className="section section-muted curated-section" aria-labelledby={`${block.id}-title`}><div className="shell"><div id={`${block.id}-title`}><Heading block={block} /></div><div className="curated-card-grid curated-location-grid">{blockItems(block).map((item, index) => {
+    const title = value(item, "title");
+    const summary = value(item, "summary");
+    const address = value(item, "address");
+    const mapsUrl = value(item, "mapsUrl");
+    return <article className="curated-card" key={`${block.id}-${index}`}>
+      <CuratedImage pageId={pageId} assetId={value(item, "assetId")} alt={title} />
+      <div className="curated-card-copy">
+        <h3>{title}</h3>
+        {address && <p className="location-address" style={{ fontWeight: 600, margin: "0.25rem 0 0.5rem" }}>{address}</p>}
+        <p>{summary}</p>
+        {mapsUrl && <a className="text-link" href={mapsUrl} target="_blank" rel="noopener noreferrer" style={{ display: "inline-block", marginTop: "0.75rem" }}>{locale === "es" ? "Ver en Google Maps" : "View on Google Maps"} &rarr;</a>}
+      </div>
+    </article>;
+  })}</div></div></section>;
 }
 
 function FormBlock({ page, block }: { page: PageRecord; block: CuratedBlock }) {
@@ -147,9 +174,9 @@ function RenderBlock({ page, locale, block }: { page: PageRecord; locale: Conten
   if (block.type === "process_steps") return <ProcessSteps block={block} />;
   if (block.type === "timeline") return <Timeline block={block} />;
   if (block.type === "split_media") return <SplitMedia pageId={page.id} locale={locale} block={block} />;
-  if (block.type === "proof_grid") return <ProofGrid pageId={page.id} block={block} />;
+  if (block.type === "proof_grid") return <ProofGrid pageId={page.id} block={block} locale={locale} />;
   if (block.type === "rich_text") return <RichText block={block} />;
-  if (block.type === "locations") return <Locations pageId={page.id} block={block} />;
+  if (block.type === "locations") return <Locations pageId={page.id} block={block} locale={locale} />;
   if (block.type === "form") return <FormBlock page={page} block={block} />;
   if (block.type === "stats") return <Stats block={block} />;
   return null;

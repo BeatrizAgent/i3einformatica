@@ -3,7 +3,7 @@
   "pageId": "complaints",
   "family": "complaints",
   "templateVariant": "sensitive-form",
-  "editorialStatus": "in_review",
+  "editorialStatus": "published",
   "assets": [],
   "locales": {
     "es": { "path": "/denuncias", "seo": { "title": "Canal de denuncias | i3e Informática", "description": "Información honesta sobre el canal temporal de denuncias y su alternativa postal." }, "hero": { "eyebrow": "Canal de denuncias", "title": "Canal temporal sin formulario activo", "intro": "El despliegue estático no tiene infraestructura aprobada para recibir, cifrar, analizar o conservar denuncias. No prometemos anonimato ni recogemos contenido sensible.", "cta": { "label": "Ver alternativa segura", "routeId": "complaints" } }, "blocks": [{ "id": "complaint-form", "type": "form", "eyebrow": "Sin recogida de datos", "title": "No envíes aquí una denuncia", "intro": "Mientras se aprueba un endpoint y almacenamiento con cifrado, antimalware, control de acceso, retención y auditoría, la alternativa explícita es una comunicación escrita al domicilio social. No uses el correo comercial general para enviar el contenido de una denuncia.", "sourceNote": "Canal temporal: la infraestructura de recepción está fuera de este corte estático y requiere aprobación legal y de seguridad." }] },

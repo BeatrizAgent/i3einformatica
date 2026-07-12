@@ -130,7 +130,7 @@ export function CasesHub({ locale }: { locale: Locale }) {
     <div className="cases-hub-page">
       <section className="cases-hero" aria-labelledby="cases-hero-title">
         <div className="cases-hero-background" aria-hidden="true">
-          <Image src={assetPath("/assets/i3e/casos-de-exito-819x1024.webp")} alt="" fill priority sizes="100vw" />
+          <Image src="/assets/i3e/casos-de-exito-819x1024.webp" alt="" fill priority sizes="100vw" />
           <div className="cases-hero-overlay" />
         </div>
         <div className="shell cases-hero-content">
@@ -205,7 +205,7 @@ export function CasesHub({ locale }: { locale: Locale }) {
         <div className="shell">
           <div className="cases-cta-banner">
             <div className="cases-cta-media">
-              <Image src={assetPath("/assets/i3e/circuitos-min.webp")} alt="" fill sizes="(max-width: 900px) 100vw, 40vw" />
+              <Image src="/assets/i3e/circuitos-min.webp" alt="" fill sizes="(max-width: 900px) 100vw, 40vw" />
             </div>
             <div className="cases-cta-copy">
               <h3>{t(copy.cta.title, locale)}</h3>

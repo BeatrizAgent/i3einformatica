@@ -1,4 +1,3 @@
-import { assetPath } from "@/lib/public-path";
 import Link from "next/link";
 import Image from "next/image";
 import { getEquivalent, locales, pageHref, type PageRecord } from "@/lib/content/repository";
@@ -30,7 +29,7 @@ function Navigation({ locale, mobile = false }: { locale: "es" | "en"; mobile?: 
 }
 
 export function Logo({ priority = false }: { priority?: boolean } = {}) {
-  return <span className="logo" aria-label="i3e Informática"><Image src={assetPath("/assets/i3e/logo-i3e-25.webp")} alt="i3e Informática" width={128} height={84} priority={priority} /></span>;
+  return <span className="logo" aria-label="i3e Informática"><Image src="/assets/i3e/logo-i3e-25.webp" alt="i3e Informática" width={128} height={84} priority={priority} /></span>;
 }
 
 export function SiteHeader({ page }: { page: PageRecord }) {
@@ -56,10 +55,10 @@ export function SiteHeader({ page }: { page: PageRecord }) {
 }
 
 const certifications = [
-  { name: "ISO 9001", src: assetPath("/assets/i3e/iso_9001.webp"), width: 460, height: 601 },
-  { name: "ISO 20000-1", src: assetPath("/assets/i3e/iso_20000.webp"), width: 464, height: 595 },
-  { name: "ISO 14001", src: assetPath("/assets/i3e/iso_14001.webp"), width: 460, height: 602 },
-  { name: "ISO 27001", src: assetPath("/assets/i3e/iso_27001.webp"), width: 461, height: 648 },
+  { name: "ISO 9001", src: "/assets/i3e/iso_9001.webp", width: 460, height: 601 },
+  { name: "ISO 20000-1", src: "/assets/i3e/iso_20000.webp", width: 464, height: 595 },
+  { name: "ISO 14001", src: "/assets/i3e/iso_14001.webp", width: 460, height: 602 },
+  { name: "ISO 27001", src: "/assets/i3e/iso_27001.webp", width: 461, height: 648 },
 ];
 
 export function SiteFooter({ locale }: Pick<PageRecord, "locale">) {

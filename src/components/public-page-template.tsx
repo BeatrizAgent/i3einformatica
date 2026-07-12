@@ -21,6 +21,7 @@ import { templateCopy } from "@/lib/page-template-data";
 import { M365DetailPage } from "@/components/landing/m365-detail-page";
 import { CybersecurityPage } from "@/components/landing/cybersecurity-page";
 import { InfraPage } from "@/components/landing/infra-page";
+import { CompliancePage } from "@/components/landing/compliance-page";
 
 function localeFor(page: PageRecord): ContentLocale {
   return page.locale === "en" ? "en" : "es";
@@ -81,6 +82,7 @@ export function PublicPageTemplate({ page }: { page: PageRecord }) {
   if (page.id === "microsoft-365-products" || page.id === "microsoft-365-solutions") return <M365DetailPage page={page} />;
   if (page.id === "cybersecurity" || page.id === "cyber") return <CybersecurityPage page={page} />;
   if (page.id === "it-infrastructure" || page.id === "infra") return <InfraPage page={page} />;
+  if (page.id === "compliance") return <CompliancePage page={page} />;
   if (page.id === "success-stories" || page.id === "cases") return <CasesTemplate page={page} />;
   return <CuratedTemplate page={page} />;
 }

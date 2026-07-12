@@ -3,14 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
+import { getCookieConsent, saveCookieConsent, type CookiePreferences } from "@/lib/cookie-consent";
 
-type CookiePreferences = {
-  necessary: boolean;
-  analytics: boolean;
-  personalization: boolean;
-};
 
-const STORAGE_KEY = "i3e-cookie-consent";
+
+
 
 export function CookieBanner() {
   const pathname = usePathname();
@@ -27,20 +24,16 @@ export function CookieBanner() {
   });
 
   useEffect(() => {
-    const stored = typeof window !== "undefined" ? localStorage.getItem(STORAGE_KEY) : null;
-    const hasConsent = !!stored;
+    const storedConsent = getCookieConsent();
+    const hasConsent = storedConsent !== null;
 
     const timer = setTimeout(() => {
       setMounted(true);
       if (!hasConsent) {
         setVisible(true);
       } else {
-        try {
-          const parsed = JSON.parse(stored!) as CookiePreferences;
-          window.dispatchEvent(new CustomEvent("i3e-cookie-consent-change", { detail: parsed }));
-        } catch {
-          setVisible(true);
-        }
+        setPrefs(storedConsent);
+        saveCookieConsent(storedConsent);
       }
     }, 0);
 
@@ -75,11 +68,9 @@ export function CookieBanner() {
 
   useEffect(() => {
     const handleReopen = () => {
-      const stored = localStorage.getItem(STORAGE_KEY);
-      if (stored) {
-        try {
-          setPrefs(JSON.parse(stored));
-        } catch {}
+      const storedConsent = getCookieConsent();
+      if (storedConsent) {
+        setPrefs(storedConsent);
       }
       setShowConfig(true);
       setVisible(true);
@@ -91,8 +82,7 @@ export function CookieBanner() {
   if (!mounted) return null;
 
   const saveConsent = (updatedPrefs: CookiePreferences) => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedPrefs));
-    window.dispatchEvent(new CustomEvent("i3e-cookie-consent-change", { detail: updatedPrefs }));
+    saveCookieConsent(updatedPrefs);
     setVisible(false);
     setShowConfig(false);
   };
