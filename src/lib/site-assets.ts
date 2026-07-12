@@ -214,12 +214,4 @@ export const landingCases: LandingVisual[] = [
   },
 ];
 
-export const caseSupportVisuals = [
-  { src: assetPath("/assets/i3e/generated/cases/cases-visual-network.webp"), alt: { es: "Red digital segura", en: "Secure digital network" }, label: { es: "Conectividad", en: "Connectivity" } },
-  { src: assetPath("/assets/i3e/generated/cases/cases-visual-cloud.webp"), alt: { es: "Infraestructura cloud", en: "Cloud infrastructure" }, label: { es: "Cloud", en: "Cloud" } },
-  { src: assetPath("/assets/i3e/generated/cases/cases-visual-fiber.webp"), alt: { es: "Flujo seguro de datos", en: "Secure data flow" }, label: { es: "Datos", en: "Data" } },
-  { src: assetPath("/assets/i3e/generated/cases/cases-visual-public.webp"), alt: { es: "Infraestructura pública conectada", en: "Connected public infrastructure" }, label: { es: "Servicio público", en: "Public service" } },
-  { src: assetPath("/assets/i3e/generated/cases/cases-visual-results.webp"), alt: { es: "Resultados medibles", en: "Measurable results" }, label: { es: "Resultados", en: "Outcomes" } },
-] satisfies Array<{ src: string; alt: { es: string; en: string }; label: { es: string; en: string } }>;
-
 export const faviconAsset = assetPath("/assets/i3e/favicon-i3e-300x300.webp");
