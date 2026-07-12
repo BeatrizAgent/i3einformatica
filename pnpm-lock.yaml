@@ -11,6 +11,15 @@ importers:
       '@gsap/react':
         specifier: ^2.1.2
         version: 2.1.2(gsap@3.15.0)(react@19.2.4)
+      '@iconify-json/arcticons':
+        specifier: ^1.2.55
+        version: 1.2.55
+      '@iconify-json/logos':
+        specifier: ^1.2.11
+        version: 1.2.11
+      '@iconify-json/simple-icons':
+        specifier: ^1.2.89
+        version: 1.2.89
       gsap:
         specifier: ^3.15.0
         version: 3.15.0
@@ -378,6 +387,18 @@ packages:
   '@humanwhocodes/retry@0.4.3':
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
+
+  '@iconify-json/arcticons@1.2.55':
+    resolution: {integrity: sha512-Iqo1jIVWy/Bk8My+cdjSZv2XoRI4EK1sGNAWKw49n0CcpSfoj4rLVMKfJQUhmfZiA3rkLx8abNlJU81BHxrS3Q==}
+
+  '@iconify-json/logos@1.2.11':
+    resolution: {integrity: sha512-fOo4pGEatuyuCFNL+cwquYMa2Im0oJHRHV7lt/Qqs5Ode/lPImHCQcfTtPzZj7qYMPb/h8YHN3TG54uEowrjNQ==}
+
+  '@iconify-json/simple-icons@1.2.89':
+    resolution: {integrity: sha512-hRaCY5s2G5oWAIhc4LCGYn6g6RrwLL4zhoLOT+KUO3joVCxVlZKA+839bv/47Nbe9/ZD4UA6dznZ4XPYcI53wA==}
+
+  '@iconify/types@2.0.0':
+    resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
 
   '@img/colour@1.1.0':
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
@@ -2833,6 +2854,20 @@ snapshots:
   '@humanwhocodes/module-importer@1.0.1': {}
 
   '@humanwhocodes/retry@0.4.3': {}
+
+  '@iconify-json/arcticons@1.2.55':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/logos@1.2.11':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/simple-icons@1.2.89':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify/types@2.0.0': {}
 
   '@img/colour@1.1.0':
     optional: true

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getAsset, getPageContent, resolveAction } from "@/lib/page-content";
 import type { PageRecord } from "@/lib/content/repository";
 import { TechnologyBand } from "@/components/landing/technology-band";
+import { assetPath } from "@/lib/public-path";
 
 type Locale = "es" | "en";
 
@@ -18,7 +19,7 @@ export function InfraPage({ page }: { page: PageRecord }) {
   if (!content) return null;
 
   const heroImage = content.hero.assetId ? getAsset(content.hero.assetId) : null;
-  const heroBg = heroImage ? heroImage.path : "/assets/i3e/insfraestructuras-it-min.webp";
+  const heroBg = heroImage ? heroImage.path : assetPath("/assets/i3e/insfraestructuras-it-min.webp");
   const heroCta = resolveAction(content.hero.cta, locale);
 
   const outcomesBlock = content.blocks.find((b) => b.id === "outcomes");

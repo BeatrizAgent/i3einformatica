@@ -1,8 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import * as m from "motion/react-m";
+import { BrandIcon, type BrandIconName } from "@/components/brand-icon";
 import { useLandingMotionEnabled } from "@/components/landing/motion-provider";
 import type { Locale } from "@/lib/content/repository";
 import type { Capability } from "@/lib/site-assets";
@@ -28,7 +28,7 @@ export function CapabilityRail({ items, locale, enabled = true }: { items: Capab
           whileHover={active ? { y: -2 } : undefined}
         >
           <Link className="capability-card" href={item.href[language]}>
-            <Image src={item.src} alt="" width={48} height={48} />
+            <BrandIcon name={(["microsoft365", "security", "azure", "serverbox", "shield"] as BrandIconName[])[index] ?? "microsoft"} size={48} tone="dark" />
             <span>{item.label[language]}</span>
             <span className="capability-arrow" aria-hidden="true">↗</span>
           </Link>

@@ -1,25 +1,22 @@
-"use client";
+import Image from "next/image";
 
 import { assetPath } from "@/lib/public-path";
+import { caseSupportVisuals } from "@/lib/site-assets";
 
-import Image from "next/image";
-import Link from "next/link";
-import { useCallback, useEffect, useState } from "react";
+type Locale = "es" | "en";
 
-export type CaseStudyMeta = {
+type CaseStudyMeta = {
   label: { es: string; en: string };
   value: { es: string; en: string };
 };
 
-export type CaseStudy = {
+type CaseStudy = {
   id: string;
   image: { src: string; alt: string };
   title: { es: string; en: string };
   description: { es: string; en: string };
   meta: CaseStudyMeta[];
 };
-
-type Locale = "es" | "en";
 
 const cases: CaseStudy[] = [
   {
@@ -40,7 +37,7 @@ const cases: CaseStudy[] = [
   },
   {
     id: "gran-entidad-bancaria",
-    image: { src: assetPath("/assets/i3e/entidad-bancaria.webp"), alt: "Gran entidad Bancaria" },
+    image: { src: assetPath("/assets/i3e/entidad-bancaria.webp"), alt: "Gran entidad bancaria" },
     title: { es: "Gran entidad Bancaria", en: "Major banking institution" },
     description: {
       es: "Despliegue de equipos nuevos, recogida de los equipos antiguos y destrucción de datos para entidad bancaria. Logística y gestión de parque incluido. Maquetación, entrega, explicación a usuario y despliegue 360.",
@@ -57,164 +54,76 @@ const cases: CaseStudy[] = [
   {
     id: "administracion-publica",
     image: { src: assetPath("/assets/i3e/adm-publica.webp"), alt: "Administración pública" },
-    title: { es: "Administración pública", en: "Public administration" },
+    title: { es: "Administración Pública", en: "Public administration" },
     description: {
-      es: "Modernización tecnológica de la infraestructura de una administración pública: migración a la nube, refuerzo de la seguridad y soporte continuado para garantizar la continuidad de los servicios.",
-      en: "Technology modernisation of a public administration infrastructure: cloud migration, reinforced security and ongoing support to ensure service continuity.",
+      es: "Gestión on-site de todas las redes de la administración pública (interdepartamental) de la comunidad autónoma, gestionando las incidencias y dando servicio 24/7 con SLA de 4 horas.",
+      en: "On-site management of all public administration networks across the autonomous community, handling incidents and delivering 24/7 service with a four-hour SLA.",
     },
     meta: [
-      { label: { es: "Ámbito", en: "Scope" }, value: { es: "Sector público", en: "Public sector" } },
+      { label: { es: "Ámbito", en: "Scope" }, value: { es: "Seguridad", en: "Security" } },
       { label: { es: "Sector", en: "Sector" }, value: { es: "Público", en: "Public" } },
-      { label: { es: "Servicio", en: "Service" }, value: { es: "Infraestructura", en: "Infrastructure" } },
-      { label: { es: "Usuarios", en: "Users" }, value: { es: "+300", en: "+300" } },
-      { label: { es: "Duración", en: "Duration" }, value: { es: "Desde 2019", en: "Since 2019" } },
+      { label: { es: "Servicio", en: "Service" }, value: { es: "Redes", en: "Networks" } },
+      { label: { es: "Usuarios", en: "Users" }, value: { es: "+1000", en: "+1000" } },
+      { label: { es: "Duración", en: "Duration" }, value: { es: "Desde 2016", en: "Since 2016" } },
     ],
   },
 ];
 
 const copy = {
-  hero: {
-    eyebrow: { es: "Casos de éxito", en: "Success stories" },
-    title: { es: "Casos de éxito", en: "Success stories" },
-    intro: {
-      es: "Soluciones reales que mejoran la operativa, refuerzan la seguridad y optimizan la infraestructura IT de nuestros clientes.",
-      en: "Real solutions that improve operations, strengthen security and optimise our clients' IT infrastructure.",
-    },
-  },
-  cta: {
-    title: { es: "¿Te gustaría lograr resultados similares?", en: "Would you like to achieve similar results?" },
-    text: {
-      es: "Te ayudamos a implementar mejoras reales como las que ya han conseguido estos clientes.",
-      en: "We help you roll out real improvements like the ones these clients have already achieved.",
-    },
-    button: { es: "Pedir información", en: "Request information" },
-  },
-  nav: {
-    prev: { es: "Anterior caso", en: "Previous case" },
-    next: { es: "Siguiente caso", en: "Next case" },
+  eyebrow: { es: "Experiencia aplicada", en: "Applied experience" },
+  title: { es: "Casos de éxito", en: "Success stories" },
+  intro: {
+    es: "Tres proyectos. Tres retos distintos. Una misma forma de trabajar: tecnología útil, ejecución rigurosa y resultados medibles.",
+    en: "Three projects. Three different challenges. One consistent way of working: useful technology, rigorous execution and measurable results.",
   },
 };
 
-function t<V extends { es: string; en: string }>(value: V, locale: Locale) {
+function text(value: { es: string; en: string }, locale: Locale) {
   return value[locale];
 }
 
 export function CasesHub({ locale }: { locale: Locale }) {
-  const [index, setIndex] = useState(0);
-  const total = cases.length;
-  const active = cases[index];
-
-  const goPrev = useCallback(() => {
-    setIndex((current) => (current - 1 + total) % total);
-  }, [total]);
-
-  const goNext = useCallback(() => {
-    setIndex((current) => (current + 1) % total);
-  }, [total]);
-
-  useEffect(() => {
-    function handleKey(event: KeyboardEvent) {
-      if (event.key === "ArrowLeft") {
-        event.preventDefault();
-        goPrev();
-      } else if (event.key === "ArrowRight") {
-        event.preventDefault();
-        goNext();
-      }
-    }
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, [goPrev, goNext]);
-
   return (
     <div className="cases-hub-page">
-      <section className="cases-hero" aria-labelledby="cases-hero-title">
-        <div className="cases-hero-background" aria-hidden="true">
-          <Image src="/assets/i3e/casos-de-exito-819x1024.webp" alt="" fill priority sizes="100vw" />
-          <div className="cases-hero-overlay" />
-        </div>
-        <div className="shell cases-hero-content">
-          <p className="cases-hero-eyebrow">{t(copy.hero.eyebrow, locale)}</p>
-          <h1 id="cases-hero-title">{t(copy.hero.title, locale)}</h1>
-          <p className="cases-hero-intro">{t(copy.hero.intro, locale)}</p>
+      <section className="cases-heading-section" aria-labelledby="cases-title">
+        <div className="shell cases-heading">
+          <div className="cases-heading-copy">
+            <p className="cases-eyebrow">{text(copy.eyebrow, locale)}</p>
+            <h1 id="cases-title">{text(copy.title, locale)}</h1>
+            <p>{text(copy.intro, locale)}</p>
+          </div>
+          <div className="cases-visual-mosaic" aria-label={locale === "es" ? "Perspectivas visuales de nuestros proyectos" : "Visual perspectives from our projects"}>
+            {caseSupportVisuals.map((visual, index) => (
+              <div className={`cases-visual-tile cases-visual-tile--${index + 1}`} key={visual.src}>
+                <Image src={visual.src} alt={text(visual.alt, locale)} fill sizes="(max-width: 900px) 33vw, 18vw" />
+                <span className="cases-visual-label">{text(visual.label, locale)}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
-
-      <section className="cases-carousel-section content-deferred-xl" aria-label={t(copy.hero.title, locale)}>
-        <div className="shell">
-          <div className="cases-carousel" role="region" aria-roledescription="carousel">
-            <article className="case-feature-card" aria-live="polite">
+      <section className="cases-list-section" aria-label={text(copy.title, locale)}>
+        <div className="shell cases-list">
+          {cases.map((item, index) => (
+            <article className={`case-feature-card ${index % 2 === 1 ? "case-feature-card--reverse" : ""}`} key={item.id}>
               <div className="case-feature-media">
-                <Image src={active.image.src} alt={active.image.alt} fill sizes="(max-width: 900px) 100vw, 50vw" />
+                <Image src={item.image.src} alt={item.image.alt} fill sizes="(max-width: 900px) 100vw, 50vw" />
               </div>
               <div className="case-feature-copy">
-                <h2>{t(active.title, locale)}</h2>
-                <p>{t(active.description, locale)}</p>
+                <p className="case-feature-index">0{index + 1}</p>
+                <h2>{text(item.title, locale)}</h2>
+                <p>{text(item.description, locale)}</p>
                 <div className="case-feature-meta">
-                  {active.meta.map((item) => (
-                    <div className="case-feature-meta-item" key={item.label.en}>
-                      <span className="case-feature-meta-label">{t(item.label, locale)}</span>
-                      <span className="case-feature-meta-value">{t(item.value, locale)}</span>
+                  {item.meta.map((meta) => (
+                    <div className="case-feature-meta-item" key={meta.label.en}>
+                      <span className="case-feature-meta-label">{text(meta.label, locale)}</span>
+                      <span className="case-feature-meta-value">{text(meta.value, locale)}</span>
                     </div>
                   ))}
                 </div>
               </div>
             </article>
-
-            <div className="cases-carousel-nav" role="group" aria-label={locale === "es" ? "Navegación del carrusel" : "Carousel navigation"}>
-              <button
-                type="button"
-                className="cases-carousel-button cases-carousel-button--prev"
-                onClick={goPrev}
-                aria-label={t(copy.nav.prev, locale)}
-              >
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M15 5L8 12L15 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-              <button
-                type="button"
-                className="cases-carousel-button cases-carousel-button--next"
-                onClick={goNext}
-                aria-label={t(copy.nav.next, locale)}
-              >
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <path d="M9 5L16 12L9 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </button>
-            </div>
-
-            <div className="cases-carousel-dots" role="tablist" aria-label={locale === "es" ? "Selector de caso" : "Case selector"}>
-              {cases.map((caseItem, dotIndex) => (
-                <button
-                  key={caseItem.id}
-                  type="button"
-                  role="tab"
-                  aria-selected={dotIndex === index}
-                  aria-label={`${locale === "es" ? "Caso" : "Case"} ${dotIndex + 1}`}
-                  className={`cases-carousel-dot ${dotIndex === index ? "is-active" : ""}`}
-                  onClick={() => setIndex(dotIndex)}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="cases-cta-section content-deferred-lg">
-        <div className="shell">
-          <div className="cases-cta-banner">
-            <div className="cases-cta-media">
-              <Image src="/assets/i3e/circuitos-min.webp" alt="" fill sizes="(max-width: 900px) 100vw, 40vw" />
-            </div>
-            <div className="cases-cta-copy">
-              <h3>{t(copy.cta.title, locale)}</h3>
-              <p>{t(copy.cta.text, locale)}</p>
-              <Link className="m365-button-primary" href={locale === "es" ? "/contacto" : "/en/contact"}>
-                {t(copy.cta.button, locale)}
-              </Link>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
     </div>

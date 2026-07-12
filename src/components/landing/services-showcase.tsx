@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BrandIcon } from "@/components/brand-icon";
 import type { Locale } from "@/lib/content/repository";
 import type { Service } from "@/components/landing/services-data";
 
@@ -27,7 +28,7 @@ export function ServicesShowcase({ items, locale }: { items: Service[]; locale: 
                 <Image src={item.src} alt={item.alt} fill sizes="(max-width: 700px) 100vw, 46vw" />
               </div>
               <div className="service-card-copy">
-                <Image className="service-card-icon" src={item.icon} alt="" width={40} height={40} />
+                <BrandIcon className="service-card-icon" name={item.icon} size={40} />
                 <p className="service-card-index" aria-hidden="true">0{index + 1}</p>
                 <h3>{item.title[language]}</h3>
                 <p className="service-card-result">{item.result[language]}</p>

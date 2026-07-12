@@ -3,6 +3,8 @@ import Link from "next/link";
 import { getAsset, getPageContent, resolveAction } from "@/lib/page-content";
 import type { PageRecord } from "@/lib/content/repository";
 import { TechnologyBand } from "@/components/landing/technology-band";
+import { BrandIcon } from "@/components/brand-icon";
+import { assetPath } from "@/lib/public-path";
 
 type AzureLocale = "es" | "en";
 
@@ -19,7 +21,7 @@ export function AzurePage({ page }: { page: PageRecord }) {
 
   const contactHref = locale === "en" ? "/en/contact" : "/contacto";
   const heroImage = content.hero.assetId ? getAsset(content.hero.assetId) : null;
-  const heroBg = heroImage ? heroImage.path : "/assets/i3e/microsoft-azure-min.webp";
+  const heroBg = heroImage ? heroImage.path : assetPath("/assets/i3e/microsoft-azure-min.webp");
   const heroCta = resolveAction(content.hero.cta, locale);
 
   const capabilitiesBlock = content.blocks.find((b) => b.id === "capabilities");
@@ -47,7 +49,7 @@ export function AzurePage({ page }: { page: PageRecord }) {
         </div>
         <div className="azure-hero-shade" aria-hidden="true" />
         <div className="shell azure-hero-inner">
-          <Image className="azure-hero-mark" src="/assets/i3e/arcticons-microsoft-azure-2.svg" alt="" width={42} height={42} priority />
+          <BrandIcon className="azure-hero-mark" name="azure" size={42} />
           <div className="azure-hero-copy">
             <p className="eyebrow">{content.hero.eyebrow}</p>
             <h1 id="azure-title">{content.hero.title}</h1>
@@ -79,7 +81,7 @@ export function AzurePage({ page }: { page: PageRecord }) {
               {capItems.slice(0, 2).map((item, index) => {
                 const assetId = capAssets[index];
                 const assetObj = getAsset(assetId);
-                const imageSrc = assetObj ? assetObj.path : "/assets/i3e/infraestructura-migracion-min.webp";
+                const imageSrc = assetObj ? assetObj.path : assetPath("/assets/i3e/infraestructura-migracion-min.webp");
 
                 return (
                   <article className="azure-focus-card flex flex-col justify-between" key={item.title || index}>

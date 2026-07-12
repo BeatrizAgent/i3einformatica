@@ -8,6 +8,7 @@ import { ServicesShowcase } from "@/components/landing/services-showcase";
 import { ApproachBand } from "@/components/landing/approach-band";
 import { AzurePage } from "@/components/landing/azure-page";
 import { CasesGrid } from "@/components/landing/cases-grid";
+import { CasesHub } from "@/components/landing/cases-hub";
 import { ClientStrip } from "@/components/landing/client-strip";
 import { ExperienceBand } from "@/components/landing/experience-band";
 import { PartnerMarquee } from "@/components/landing/partner-marquee";
@@ -22,6 +23,7 @@ import { M365DetailPage } from "@/components/landing/m365-detail-page";
 import { CybersecurityPage } from "@/components/landing/cybersecurity-page";
 import { InfraPage } from "@/components/landing/infra-page";
 import { CompliancePage } from "@/components/landing/compliance-page";
+import { ComplaintsPage } from "@/components/landing/complaints-page";
 
 function localeFor(page: PageRecord): ContentLocale {
   return page.locale === "en" ? "en" : "es";
@@ -72,7 +74,7 @@ function M365HubTemplate({ page }: { page: PageRecord }) {
 }
 
 function CasesTemplate({ page }: { page: PageRecord }) {
-  return <CuratedTemplate page={page} />;
+  return <CasesHub locale={localeFor(page)} />;
 }
 
 export function PublicPageTemplate({ page }: { page: PageRecord }) {
@@ -84,5 +86,6 @@ export function PublicPageTemplate({ page }: { page: PageRecord }) {
   if (page.id === "it-infrastructure" || page.id === "infra") return <InfraPage page={page} />;
   if (page.id === "compliance") return <CompliancePage page={page} />;
   if (page.id === "success-stories" || page.id === "cases") return <CasesTemplate page={page} />;
+  if (page.id === "complaints") return <ComplaintsPage page={page} />;
   return <CuratedTemplate page={page} />;
 }

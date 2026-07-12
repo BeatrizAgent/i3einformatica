@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getEquivalent, locales, pageHref, type PageRecord } from "@/lib/content/repository";
+import { assetPath } from "@/lib/public-path";
 import { ReopenCookies } from "@/components/reopen-cookies";
 
 const nav = {
@@ -16,20 +17,22 @@ const nav = {
   },
 } as const;
 
-function Navigation({ locale, mobile = false }: { locale: "es" | "en"; mobile?: boolean }) {
+function Navigation({ locale, mobile = false, currentHref }: { locale: "es" | "en"; mobile?: boolean; currentHref?: string }) {
   const copy = nav[locale];
+  const isCurrent = (href: string) => href === currentHref;
+  const servicesActive = copy.services.some(([, href]) => isCurrent(href));
   return <nav aria-label={mobile ? (locale === "es" ? "Navegación móvil" : "Mobile navigation") : (locale === "es" ? "Navegación principal" : "Main navigation")}>
     <details className="services-menu">
-      <summary>{locale === "es" ? "Servicios" : "Services"}</summary>
-      <div className="services-menu-panel">{copy.services.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}</div>
+      <summary aria-current={servicesActive ? "page" : undefined}>{locale === "es" ? "Servicios" : "Services"}</summary>
+      <div className="services-menu-panel">{copy.services.map(([label, href]) => <Link key={href} href={href} aria-current={isCurrent(href) ? "page" : undefined}>{label}</Link>)}</div>
     </details>
-    {copy.direct.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}
-    <Link href={copy.jobs[1]}>{copy.jobs[0]}</Link>
+    {copy.direct.map(([label, href]) => <Link key={href} href={href} aria-current={isCurrent(href) ? "page" : undefined}>{label}</Link>)}
+    <Link href={copy.jobs[1]} aria-current={isCurrent(copy.jobs[1]) ? "page" : undefined}>{copy.jobs[0]}</Link>
   </nav>;
 }
 
 export function Logo({ priority = false }: { priority?: boolean } = {}) {
-  return <span className="logo" aria-label="i3e Informática"><Image src="/assets/i3e/logo-i3e-25.webp" alt="i3e Informática" width={128} height={84} priority={priority} /></span>;
+  return <span className="logo" aria-label="i3e Informática"><Image src={assetPath("/assets/i3e/logo-i3e-25.webp")} alt="i3e Informática" width={128} height={84} priority={priority} /></span>;
 }
 
 export function SiteHeader({ page }: { page: PageRecord }) {
@@ -41,8 +44,8 @@ export function SiteHeader({ page }: { page: PageRecord }) {
     <a href="#content" className="skip-link">{shellLocale === "es" ? "Saltar al contenido principal" : "Skip to main content"}</a>
     <div className="shell header-inner">
       <Link href={page.locale === "es" ? "/" : `/${page.locale}`} className="brand"><Logo priority /></Link>
-      <div className="desktop-navigation"><Navigation locale={shellLocale} /></div>
-      <details className="mobile-menu"><summary>{shellLocale === "es" ? "Menú" : "Menu"}</summary><Navigation locale={shellLocale} mobile /></details>
+      <div className="desktop-navigation"><Navigation locale={shellLocale} currentHref={pageHref(page)} /></div>
+      <details className="mobile-menu"><summary aria-label={shellLocale === "es" ? "Abrir menú de navegación" : "Open navigation menu"}><span className="mobile-menu-label">{shellLocale === "es" ? "Menú" : "Menu"}</span><span className="mobile-menu-icon" aria-hidden="true" /></summary><Navigation locale={shellLocale} mobile currentHref={pageHref(page)} /></details>
       <div className="header-actions">
         <details className="language-switcher">
           <summary aria-label={shellLocale === "es" ? "Cambiar idioma" : "Change language"}>{page.locale.toUpperCase()}</summary>
@@ -55,10 +58,10 @@ export function SiteHeader({ page }: { page: PageRecord }) {
 }
 
 const certifications = [
-  { name: "ISO 9001", src: "/assets/i3e/iso_9001.webp", width: 460, height: 601 },
-  { name: "ISO 20000-1", src: "/assets/i3e/iso_20000.webp", width: 464, height: 595 },
-  { name: "ISO 14001", src: "/assets/i3e/iso_14001.webp", width: 460, height: 602 },
-  { name: "ISO 27001", src: "/assets/i3e/iso_27001.webp", width: 461, height: 648 },
+  { name: "ISO 9001", src: assetPath("/assets/i3e/iso_9001.webp"), width: 460, height: 601 },
+  { name: "ISO 20000-1", src: assetPath("/assets/i3e/iso_20000.webp"), width: 464, height: 595 },
+  { name: "ISO 14001", src: assetPath("/assets/i3e/iso_14001.webp"), width: 460, height: 602 },
+  { name: "ISO 27001", src: assetPath("/assets/i3e/iso_27001.webp"), width: 461, height: 648 },
 ];
 
 export function SiteFooter({ locale }: Pick<PageRecord, "locale">) {

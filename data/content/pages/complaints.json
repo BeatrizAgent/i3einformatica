@@ -6,7 +6,57 @@
   "editorialStatus": "published",
   "assets": [],
   "locales": {
-    "es": { "path": "/denuncias", "seo": { "title": "Canal de denuncias | i3e Informática", "description": "Información honesta sobre el canal temporal de denuncias y su alternativa postal." }, "hero": { "eyebrow": "Canal de denuncias", "title": "Canal temporal sin formulario activo", "intro": "El despliegue estático no tiene infraestructura aprobada para recibir, cifrar, analizar o conservar denuncias. No prometemos anonimato ni recogemos contenido sensible.", "cta": { "label": "Ver alternativa segura", "routeId": "complaints" } }, "blocks": [{ "id": "complaint-form", "type": "form", "eyebrow": "Sin recogida de datos", "title": "No envíes aquí una denuncia", "intro": "Mientras se aprueba un endpoint y almacenamiento con cifrado, antimalware, control de acceso, retención y auditoría, la alternativa explícita es una comunicación escrita al domicilio social. No uses el correo comercial general para enviar el contenido de una denuncia.", "sourceNote": "Canal temporal: la infraestructura de recepción está fuera de este corte estático y requiere aprobación legal y de seguridad." }] },
-    "en": { "path": "/en/complaints", "seo": { "title": "Complaints channel | i3e IT", "description": "Honest information about the temporary complaints channel and postal alternative." }, "hero": { "eyebrow": "Complaints channel", "title": "Temporary channel without active form", "intro": "The static deployment has no approved infrastructure to receive, encrypt, scan or retain reports. We do not promise anonymity or collect sensitive content.", "cta": { "label": "See safe alternative", "routeId": "complaints" } }, "blocks": [{ "id": "complaint-form", "type": "form", "eyebrow": "No data collection", "title": "Do not submit a report here", "intro": "Until an endpoint and storage with encryption, malware scanning, access control, retention and audit are approved, the explicit alternative is a written communication to the registered office. Do not send report contents to the general commercial mailbox.", "sourceNote": "Temporary channel: receiving infrastructure is outside this static cut and requires legal and security approval." }] }
+    "es": {
+      "path": "/denuncias",
+      "seo": {
+        "title": "Buz\u00f3n de denuncias | i3e Inform\u00e1tica",
+        "description": "Canal seguro de denuncias de i3e Inform\u00e1tica con formulario configurable y alternativa postal."
+      },
+      "hero": {
+        "eyebrow": "Canal de denuncias",
+        "title": "Buz\u00f3n de denuncias",
+        "intro": "Comunica cualquier irregularidad o denuncia relacionada con tu puesto de trabajo.",
+        "cta": { "label": "Enviar una denuncia", "routeId": "complaints" }
+      },
+      "blocks": [{
+        "id": "complaint-form",
+        "type": "form",
+        "eyebrow": "Formulario de denuncias",
+        "title": "Cu\u00e9ntanos qu\u00e9 ha ocurrido",
+        "intro": "Selecciona el tipo de comunicaci\u00f3n, a\u00f1ade el contexto que consideres necesario y adjunta documentos solo si son relevantes.",
+        "items": [{
+          "title": "Alternativa postal",
+          "summary": "Si prefieres no utilizar el formulario, puedes dirigir una comunicaci\u00f3n escrita al domicilio social de I3E IT RESOURCES SL.",
+          "address": "C/ R\u00edos Rosas, 46 \u00b7 28003 Madrid \u00b7 Espa\u00f1a"
+        }],
+        "sourceNote": "No incluyas datos personales innecesarios. El endpoint debe aplicar cifrado, control de acceso, antimalware, retenci\u00f3n y auditor\u00eda antes de pasar a producci\u00f3n."
+      }]
+    },
+    "en": {
+      "path": "/en/complaints",
+      "seo": {
+        "title": "Whistleblowing channel | i3e IT",
+        "description": "i3e IT's secure whistleblowing channel with a configurable form and postal alternative."
+      },
+      "hero": {
+        "eyebrow": "Whistleblowing channel",
+        "title": "Whistleblowing mailbox",
+        "intro": "Report any irregularity or concern related to your workplace.",
+        "cta": { "label": "Send a report", "routeId": "complaints" }
+      },
+      "blocks": [{
+        "id": "complaint-form",
+        "type": "form",
+        "eyebrow": "Whistleblowing form",
+        "title": "Tell us what happened",
+        "intro": "Choose the type of concern, add the context you consider necessary and attach documents only when relevant.",
+        "items": [{
+          "title": "Postal alternative",
+          "summary": "If you prefer not to use the form, you may send a written communication to I3E IT RESOURCES SL's registered office.",
+          "address": "Calle de R\u00edos Rosas, 46 \u00b7 28003 Madrid \u00b7 Spain"
+        }],
+        "sourceNote": "Do not include unnecessary personal data. The endpoint must apply encryption, access control, malware scanning, retention and auditing before production use."
+      }]
+    }
   }
 }

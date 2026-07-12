@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { SubmissionForm } from "@/components/submission-form";
+import { AnimatedMetric } from "@/components/landing/animated-metric";
+import { ParallaxMedia } from "@/components/landing/parallax-media";
 import type { PageRecord } from "@/lib/content/repository";
 import { getAsset, getPageDocument, resolveAction, type ContentAction, type ContentLocale, type CuratedBlock, type CuratedPageLocale } from "@/lib/page-content";
 
@@ -24,13 +26,14 @@ function ActionLink({ action, locale, className = "text-link" }: { action?: Cont
   return <Link className={className} href={resolved.href}>{resolved.label} <span aria-hidden="true">-&gt;</span></Link>;
 }
 
-function CuratedImage({ pageId, assetId, alt, sizes = "(max-width: 760px) 100vw, 33vw" }: { pageId: string; assetId?: string; alt?: string; sizes?: string }) {
+function CuratedImage({ pageId, assetId, alt, sizes = "(max-width: 760px) 100vw, 33vw", parallax = false }: { pageId: string; assetId?: string; alt?: string; sizes?: string; parallax?: boolean }) {
   if (!assetId) return null;
   const asset = getAsset(assetId);
   if (!asset) return null;
   const document = getPageDocument(pageId);
   const pageAsset = document?.assets.find((candidate) => candidate.assetId === assetId);
-  return <div className="curated-media"><Image src={asset.path} alt={alt ?? pageAsset?.alt ?? assetId} fill sizes={sizes} /></div>;
+  const image = <Image src={asset.path} alt={alt ?? pageAsset?.alt ?? assetId} fill sizes={sizes} />;
+  return <div className={`curated-media${parallax ? " curated-media-parallax" : ""}`}>{parallax ? <ParallaxMedia>{image}</ParallaxMedia> : image}</div>;
 }
 
 function Heading({ block }: { block: CuratedBlock }) {
@@ -42,12 +45,13 @@ function Heading({ block }: { block: CuratedBlock }) {
 }
 
 function CardGrid({ pageId, locale, block }: { pageId: string; locale: ContentLocale; block: CuratedBlock }) {
+  const isCapabilityGrid = block.type === "capability_grid";
   return <section className="section curated-section" aria-labelledby={`${block.id}-title`}>
     <div className="shell">
       <div id={`${block.id}-title`}><Heading block={block} /></div>
-      <div className="curated-card-grid">
+      <div className={`curated-card-grid${isCapabilityGrid ? " curated-capability-grid" : ""}`}>
         {blockItems(block).map((item, index) => <article className="curated-card" key={`${block.id}-${index}`}>
-          {value(item, "assetId") && <CuratedImage pageId={pageId} assetId={value(item, "assetId")} alt={value(item, "alt") || value(item, "title")} />}
+          {value(item, "assetId") && <CuratedImage pageId={pageId} assetId={value(item, "assetId")} alt={value(item, "alt") || value(item, "title")} parallax={isCapabilityGrid} />}
           <div className="curated-card-copy">
             <span className="curated-card-index" aria-hidden="true">0{index + 1}</span>
             <h3>{value(item, "title")}</h3>
@@ -161,7 +165,7 @@ function FormBlock({ page, block }: { page: PageRecord; block: CuratedBlock }) {
 
 function Stats({ block }: { block: CuratedBlock }) {
   if (block.approvalStatus !== "approved") return null;
-  return <section className="section curated-section"><div className="shell"><Heading block={block} /><div className="curated-stats-grid">{blockItems(block).map((item, index) => <div className="curated-stat" key={`${block.id}-${index}`}><strong>{value(item, "value")}</strong><span>{value(item, "label")}</span></div>)}</div></div></section>;
+  return <section className="section curated-section"><div className="shell"><Heading block={block} /><div className="curated-stats-grid">{blockItems(block).map((item, index) => { const label = value(item, "label"); return <div className="curated-stat" key={`${block.id}-${index}`}><strong><AnimatedMetric value={value(item, "value")} label={label} /></strong><span>{label}</span></div>; })}</div></div></section>;
 }
 
 function Cta({ content, locale }: { content: CuratedPageLocale; locale: ContentLocale }) {

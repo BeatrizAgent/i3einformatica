@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getAsset, getPageContent, resolveAction } from "@/lib/page-content";
 import type { PageRecord } from "@/lib/content/repository";
 import { TechnologyBand } from "@/components/landing/technology-band";
+import { assetPath } from "@/lib/public-path";
 
 type Locale = "es" | "en";
 
@@ -39,11 +40,11 @@ export function M365DetailPage({ page }: { page: PageRecord }) {
 
   // Fallback images to prevent repeats
   const fallbackImages = [
-    "/assets/i3e/migracion-min.webp",
-    "/assets/i3e/migracion-sharepoint-min.webp",
-    "/assets/i3e/copilot-min.webp",
-    "/assets/i3e/soluciones-1024x768.webp",
-    "/assets/i3e/equipo-tecnico-1024x683.webp"
+    assetPath("/assets/i3e/migracion-min.webp"),
+    assetPath("/assets/i3e/migracion-sharepoint-min.webp"),
+    assetPath("/assets/i3e/copilot-min.webp"),
+    assetPath("/assets/i3e/soluciones-1024x768.webp"),
+    assetPath("/assets/i3e/equipo-tecnico-1024x683.webp")
   ];
 
   return (

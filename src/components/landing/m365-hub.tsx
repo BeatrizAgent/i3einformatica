@@ -3,6 +3,8 @@ import Link from "next/link";
 import { MotionRevealItem, MotionStagger, ScrollReveal } from "@/components/landing/scroll-reveal";
 import { getAsset, getPageContent, resolveAction } from "@/lib/page-content";
 import { TechnologyBand } from "@/components/landing/technology-band";
+import { BrandIcon, type BrandIconName } from "@/components/brand-icon";
+import { assetPath } from "@/lib/public-path";
 
 type Locale = "es" | "en";
 
@@ -11,25 +13,13 @@ interface CapabilityItem {
   summary?: string;
 }
 
-function Microsoft365Icon({ className = "" }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <circle cx="24" cy="24" r="23" stroke="currentColor" strokeWidth="1.5" fill="none" />
-      <rect x="12" y="12" width="10" height="10" fill="currentColor" />
-      <rect x="26" y="12" width="10" height="10" fill="currentColor" />
-      <rect x="12" y="26" width="10" height="10" fill="currentColor" />
-      <rect x="26" y="26" width="10" height="10" fill="currentColor" />
-    </svg>
-  );
-}
-
 export function M365Hub({ locale, enabled }: { locale: Locale; enabled: boolean }) {
   const content = getPageContent("microsoft-365", locale);
   if (!content) return null;
 
   const heroCta = resolveAction(content.hero.cta, locale);
   const heroImage = content.hero.assetId ? getAsset(content.hero.assetId) : null;
-  const heroBg = heroImage ? heroImage.path : "/assets/i3e/edificios.webp";
+  const heroBg = heroImage ? heroImage.path : assetPath("/assets/i3e/edificios.webp");
 
   // Get the split_media block for Product & Solutions cards
   const splitBlock = content.blocks.find((b) => b.id === "product-solution");
@@ -41,14 +31,12 @@ export function M365Hub({ locale, enabled }: { locale: Locale; enabled: boolean 
   const capabilitiesBlock = content.blocks.find((b) => b.id === "capabilities");
   const capabilityItems = (capabilitiesBlock?.items ?? []) as unknown as CapabilityItem[];
 
-  // Map the 4 capabilities to their respective icons
-  const capabilityIcons: Record<string, string> = {
-    copilot: "/assets/i3e/arcticons-microsoft-365-2.svg",
-    sharepoint: "/assets/i3e/arcticons-microsoft-365-2.svg",
-    "teams y colaboración": "/assets/i3e/arcticons-microsoft-365-2.svg",
-    "teams and collaboration": "/assets/i3e/arcticons-microsoft-365-2.svg",
-    "seguridad y cumplimiento": "/assets/i3e/arcticons-security-2.svg",
-    "security and compliance": "/assets/i3e/arcticons-security-2.svg",
+  const getCapabilityIcon = (itemKey: string): BrandIconName => {
+    if (itemKey.includes("copilot")) return "copilot";
+    if (itemKey.includes("sharepoint")) return "sharepoint";
+    if (itemKey.includes("teams") || itemKey.includes("colabora")) return "teams";
+    if (itemKey.includes("seguridad") || itemKey.includes("security")) return "security";
+    return "microsoft";
   };
 
   const finalCtaAction = content.cta?.action ? resolveAction(content.cta.action, locale) : null;
@@ -62,7 +50,7 @@ export function M365Hub({ locale, enabled }: { locale: Locale; enabled: boolean 
           <div className="m365-hero-overlay" />
         </div>
         <div className="shell m365-hero-content">
-          <div className="m365-hero-icon" aria-hidden="true"><Microsoft365Icon /></div>
+          <div className="m365-hero-icon"><BrandIcon name="microsoft365" size={112} /></div>
           <p className="eyebrow">{content.hero.eyebrow}</p>
           <h1 id="m365-title">{content.hero.title}</h1>
           <p className="lead">{content.hero.intro}</p>
@@ -85,7 +73,7 @@ export function M365Hub({ locale, enabled }: { locale: Locale; enabled: boolean 
             <ScrollReveal className="m365-block-card" enabled={enabled}>
               <div className="m365-block-media">
                 <Image
-                  src="/assets/i3e/migracion-min.webp"
+                  src={assetPath("/assets/i3e/migracion-min.webp")}
                   alt="Microsoft 365 Producto"
                   fill
                   sizes="(max-width: 900px) 100vw, 50vw"
@@ -109,7 +97,7 @@ export function M365Hub({ locale, enabled }: { locale: Locale; enabled: boolean 
             <ScrollReveal className="m365-block-card" enabled={enabled}>
               <div className="m365-block-media">
                 <Image
-                  src="/assets/i3e/soluciones-1024x768.webp"
+                  src={assetPath("/assets/i3e/soluciones-1024x768.webp")}
                   alt="Microsoft 365 Soluciones"
                   fill
                   sizes="(max-width: 900px) 100vw, 50vw"
@@ -145,7 +133,7 @@ export function M365Hub({ locale, enabled }: { locale: Locale; enabled: boolean 
                 const itemTitle = item.title || "";
                 const itemSummary = item.summary || "";
                 const itemKey = itemTitle.toLowerCase();
-                const icon = capabilityIcons[itemKey] || "/assets/i3e/arcticons-microsoft-365-2.svg";
+                const icon = getCapabilityIcon(itemKey);
                 // Determine target link based on capability
                 const href = (itemKey.includes("seguridad") || itemKey.includes("security") || itemKey.includes("colabora"))
                   ? solutionsHref
@@ -154,9 +142,7 @@ export function M365Hub({ locale, enabled }: { locale: Locale; enabled: boolean 
                 return (
                   <MotionRevealItem as="article" className="m365-mini-card" key={itemTitle || index} enabled={enabled}>
                     <Link href={href} className="m365-mini-card-link">
-                      <span className="m365-mini-card-icon">
-                        <Image src={icon} alt="" width={40} height={40} />
-                      </span>
+                      <span className="m365-mini-card-icon"><BrandIcon name={icon} size={96} /></span>
                       <h4>{itemTitle}</h4>
                       <p className="m365-mini-card-desc">{itemSummary}</p>
                     </Link>
