@@ -29,7 +29,7 @@
           "summary": "Si prefieres no utilizar el formulario, puedes dirigir una comunicaci\u00f3n escrita al domicilio social de I3E IT RESOURCES SL.",
           "address": "C/ R\u00edos Rosas, 46 \u00b7 28003 Madrid \u00b7 Espa\u00f1a"
         }],
-        "sourceNote": "No incluyas datos personales innecesarios. El endpoint debe aplicar cifrado, control de acceso, antimalware, retenci\u00f3n y auditor\u00eda antes de pasar a producci\u00f3n."
+        "sourceNote": "No incluyas datos personales innecesarios. El canal digital solo se habilitar\u00e1 con cifrado, control de acceso, antimalware, retenci\u00f3n y auditor\u00eda independientes."
       }]
     },
     "en": {
@@ -55,7 +55,7 @@
           "summary": "If you prefer not to use the form, you may send a written communication to I3E IT RESOURCES SL's registered office.",
           "address": "Calle de R\u00edos Rosas, 46 \u00b7 28003 Madrid \u00b7 Spain"
         }],
-        "sourceNote": "Do not include unnecessary personal data. The endpoint must apply encryption, access control, malware scanning, retention and auditing before production use."
+        "sourceNote": "Do not include unnecessary personal data. The digital channel will only be enabled with independent encryption, access control, malware scanning, retention, and auditing."
       }]
     }
   }
