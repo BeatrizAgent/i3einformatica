@@ -118,7 +118,9 @@ function ProofGrid({ pageId, block }: { pageId: string; block: CuratedBlock }) {
 }
 
 function RichText({ block }: { block: CuratedBlock }) {
-  return <section className="section curated-section" aria-labelledby={`${block.id}-title`}><div className="shell curated-rich-text"><div id={`${block.id}-title`}><Heading block={block} /></div>{blockItems(block).map((item, index) => <article key={`${block.id}-${index}`}><h3>{value(item, "heading")}</h3><p>{value(item, "body")}</p></article>)}</div></section>;
+  const items = blockItems(block);
+  const itemId = (item: Record<string, unknown>, index: number) => value(item, "id") || `${block.id}-${index + 1}`;
+  return <section className="section curated-section" aria-labelledby={`${block.id}-title`}><div className="shell curated-rich-text"><div id={`${block.id}-title`}><Heading block={block} />{block.sourceNote && <p className="content-source-note">{block.sourceNote}</p>}</div>{items.length > 2 && <nav className="legal-index" aria-label="Índice"><strong>Índice</strong><ol>{items.map((item, index) => <li key={`${block.id}-index-${index}`}><a href={`#${itemId(item, index)}`}>{value(item, "heading")}</a></li>)}</ol></nav>}{items.map((item, index) => <article id={itemId(item, index)} key={`${block.id}-${index}`}><h3>{value(item, "heading")}</h3><p>{value(item, "body")}</p></article>)}</div></section>;
 }
 
 function Locations({ pageId, block }: { pageId: string; block: CuratedBlock }) {
@@ -127,7 +129,7 @@ function Locations({ pageId, block }: { pageId: string; block: CuratedBlock }) {
 
 function FormBlock({ page, block }: { page: PageRecord; block: CuratedBlock }) {
   if (!page.form) return null;
-  return <section className="section section-muted curated-section"><div className="shell form-layout"><div><Heading block={block} /></div><SubmissionForm kind={page.form} locale={page.locale} /></div></section>;
+  return <section className="section section-muted curated-section"><div className="shell form-layout"><div><Heading block={block} />{block.sourceNote && <p className="content-source-note">{block.sourceNote}</p>}</div><SubmissionForm kind={page.form} locale={page.locale} /></div></section>;
 }
 
 function Stats({ block }: { block: CuratedBlock }) {

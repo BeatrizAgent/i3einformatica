@@ -38,6 +38,11 @@ jobs:
           NEXT_PUBLIC_SITE_URL: https://beatrizagent.github.io
           NEXT_PUBLIC_BASE_PATH: /i3einformatica
         run: pnpm build
+      - name: Validate export
+        env:
+          NEXT_PUBLIC_SITE_URL: https://beatrizagent.github.io
+          NEXT_PUBLIC_BASE_PATH: /i3einformatica
+        run: pnpm export:validate
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

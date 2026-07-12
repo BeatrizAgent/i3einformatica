@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title,
     description,
-    alternates: { canonical, languages: { ...Object.fromEntries(Object.entries(page.availableLocales ?? {}).map(([key, value]) => [key, value])), "es-ES": esHref, ...(enHref ? { "en-GB": enHref } : {}), "x-default": esHref } },
+    alternates: { canonical, languages: { ...Object.fromEntries(Object.entries(page.availableLocales ?? {}).map(([key, value]) => [key, publicUrl(value)])), "es-ES": publicUrl(esHref), ...(enHref ? { "en-GB": publicUrl(enHref) } : {}), "x-default": publicUrl(esHref) } },
     openGraph: { type: "website", locale: page.locale === "es" ? "es_ES" : "en_GB", title, description, url: canonical, siteName: "i3e Informática" },
   };
 }

@@ -1,5 +1,17 @@
 # Preguntas y decisiones abiertas
 
+## Estado del corte estático — 12/07/2026
+
+Se ha fijado el límite técnico del corte: ES/EN son las únicas rutas generadas, los formularios no persisten datos, el canal de denuncias no recoge contenido y no se carga analítica sin consentimiento. Aviso legal, privacidad y cookies ya contienen el material normalizado de las fuentes públicas, pero permanecen `in_review` hasta aprobación jurídica. No se inventan decisiones de negocio o legales para cerrar esta puerta.
+
+| Tema | Decisión técnica provisional | Evidencia | Pendiente humano |
+|---|---|---|---|
+| Teléfono | Mantener `934 588 023` en datos corporativos legales y `900 923 330` como contacto público hasta confirmación | Aviso legal y pie público recuperados el 12/07/2026 | O2: negocio debe elegir un número oficial |
+| Formularios | Export estático abre correo para contacto/empleo; no procesa CV ni denuncias | `src/components/submission-form.tsx` | O8–O10: proveedor, retención, antimalware y destinatarios |
+| Denuncias | Sin formulario activo; alternativa postal explícita; no promesa de anonimato | `data/content/pages/complaints.json` | O9–O10: endpoint seguro aprobado |
+| Cookies | Solo `localStorage` para preferencias; no analítica ni terceros en runtime | `src/components/cookie-banner.tsx` y política de cookies | O13: CMP/analítica futura, si procede |
+| Publicación legal | Contenido queda `in_review`; CI bloquea `published` con dependencias pendientes | `scripts/validate-content.ts` | O11: aprobación jurídica/DPO |
+
 | ID | Decisión | Propietario requerido | Bloquea |
 |---|---|---|---|
 | O1 | ¿Eliminar, 301 a `/sobre-nosotros/` o migrar `/sobre-nosotros-pruebas/`? | Contenido/SEO | import final, redirects |

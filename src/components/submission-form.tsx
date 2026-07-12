@@ -10,8 +10,8 @@ const copy = {
     en: { title: "Join the team", text: "The static version does not process applications. Email your CV and details.", subject: "Job application", action: "Send application" },
   },
   complaint: {
-    es: { title: "Canal de comunicación", text: "La versión estática no almacena denuncias. Para una comunicación confidencial, escribe al canal corporativo.", subject: "Comunicación confidencial", action: "Abrir correo confidencial" },
-    en: { title: "Reporting channel", text: "The static version does not store reports. For a confidential report, email the corporate channel.", subject: "Confidential report", action: "Open confidential email" },
+    es: { title: "Canal temporal sin recogida de datos", text: "Este sitio estático no tiene un endpoint aprobado ni almacena denuncias. No introduzcas información sensible ni adjuntos aquí y no se garantiza el anonimato por correo. Mientras se aprueba el canal, puedes dirigir una comunicación por escrito al domicilio social de I3E IT RESOURCES SL: C/ Ríos Rosas, 46, 28003 Madrid.", subject: "", action: "" },
+    en: { title: "Temporary channel without data collection", text: "This static site has no approved endpoint and does not store reports. Do not enter sensitive information or attachments here, and anonymity by email is not guaranteed. Until an approved channel exists, you may send a written communication to I3E IT RESOURCES SL's registered office: Calle de Ríos Rosas, 46, 28003 Madrid, Spain.", subject: "", action: "" },
   },
 } as const;
 
@@ -20,6 +20,6 @@ export function SubmissionForm({ kind, locale }: { kind: "contact" | "jobs" | "c
   return <div className="form-card static-form-notice">
     <p className="eyebrow">{text.title}</p>
     <p>{text.text}</p>
-    <a className="button" href={`mailto:info@i3einformatica.com?subject=${encodeURIComponent(text.subject)}`}>{text.action}</a>
+    {kind !== "complaint" && <a className="button" href={`mailto:info@i3einformatica.com?subject=${encodeURIComponent(text.subject)}`}>{text.action}</a>}
   </div>;
 }

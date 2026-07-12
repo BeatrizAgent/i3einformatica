@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 type CookiePreferences = {
   necessary: boolean;
@@ -115,8 +116,8 @@ export function CookieBanner() {
   const t = {
     title: isEn ? "Cookie Consent" : "Control de Cookies",
     desc: isEn 
-      ? "We use cookies to optimize your browsing experience, analyze site traffic, and personalize content. You can accept all, reject non-essential cookies, or customize your preferences."
-      : "Utilizamos cookies para optimizar tu experiencia de navegación, analizar el tráfico del sitio y personalizar el contenido. Puedes aceptar todas, rechazar las no esenciales o configurar tus preferencias.",
+      ? "This static site stores your consent choice locally. No analytics or advertising resource loads before consent. You can accept optional categories, reject them, or customize your preferences."
+      : "Este sitio estático guarda localmente tu elección de consentimiento. No carga analítica ni publicidad antes del consentimiento. Puedes aceptar categorías opcionales, rechazarlas o configurar tus preferencias.",
     acceptAll: isEn ? "Accept All" : "Aceptar todas",
     rejectAll: isEn ? "Reject All" : "Rechazar no esenciales",
     configure: isEn ? "Customize" : "Configurar",
@@ -154,8 +155,9 @@ export function CookieBanner() {
         {!showConfig ? (
           <div className="cookie-banner-content">
             <div className="cookie-banner-text">
-              <h2 id="cookie-title" className="cookie-banner-heading">{t.title}</h2>
-              <p>{t.desc}</p>
+            <h2 id="cookie-title" className="cookie-banner-heading">{t.title}</h2>
+            <p>{t.desc}</p>
+            <Link href={isEn ? "/en/cookie-policy" : "/politica-de-cookies"}>{isEn ? "Read cookie policy" : "Leer política de cookies"}</Link>
             </div>
             <div className="cookie-banner-actions">
               <button onClick={handleAcceptAll} className="button">{t.acceptAll}</button>

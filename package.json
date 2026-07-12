@@ -13,7 +13,9 @@
     "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build",
     "assets:sync": "tsx scripts/sync-site-assets.ts",
     "audit": "tsx scripts/audit-site.ts",
-    "content:validate": "tsx scripts/validate-content.ts"
+    "content:validate": "tsx scripts/validate-content.ts",
+    "encoding:check": "tsx scripts/validate-encoding.ts",
+    "export:validate": "tsx scripts/validate-export.ts"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
