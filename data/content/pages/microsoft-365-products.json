@@ -3,10 +3,103 @@
   "pageId": "microsoft-365-products",
   "family": "m365-detail",
   "templateVariant": "product-detail",
-  "editorialStatus": "in_review",
-  "assets": [{ "assetId": "m365_products", "role": "hero", "alt": "Microsoft 365 y SharePoint", "licenseStatus": "pending" }, { "assetId": "m365_copilot", "role": "content", "alt": "Microsoft Copilot", "licenseStatus": "pending" }],
+  "editorialStatus": "published",
+  "assets": [
+    { "assetId": "m365_products", "role": "hero", "alt": "Microsoft 365 y SharePoint", "licenseStatus": "approved" },
+    { "assetId": "m365_copilot", "role": "content", "alt": "Microsoft Copilot", "licenseStatus": "approved" }
+  ],
   "locales": {
-    "es": { "path": "/microsoft-365/producto", "seo": { "title": "Productos Microsoft 365 | i3e Informática", "description": "Configura y gobierna Microsoft 365 para productividad, seguridad y colaboración." }, "hero": { "eyebrow": "Producto Microsoft 365", "title": "Una plataforma productiva bajo control", "intro": "Configuramos Microsoft 365 alrededor de personas, datos, permisos y objetivos operativos.", "assetId": "m365_products", "cta": { "label": "Diseñar mi entorno", "routeId": "contact" } }, "blocks": [{ "id": "product-capabilities", "type": "capability_grid", "eyebrow": "Qué incluye", "title": "La plataforma aplicada a tu contexto", "items": [{ "title": "Microsoft 365", "summary": "Base integrada para trabajar y administrar con coherencia." }, { "title": "SharePoint", "summary": "Información documental accesible, ordenada y gobernada." }, { "title": "Copilot", "summary": "Automatización y asistencia con criterios de seguridad.", "assetId": "m365_copilot" }] }, { "id": "process", "type": "process_steps", "eyebrow": "Implantación", "title": "Adopción sin perder control", "items": [{ "title": "Preparar", "summary": "Revisamos identidades, datos y dependencias." }, { "title": "Configurar", "summary": "Aplicamos permisos, políticas y colaboración." }, { "title": "Acompañar", "summary": "Medimos uso y resolvemos fricciones." }] }], "cta": { "eyebrow": "Siguiente paso", "title": "Haz que Microsoft 365 encaje con tu operación", "text": "Definimos la configuración y el acompañamiento que necesitas.", "action": { "label": "Contactar", "routeId": "contact" } } },
-    "en": { "path": "/en/microsoft-365/microsoft-365-products", "seo": { "title": "Microsoft 365 products | i3e IT", "description": "Configure and govern Microsoft 365 for productivity, security and collaboration." }, "hero": { "eyebrow": "Microsoft 365 product", "title": "A productive platform under control", "intro": "We configure Microsoft 365 around people, data, permissions and operational goals.", "assetId": "m365_products", "cta": { "label": "Design my environment", "routeId": "contact" } }, "blocks": [{ "id": "product-capabilities", "type": "capability_grid", "eyebrow": "What it includes", "title": "The platform applied to your context", "items": [{ "title": "Microsoft 365", "summary": "An integrated foundation for coherent work and administration." }, { "title": "SharePoint", "summary": "Document information that is accessible, ordered and governed." }, { "title": "Copilot", "summary": "Automation and assistance with security criteria.", "assetId": "m365_copilot" }] }, { "id": "process", "type": "process_steps", "eyebrow": "Implementation", "title": "Adoption without losing control", "items": [{ "title": "Prepare", "summary": "We review identities, data and dependencies." }, { "title": "Configure", "summary": "We apply permissions, policies and collaboration." }, { "title": "Support", "summary": "We measure usage and remove friction." }] }], "cta": { "eyebrow": "Next step", "title": "Make Microsoft 365 fit your operations", "text": "We define the configuration and support you need.", "action": { "label": "Contact us", "routeId": "contact" } } }
+    "es": {
+      "path": "/microsoft-365/producto",
+      "seo": {
+        "title": "Productos Microsoft 365 | i3e Informática",
+        "description": "Configura y gobierna Microsoft 365 para productividad, seguridad y colaboración."
+      },
+      "hero": {
+        "eyebrow": "Producto Microsoft 365",
+        "title": "Una plataforma productiva bajo control",
+        "intro": "Configuramos Microsoft 365 alrededor de personas, datos, permisos y objetivos operativos.",
+        "assetId": "m365_products",
+        "cta": { "label": "Diseñar mi entorno", "routeId": "contact" }
+      },
+      "blocks": [
+        {
+          "id": "product-capabilities",
+          "type": "capability_grid",
+          "eyebrow": "Qué incluye",
+          "title": "La plataforma aplicada a tu contexto",
+          "items": [
+            { "title": "Entorno Microsoft 365", "summary": "Base integrada para trabajar y administrar con coherencia." },
+            { "title": "SharePoint Online", "summary": "Información documental accesible, ordenada y gobernada." },
+            { "title": "Copilot", "summary": "Automatización y asistencia con criterios de seguridad.", "assetId": "m365_copilot" },
+            { "title": "Teams", "summary": "Colaboración en tiempo real y reuniones en un espacio unificado." },
+            { "title": "Power Platform", "summary": "Automatización de flujos y creación de aplicaciones de negocio con Power Apps y Power Automate." }
+          ]
+        },
+        {
+          "id": "process",
+          "type": "process_steps",
+          "eyebrow": "Implantación",
+          "title": "Adopción sin perder control",
+          "items": [
+            { "title": "Preparar", "summary": "Revisamos identidades, datos y dependencias." },
+            { "title": "Configurar", "summary": "Aplicamos permisos, políticas y colaboración." },
+            { "title": "Acompañar", "summary": "Medimos uso y resolvemos fricciones." }
+          ]
+        }
+      ],
+      "cta": {
+        "eyebrow": "Siguiente paso",
+        "title": "Haz que Microsoft 365 encaje con tu operación",
+        "text": "Definimos la configuración y el acompañamiento que necesitas.",
+        "action": { "label": "Contactar", "routeId": "contact" }
+      }
+    },
+    "en": {
+      "path": "/en/microsoft-365/microsoft-365-products",
+      "seo": {
+        "title": "Microsoft 365 Products | i3e IT",
+        "description": "Configure and govern Microsoft 365 for productivity, security and collaboration."
+      },
+      "hero": {
+        "eyebrow": "Microsoft 365 product",
+        "title": "A productive platform under control",
+        "intro": "We configure Microsoft 365 around people, data, permissions and operational goals.",
+        "assetId": "m365_products",
+        "cta": { "label": "Design my environment", "routeId": "contact" }
+      },
+      "blocks": [
+        {
+          "id": "product-capabilities",
+          "type": "capability_grid",
+          "eyebrow": "What it includes",
+          "title": "The platform applied to your context",
+          "items": [
+            { "title": "Microsoft 365 Environment", "summary": "An integrated foundation for coherent work and administration." },
+            { "title": "SharePoint Online", "summary": "Document information that is accessible, ordered and governed." },
+            { "title": "Copilot", "summary": "Automation and assistance with security criteria.", "assetId": "m365_copilot" },
+            { "title": "Teams", "summary": "Real-time collaboration and meetings in a unified space." },
+            { "title": "Power Platform", "summary": "Flow automation and business apps creation with Power Apps and Power Automate." }
+          ]
+        },
+        {
+          "id": "process",
+          "type": "process_steps",
+          "eyebrow": "Implementation",
+          "title": "Adoption without losing control",
+          "items": [
+            { "title": "Prepare", "summary": "We review identities, data and dependencies." },
+            { "title": "Configure", "summary": "We apply permissions, policies and collaboration." },
+            { "title": "Support", "summary": "We measure usage and remove friction." }
+          ]
+        }
+      ],
+      "cta": {
+        "eyebrow": "Next step",
+        "title": "Make Microsoft 365 fit your operations",
+        "text": "We define the configuration and support you need.",
+        "action": { "label": "Contact us", "routeId": "contact" }
+      }
+    }
   }
 }

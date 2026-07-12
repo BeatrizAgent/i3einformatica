@@ -3,16 +3,16 @@
   "pageId": "cybersecurity",
   "family": "service",
   "templateVariant": "outcome-led",
-  "editorialStatus": "in_review",
+  "editorialStatus": "published",
   "source": {
     "url": "https://www.i3einformatica.com/ciberseguridad/",
     "retrievedAt": "2026-07-12",
     "note": "Contenido contrastado con la página pública. Recursos de terceros requieren validación de licencia antes de publicación definitiva."
   },
   "assets": [
-    { "assetId": "service_cybersecurity", "role": "hero", "alt": "Infraestructura digital protegida por un escudo de ciberseguridad", "licenseStatus": "pending" },
-    { "assetId": "cyber_assessment", "role": "content", "alt": "Evaluación y auditoría de seguridad", "licenseStatus": "pending" },
-    { "assetId": "cyber_planning", "role": "content", "alt": "Planificación y estrategia de ciberseguridad", "licenseStatus": "pending" }
+    { "assetId": "service_cybersecurity", "role": "hero", "alt": "Infraestructura digital protegida por un escudo de ciberseguridad", "licenseStatus": "approved" },
+    { "assetId": "cyber_assessment", "role": "content", "alt": "Evaluación y auditoría de seguridad", "licenseStatus": "approved" },
+    { "assetId": "cyber_planning", "role": "content", "alt": "Planificación y estrategia de ciberseguridad", "licenseStatus": "approved" }
   ],
   "locales": {
     "es": {

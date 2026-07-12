@@ -18,6 +18,9 @@ import type { PageRecord } from "@/lib/content/repository";
 import { landingSolutions } from "@/lib/site-assets";
 import { getAsset, getPageContent, getPageDocument, resolveAction, type ContentLocale } from "@/lib/page-content";
 import { templateCopy } from "@/lib/page-template-data";
+import { M365DetailPage } from "@/components/landing/m365-detail-page";
+import { CybersecurityPage } from "@/components/landing/cybersecurity-page";
+import { InfraPage } from "@/components/landing/infra-page";
 
 function localeFor(page: PageRecord): ContentLocale {
   return page.locale === "en" ? "en" : "es";
@@ -64,7 +67,7 @@ function HomeTemplate({ page }: { page: PageRecord }) {
 }
 
 function M365HubTemplate({ page }: { page: PageRecord }) {
-  return <M365Hub locale={localeFor(page)} enabled={false} />;
+  return <M365Hub locale={localeFor(page)} enabled={true} />;
 }
 
 function CasesTemplate({ page }: { page: PageRecord }) {
@@ -72,10 +75,12 @@ function CasesTemplate({ page }: { page: PageRecord }) {
 }
 
 export function PublicPageTemplate({ page }: { page: PageRecord }) {
-  const family = page.id === "home" ? "home" : page.id === "microsoft-azure" ? "azure" : page.id === "m365" || page.id === "microsoft-365" ? "m365-hub" : page.id === "cases" || page.id === "success-stories" ? "cases" : "curated";
-  if (family === "home") return <HomeTemplate page={page} />;
-  if (family === "azure") return <AzurePage page={page} />;
-  if (family === "m365-hub") return <M365HubTemplate page={page} />;
-  if (family === "cases") return <CasesTemplate page={page} />;
+  if (page.id === "home") return <HomeTemplate page={page} />;
+  if (page.id === "microsoft-azure" || page.id === "azure") return <AzurePage page={page} />;
+  if (page.id === "microsoft-365" || page.id === "m365") return <M365HubTemplate page={page} />;
+  if (page.id === "microsoft-365-products" || page.id === "microsoft-365-solutions") return <M365DetailPage page={page} />;
+  if (page.id === "cybersecurity" || page.id === "cyber") return <CybersecurityPage page={page} />;
+  if (page.id === "it-infrastructure" || page.id === "infra") return <InfraPage page={page} />;
+  if (page.id === "success-stories" || page.id === "cases") return <CasesTemplate page={page} />;
   return <CuratedTemplate page={page} />;
 }

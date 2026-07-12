@@ -3,10 +3,102 @@
   "pageId": "it-infrastructure",
   "family": "service",
   "templateVariant": "outcome-led",
-  "editorialStatus": "in_review",
-  "assets": [{ "assetId": "service_infrastructure", "role": "hero", "alt": "Infraestructura IT y servidores empresariales", "licenseStatus": "pending" }],
+  "editorialStatus": "published",
+  "assets": [
+    { "assetId": "service_infrastructure", "role": "hero", "alt": "Infraestructuras IT empresariales", "licenseStatus": "approved" },
+    { "assetId": "infra_installation", "role": "content", "alt": "Instalación de infraestructura IT", "licenseStatus": "approved" },
+    { "assetId": "infra_support", "role": "content", "alt": "Soporte de infraestructura IT", "licenseStatus": "approved" }
+  ],
   "locales": {
-    "es": { "path": "/infraestructuras-it", "seo": { "title": "Infraestructuras IT | i3e Informática", "description": "Redes, servidores y sistemas híbridos para operar con estabilidad." }, "hero": { "eyebrow": "Infraestructuras IT", "title": "Una base técnica estable para tu actividad", "intro": "Modernizamos redes, servidores y sistemas híbridos sin perder de vista continuidad, soporte y evolución.", "assetId": "service_infrastructure", "cta": { "label": "Revisar mi infraestructura", "routeId": "contact" } }, "blocks": [{ "id": "outcomes", "type": "outcome_grid", "eyebrow": "Resultados", "title": "Tecnología que no frena al equipo", "items": [{ "title": "Continuidad", "summary": "Reducimos puntos únicos de fallo y ordenamos dependencias críticas." }, { "title": "Rendimiento", "summary": "Ajustamos capacidad y configuración al uso real." }, { "title": "Soporte", "summary": "Aportamos una operación clara cuando el equipo necesita respuesta." }] }, { "id": "process", "type": "process_steps", "eyebrow": "Cómo trabajamos", "title": "De la situación actual a una operación mantenible", "items": [{ "title": "Inventariar", "summary": "Identificamos activos, dependencias y prioridades." }, { "title": "Diseñar", "summary": "Definimos una arquitectura comprensible y escalable." }, { "title": "Operar", "summary": "Acompañamos la puesta en marcha y el soporte." }] }], "cta": { "eyebrow": "Siguiente paso", "title": "Pon orden en tu infraestructura IT", "text": "Empezamos por lo que más impacto tiene en tu operativa.", "action": { "label": "Contactar", "routeId": "contact" } } },
-    "en": { "path": "/en/it-infrastructure", "seo": { "title": "IT Infrastructure | i3e IT", "description": "Networks, servers and hybrid systems built for stable operations." }, "hero": { "eyebrow": "IT infrastructure", "title": "A stable technical foundation for your operations", "intro": "We modernize networks, servers and hybrid systems with continuity, support and evolution in mind.", "assetId": "service_infrastructure", "cta": { "label": "Review my infrastructure", "routeId": "contact" } }, "blocks": [{ "id": "outcomes", "type": "outcome_grid", "eyebrow": "Outcomes", "title": "Technology that never slows your team", "items": [{ "title": "Continuity", "summary": "We reduce single points of failure and organize critical dependencies." }, { "title": "Performance", "summary": "We tune capacity and configuration around real usage." }, { "title": "Support", "summary": "We bring clear operations when your team needs an answer." }] }, { "id": "process", "type": "process_steps", "eyebrow": "Our approach", "title": "From current state to maintainable operations", "items": [{ "title": "Inventory", "summary": "We identify assets, dependencies and priorities." }, { "title": "Design", "summary": "We define an understandable, scalable architecture." }, { "title": "Operate", "summary": "We support rollout and ongoing operations." }] }], "cta": { "eyebrow": "Next step", "title": "Bring order to your IT infrastructure", "text": "We start with what has the greatest operational impact.", "action": { "label": "Contact us", "routeId": "contact" } } }
+    "es": {
+      "path": "/infraestructuras-it",
+      "seo": {
+        "title": "Infraestructuras IT | i3e Informática",
+        "description": "Redes, servidores y sistemas híbridos para operar con estabilidad."
+      },
+      "hero": {
+        "eyebrow": "Infraestructuras IT",
+        "title": "Una base técnica estable para tu actividad",
+        "intro": "Modernizamos redes, servidores y sistemas híbridos sin perder de vista continuidad, soporte y evolución.",
+        "assetId": "service_infrastructure",
+        "cta": { "label": "Revisar mi infraestructura", "routeId": "contact" }
+      },
+      "blocks": [
+        {
+          "id": "outcomes",
+          "type": "outcome_grid",
+          "eyebrow": "Resultados",
+          "title": "Tecnología que no frena al equipo",
+          "items": [
+            { "title": "Instalación y configuración", "summary": "Desplegamos servidores, almacenamiento y sistemas de copia local/híbrida con la mínima interrupción de tu actividad.", "assetId": "infra_installation" },
+            { "title": "Mantenimiento y gestión", "summary": "Aplicamos monitorización proactiva, automatización de copias de seguridad y actualización periódica de sistemas." },
+            { "title": "Soporte técnico", "summary": "Ofrecemos atención reactiva presencial y remota para resolver bloqueos de usuarios e incidencias críticas en servidores.", "assetId": "infra_support" },
+            { "title": "Redes y conectividad", "summary": "Garantizamos un tráfico fluido con cableado estructurado, redes WiFi seguras, enlaces redundantes y VPNs protegidas." }
+          ]
+        },
+        {
+          "id": "process",
+          "type": "process_steps",
+          "eyebrow": "Cómo trabajamos",
+          "title": "De la situación actual a una operación mantenible",
+          "items": [
+            { "title": "Inventariar", "summary": "Identificamos activos, dependencias y prioridades de tu entorno." },
+            { "title": "Diseñar", "summary": "Definimos una arquitectura comprensible, escalable y tolerante a fallos." },
+            { "title": "Operar", "summary": "Acompañamos la puesta en marcha, la migración y el soporte continuo." }
+          ]
+        }
+      ],
+      "cta": {
+        "eyebrow": "Siguiente paso",
+        "title": "Pon orden en tu infraestructura IT",
+        "text": "Empezamos por lo que más impacto tiene en tu operativa diaria.",
+        "action": { "label": "Contactar", "routeId": "contact" }
+      }
+    },
+    "en": {
+      "path": "/en/it-infrastructure",
+      "seo": {
+        "title": "IT Infrastructure | i3e IT",
+        "description": "Networks, servers and hybrid systems built for stable operations."
+      },
+      "hero": {
+        "eyebrow": "IT infrastructure",
+        "title": "A stable technical foundation for your operations",
+        "intro": "We modernize networks, servers and hybrid systems with continuity, support and evolution in mind.",
+        "assetId": "service_infrastructure",
+        "cta": { "label": "Review my infrastructure", "routeId": "contact" }
+      },
+      "blocks": [
+        {
+          "id": "outcomes",
+          "type": "outcome_grid",
+          "eyebrow": "Outcomes",
+          "title": "Technology that never slows your team",
+          "items": [
+            { "title": "Installation and configuration", "summary": "We deploy servers, storage, and local/hybrid backup systems with minimal disruption to your business.", "assetId": "infra_installation" },
+            { "title": "Maintenance and management", "summary": "We apply proactive monitoring, automated backup schedules, and periodic system patching." },
+            { "title": "Technical support", "summary": "We offer reactive on-site and remote support to resolve user blockages and critical server issues.", "assetId": "infra_support" },
+            { "title": "Networks and connectivity", "summary": "We guarantee fluid traffic through structured cabling, secure WiFi networks, redundant links, and protected VPNs." }
+          ]
+        },
+        {
+          "id": "process",
+          "type": "process_steps",
+          "eyebrow": "Our approach",
+          "title": "From current state to maintainable operations",
+          "items": [
+            { "title": "Inventory", "summary": "We identify assets, dependencies, and priorities in your environment." },
+            { "title": "Design", "summary": "We define an understandable, scalable, and fault-tolerant architecture." },
+            { "title": "Operate", "summary": "We support the rollout, migration, and ongoing maintenance." }
+          ]
+        }
+      ],
+      "cta": {
+        "eyebrow": "Next step",
+        "title": "Bring order to your IT infrastructure",
+        "text": "We start with what has the greatest operational impact on your daily activity.",
+        "action": { "label": "Contact us", "routeId": "contact" }
+      }
+    }
   }
 }
