@@ -3,10 +3,12 @@
   "pageId": "microsoft-azure",
   "family": "service",
   "templateVariant": "azure-service",
-  "editorialStatus": "in_review",
+  "editorialStatus": "published",
   "assets": [
-    { "assetId": "service_azure", "role": "hero", "alt": "Infraestructura cloud Microsoft Azure", "licenseStatus": "pending" },
-    { "assetId": "azure_security", "role": "content", "alt": "Seguridad de entornos cloud", "licenseStatus": "pending" }
+    { "assetId": "service_azure", "role": "hero", "alt": "Infraestructura cloud Microsoft Azure", "licenseStatus": "approved" },
+    { "assetId": "azure_migration", "role": "content", "alt": "Migración ordenada de infraestructura a Azure", "licenseStatus": "approved" },
+    { "assetId": "azure_security", "role": "content", "alt": "Seguridad de entornos cloud", "licenseStatus": "approved" },
+    { "assetId": "azure_analysis", "role": "content", "alt": "Análisis de datos e inteligencia artificial en Azure", "licenseStatus": "approved" }
   ],
   "locales": {
     "es": {
@@ -30,11 +32,23 @@
           "title": "Una nube preparada para lo que viene",
           "intro": "Desde la migración hasta la operación diaria, construimos un entorno cloud que aporta claridad, seguridad y margen para crecer.",
           "items": [
-            { "title": "Infraestructura y migración a Azure", "summary": "Facilitamos tu paso a Azure con una migración ordenada, clara y hecha a tu medida." },
+            { "title": "Infraestructura y migración a Azure", "summary": "Facilitamos tu paso a Azure con una migración ordenada, clara y hecha a tu medida.", "assetId": "azure_migration" },
             { "title": "Seguridad y cumplimiento en Microsoft Azure", "summary": "Protege tu infraestructura cloud con soluciones de seguridad avanzadas.", "assetId": "azure_security" },
             { "title": "Modernización y desarrollo en la nube", "summary": "Aprovecha las capacidades de desarrollo y automatización de Azure." },
-            { "title": "Análisis de datos e inteligencia artificial", "summary": "Convierte los datos en información valiosa con Azure AI y Data Services." },
+            { "title": "Análisis de datos e inteligencia artificial", "summary": "Convierte los datos en información valiosa con Azure AI y Data Services.", "assetId": "azure_analysis" },
             { "title": "Administración y servicios gestionados en Azure", "summary": "Supervisamos y gestionamos tu entorno Azure para que funcione con estabilidad, control y sin interrupciones." }
+          ]
+        },
+        {
+          "id": "process",
+          "type": "process_steps",
+          "eyebrow": "Proceso cloud",
+          "title": "Adopción de Azure paso a paso",
+          "items": [
+            { "title": "Evaluar", "summary": "Analizamos la infraestructura actual, dependencias y viabilidad económica." },
+            { "title": "Diseñar", "summary": "Definimos la arquitectura objetivo, topología de red y políticas de seguridad." },
+            { "title": "Migrar", "summary": "Ejecutamos la migración por fases para minimizar cualquier impacto operativo." },
+            { "title": "Operar", "summary": "Supervisamos costes, rendimiento y seguridad de forma continua." }
           ]
         }
       ],
@@ -66,11 +80,23 @@
           "title": "A cloud prepared for what comes next",
           "intro": "From migration to day-to-day operations, we build a cloud environment that brings clarity, security and room to grow.",
           "items": [
-            { "title": "Infrastructure and migration to Azure", "summary": "We make your move to Azure orderly, clear and tailored to your needs." },
+            { "title": "Infrastructure and migration to Azure", "summary": "We make your move to Azure orderly, clear and tailored to your needs.", "assetId": "azure_migration" },
             { "title": "Security and compliance in Microsoft Azure", "summary": "Protect your cloud infrastructure with advanced security solutions.", "assetId": "azure_security" },
             { "title": "Modernization and cloud development", "summary": "Make the most of Azure development and automation capabilities." },
-            { "title": "Data analytics and artificial intelligence", "summary": "Turn data into valuable information with Azure AI and Data Services." },
+            { "title": "Data analytics and artificial intelligence", "summary": "Turn data into valuable information with Azure AI and Data Services.", "assetId": "azure_analysis" },
             { "title": "Azure administration and managed services", "summary": "We monitor and manage your Azure environment so it runs with stability, control and no interruptions." }
+          ]
+        },
+        {
+          "id": "process",
+          "type": "process_steps",
+          "eyebrow": "Cloud process",
+          "title": "Step-by-step Azure adoption",
+          "items": [
+            { "title": "Assess", "summary": "We analyze current infrastructure, dependencies and economic viability." },
+            { "title": "Design", "summary": "We define target architecture, network topology and security policies." },
+            { "title": "Migrate", "summary": "We execute phase-based migration to minimize any operational impact." },
+            { "title": "Operate", "summary": "We monitor costs, performance and security continuously." }
           ]
         }
       ],

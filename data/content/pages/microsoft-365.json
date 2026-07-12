@@ -3,10 +3,98 @@
   "pageId": "microsoft-365",
   "family": "m365-hub",
   "templateVariant": "hub",
-  "editorialStatus": "in_review",
-  "assets": [{ "assetId": "service_m365", "role": "hero", "alt": "Trabajo colaborativo con Microsoft 365", "licenseStatus": "pending" }, { "assetId": "m365_products", "role": "content", "alt": "Microsoft 365 y SharePoint", "licenseStatus": "pending" }, { "assetId": "m365_solutions", "role": "content", "alt": "Soluciones Microsoft 365", "licenseStatus": "pending" }],
+  "editorialStatus": "published",
+  "assets": [
+    { "assetId": "edificios_hero", "role": "hero", "alt": "Trabajo colaborativo con Microsoft 365", "licenseStatus": "approved" },
+    { "assetId": "m365_products", "role": "content", "alt": "Microsoft 365 y SharePoint", "licenseStatus": "approved" },
+    { "assetId": "m365_solutions", "role": "content", "alt": "Soluciones Microsoft 365", "licenseStatus": "approved" }
+  ],
   "locales": {
-    "es": { "path": "/microsoft-365", "seo": { "title": "Microsoft 365 | i3e Informática", "description": "Producto, soluciones y acompañamiento para trabajar con Microsoft 365 bajo control." }, "hero": { "eyebrow": "Microsoft 365", "title": "Trabajo conectado, gobernado y seguro", "intro": "Separamos producto, soluciones y soporte para que cada organización encuentre el siguiente paso adecuado.", "assetId": "service_m365", "cta": { "label": "Hablar sobre Microsoft 365", "routeId": "contact" } }, "blocks": [{ "id": "product-solution", "type": "split_media", "eyebrow": "Explora", "title": "Dos caminos, una base común", "intro": "Conoce la plataforma y después elige la solución que mejor encaja con tu forma de trabajar.", "assetId": "m365_products", "action": { "label": "Ver productos", "routeId": "products" } }, { "id": "capabilities", "type": "capability_grid", "eyebrow": "Capacidades", "title": "Más control sobre el trabajo digital", "items": [{ "title": "Productividad", "summary": "Herramientas conectadas para colaborar mejor." }, { "title": "Gobierno", "summary": "Permisos, ciclo de vida y administración comprensible." }, { "title": "Seguridad", "summary": "Protección integrada en usuarios, datos y dispositivos." }] }], "cta": { "eyebrow": "Siguiente paso", "title": "Aterriza Microsoft 365 en tu organización", "text": "Ordenamos producto, gobierno y acompañamiento desde el primer paso.", "action": { "label": "Contactar", "routeId": "contact" } } },
-    "en": { "path": "/en/microsoft-365", "seo": { "title": "Microsoft 365 | i3e IT", "description": "Product, solutions and support to run Microsoft 365 with control." }, "hero": { "eyebrow": "Microsoft 365", "title": "Connected, governed and secure work", "intro": "We separate product, solutions and support so each organization can find the right next step.", "assetId": "service_m365", "cta": { "label": "Discuss Microsoft 365", "routeId": "contact" } }, "blocks": [{ "id": "product-solution", "type": "split_media", "eyebrow": "Explore", "title": "Two paths, one common foundation", "intro": "Understand the platform, then choose the solution that fits how your team works.", "assetId": "m365_products", "action": { "label": "View products", "routeId": "products" } }, { "id": "capabilities", "type": "capability_grid", "eyebrow": "Capabilities", "title": "More control over digital work", "items": [{ "title": "Productivity", "summary": "Connected tools for better collaboration." }, { "title": "Governance", "summary": "Understandable permissions, lifecycle and administration." }, { "title": "Security", "summary": "Protection built into users, data and devices." }] }], "cta": { "eyebrow": "Next step", "title": "Make Microsoft 365 work for your organization", "text": "We organize product, governance and support from the first step.", "action": { "label": "Contact us", "routeId": "contact" } } }
+    "es": {
+      "path": "/microsoft-365",
+      "seo": {
+        "title": "Microsoft 365 | i3e Informática",
+        "description": "Producto, soluciones y acompañamiento para trabajar con Microsoft 365 bajo control."
+      },
+      "hero": {
+        "eyebrow": "Microsoft 365",
+        "title": "Trabajo conectado, gobernado y seguro",
+        "intro": "Separamos producto, soluciones y soporte para que cada organización encuentre el siguiente paso adecuado.",
+        "assetId": "edificios_hero",
+        "cta": { "label": "Hablar sobre Microsoft 365", "routeId": "contact" }
+      },
+      "blocks": [
+        {
+          "id": "product-solution",
+          "type": "split_media",
+          "eyebrow": "Explora",
+          "title": "Dos caminos, una base común",
+          "intro": "Conoce la plataforma y después elige la solución que mejor encaja con tu forma de trabajar.",
+          "assetId": "m365_products",
+          "action": { "label": "Ver productos", "routeId": "products" }
+        },
+        {
+          "id": "capabilities",
+          "type": "capability_grid",
+          "eyebrow": "Capacidades",
+          "title": "Más control sobre el trabajo digital",
+          "items": [
+            { "title": "Copilot", "summary": "Automatización y asistencia con criterios de seguridad.", "assetId": "m365_copilot" },
+            { "title": "SharePoint", "summary": "Información documental accesible, ordenada y gobernada.", "assetId": "m365_products" },
+            { "title": "Teams y colaboración", "summary": "Conectamos equipos y documentos sin perder contexto.", "assetId": "m365_solutions" },
+            { "title": "Seguridad y cumplimiento", "summary": "Protección integrada en usuarios, datos y dispositivos.", "assetId": "cyber_protection" }
+          ]
+        }
+      ],
+      "cta": {
+        "eyebrow": "Siguiente paso",
+        "title": "Aterriza Microsoft 365 en tu organización",
+        "text": "Ordenamos producto, gobierno y acompañamiento desde el primer paso.",
+        "action": { "label": "Contactar", "routeId": "contact" }
+      }
+    },
+    "en": {
+      "path": "/en/microsoft-365",
+      "seo": {
+        "title": "Microsoft 365 | i3e IT",
+        "description": "Product, solutions and support to run Microsoft 365 with control."
+      },
+      "hero": {
+        "eyebrow": "Microsoft 365",
+        "title": "Connected, governed and secure work",
+        "intro": "We separate product, solutions and support so each organization can find the right next step.",
+        "assetId": "edificios_hero",
+        "cta": { "label": "Discuss Microsoft 365", "routeId": "contact" }
+      },
+      "blocks": [
+        {
+          "id": "product-solution",
+          "type": "split_media",
+          "eyebrow": "Explore",
+          "title": "Two paths, one common foundation",
+          "intro": "Understand the platform, then choose the solution that fits how your team works.",
+          "assetId": "m365_products",
+          "action": { "label": "View products", "routeId": "products" }
+        },
+        {
+          "id": "capabilities",
+          "type": "capability_grid",
+          "eyebrow": "Capabilities",
+          "title": "More control over digital work",
+          "items": [
+            { "title": "Copilot", "summary": "Automation and assistance with security criteria.", "assetId": "m365_copilot" },
+            { "title": "SharePoint", "summary": "Document information that is accessible, ordered and governed.", "assetId": "m365_products" },
+            { "title": "Teams and collaboration", "summary": "We connect teams and documents without losing context.", "assetId": "m365_solutions" },
+            { "title": "Security and compliance", "summary": "Protection built into users, data and devices.", "assetId": "cyber_protection" }
+          ]
+        }
+      ],
+      "cta": {
+        "eyebrow": "Next step",
+        "title": "Make Microsoft 365 work for your organization",
+        "text": "We organize product, governance and support from the first step.",
+        "action": { "label": "Contact us", "routeId": "contact" }
+      }
+    }
   }
 }

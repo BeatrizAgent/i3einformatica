@@ -3,10 +3,98 @@
   "pageId": "microsoft-365-solutions",
   "family": "m365-detail",
   "templateVariant": "solution-detail",
-  "editorialStatus": "in_review",
-  "assets": [{ "assetId": "m365_solutions", "role": "hero", "alt": "Soluciones Microsoft 365", "licenseStatus": "pending" }],
+  "editorialStatus": "published",
+  "assets": [
+    { "assetId": "m365_solutions", "role": "hero", "alt": "Soluciones Microsoft 365", "licenseStatus": "approved" }
+  ],
   "locales": {
-    "es": { "path": "/microsoft-365/soluciones", "seo": { "title": "Soluciones Microsoft 365 | i3e Informática", "description": "Soluciones Microsoft 365 adaptadas a colaboración, gobierno y seguridad." }, "hero": { "eyebrow": "Soluciones Microsoft 365", "title": "De la herramienta al modo de trabajar", "intro": "Acompañamos la adopción, la seguridad y la administración para que el cambio sea útil y sostenible.", "assetId": "m365_solutions", "cta": { "label": "Definir una solución", "routeId": "contact" } }, "blocks": [{ "id": "solutions", "type": "outcome_grid", "eyebrow": "Soluciones", "title": "Microsoft 365 aplicado a retos reales", "items": [{ "title": "Colaborar", "summary": "Conectamos equipos y documentos sin perder contexto." }, { "title": "Proteger", "summary": "Integramos seguridad y gobierno desde el diseño." }, { "title": "Adoptar", "summary": "Acompañamos el cambio para que se convierta en hábito." }] }, { "id": "process", "type": "process_steps", "eyebrow": "Acompañamiento", "title": "Un cambio que tu equipo puede asumir", "items": [{ "title": "Entender", "summary": "Aclaramos necesidades y puntos de fricción." }, { "title": "Configurar", "summary": "Aterrizamos la solución en el entorno real." }, { "title": "Mejorar", "summary": "Revisamos uso, seguridad y próximos pasos." }] }], "cta": { "eyebrow": "Siguiente paso", "title": "Convierte Microsoft 365 en una ventaja operativa", "text": "Diseñamos una solución con alcance claro y acompañamiento cercano.", "action": { "label": "Contactar", "routeId": "contact" } } },
-    "en": { "path": "/en/microsoft-365/microsoft-365-solutions", "seo": { "title": "Microsoft 365 solutions | i3e IT", "description": "Microsoft 365 solutions tailored to collaboration, governance and security." }, "hero": { "eyebrow": "Microsoft 365 solutions", "title": "From tool to way of working", "intro": "We support adoption, security and administration so change becomes useful and sustainable.", "assetId": "m365_solutions", "cta": { "label": "Define a solution", "routeId": "contact" } }, "blocks": [{ "id": "solutions", "type": "outcome_grid", "eyebrow": "Solutions", "title": "Microsoft 365 applied to real challenges", "items": [{ "title": "Collaborate", "summary": "We connect teams and documents without losing context." }, { "title": "Protect", "summary": "We build security and governance into the design." }, { "title": "Adopt", "summary": "We support change until it becomes a habit." }] }, { "id": "process", "type": "process_steps", "eyebrow": "Support", "title": "A change your team can own", "items": [{ "title": "Understand", "summary": "We clarify needs and friction points." }, { "title": "Configure", "summary": "We bring the solution into the real environment." }, { "title": "Improve", "summary": "We review usage, security and next steps." }] }], "cta": { "eyebrow": "Next step", "title": "Turn Microsoft 365 into an operational advantage", "text": "We design a solution with clear scope and close support.", "action": { "label": "Contact us", "routeId": "contact" } } }
+    "es": {
+      "path": "/microsoft-365/soluciones",
+      "seo": {
+        "title": "Soluciones Microsoft 365 | i3e Informática",
+        "description": "Soluciones Microsoft 365 adaptadas a colaboración, gobierno y seguridad."
+      },
+      "hero": {
+        "eyebrow": "Soluciones Microsoft 365",
+        "title": "De la herramienta al modo de trabajar",
+        "intro": "Acompañamos la adopción, la seguridad y la administración para que el cambio sea útil y sostenible.",
+        "assetId": "m365_solutions",
+        "cta": { "label": "Definir una solución", "routeId": "contact" }
+      },
+      "blocks": [
+        {
+          "id": "solutions",
+          "type": "outcome_grid",
+          "eyebrow": "Soluciones",
+          "title": "Microsoft 365 aplicado a retos reales",
+          "items": [
+            { "title": "Seguridad y cumplimiento Microsoft 365", "summary": "Alineamos identidades, datos y accesos con directivas de cumplimiento y protección de datos." },
+            { "title": "Backup y recuperación Microsoft 365", "summary": "Garantizamos copias de seguridad consistentes en la nube para correos, SharePoint y Teams ante borrados accidentales." },
+            { "title": "Consultoría y formación Microsoft 365", "summary": "Capacitamos a tu equipo técnico en administración avanzada y acompañamos a los usuarios en buenas prácticas." }
+          ]
+        },
+        {
+          "id": "process",
+          "type": "process_steps",
+          "eyebrow": "Acompañamiento",
+          "title": "Un cambio que tu equipo puede asumir",
+          "items": [
+            { "title": "Entender", "summary": "Aclaramos necesidades y puntos de fricción." },
+            { "title": "Configurar", "summary": "Aterrizamos la solución en el entorno real." },
+            { "title": "Mejorar", "summary": "Revisamos uso, seguridad y próximos pasos." }
+          ]
+        }
+      ],
+      "cta": {
+        "eyebrow": "Siguiente paso",
+        "title": "Convierte Microsoft 365 en una ventaja operativa",
+        "text": "Diseñamos una solución con alcance claro y acompañamiento cercano.",
+        "action": { "label": "Contactar", "routeId": "contact" }
+      }
+    },
+    "en": {
+      "path": "/en/microsoft-365/microsoft-365-solutions",
+      "seo": {
+        "title": "Microsoft 365 Solutions | i3e IT",
+        "description": "Microsoft 365 solutions tailored to collaboration, governance and security."
+      },
+      "hero": {
+        "eyebrow": "Microsoft 365 solutions",
+        "title": "From tool to way of working",
+        "intro": "We support adoption, security and administration so change becomes useful and sustainable.",
+        "assetId": "m365_solutions",
+        "cta": { "label": "Define a solution", "routeId": "contact" }
+      },
+      "blocks": [
+        {
+          "id": "solutions",
+          "type": "outcome_grid",
+          "eyebrow": "Solutions",
+          "title": "Microsoft 365 applied to real challenges",
+          "items": [
+            { "title": "Microsoft 365 security and compliance", "summary": "We align identities, data and access with compliance and data protection policies." },
+            { "title": "Microsoft 365 backup and recovery", "summary": "We guarantee consistent cloud backups for emails, SharePoint and Teams against accidental deletion." },
+            { "title": "Microsoft 365 consulting and training", "summary": "We train your technical team in advanced administration and support users on best practices." }
+          ]
+        },
+        {
+          "id": "process",
+          "type": "process_steps",
+          "eyebrow": "Support",
+          "title": "A change your team can own",
+          "items": [
+            { "title": "Understand", "summary": "We clarify needs and friction points." },
+            { "title": "Configure", "summary": "We bring the solution into the real environment." },
+            { "title": "Improve", "summary": "We review usage, security and next steps." }
+          ]
+        }
+      ],
+      "cta": {
+        "eyebrow": "Next step",
+        "title": "Turn Microsoft 365 into an operational advantage",
+        "text": "We design a solution with clear scope and close support.",
+        "action": { "label": "Contact us", "routeId": "contact" }
+      }
+    }
   }
 }

@@ -1821,3 +1821,175 @@ tbody th small { font-weight: 400; }
     justify-content: center;
   }
 }
+
+/* Technology Band and custom page styles */
+.tech-band-section {
+  padding-block: 4rem;
+  background: rgba(11, 17, 62, 0.45);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.tech-band-title {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 2.5rem;
+}
+.tech-band-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(2rem, 5vw, 4rem);
+}
+.tech-band-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0.7;
+  transition: opacity 0.25s ease;
+}
+.tech-band-item:hover {
+  opacity: 1;
+}
+.tech-band-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: brightness(0) invert(1);
+}
+.tech-band-name {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Breadcrumbs accessibility */
+.breadcrumbs {
+  padding: 1.5rem 0 0;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.breadcrumbs a {
+  color: var(--action-blue);
+}
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+.breadcrumbs span {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Custom styles for detail pages and alternate sections */
+.detail-capabilities-section {
+  padding-block: 5rem;
+}
+.detail-alternate-layout {
+  display: grid;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+.detail-alternate-item {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.detail-alternate-item:nth-child(even) {
+  direction: rtl;
+}
+.detail-alternate-item:nth-child(even) > * {
+  direction: ltr;
+}
+.detail-alternate-media {
+  position: relative;
+  aspect-ratio: 16/10;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.detail-alternate-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.detail-alternate-copy h3 {
+  font-size: 1.75rem;
+  color: var(--nav-dark);
+  margin: 0;
+}
+.detail-alternate-copy p {
+  color: #4c5665;
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+/* Index layout for details and cybersecurity */
+.anchored-index {
+  position: sticky;
+  top: 6rem;
+  padding: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #dfe4ea;
+  border-radius: var(--radius);
+  box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.02);
+}
+.anchored-index-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--nav-dark);
+  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+}
+.anchored-index-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+.anchored-index-list a {
+  color: #4c5665;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+.anchored-index-list a:hover {
+  color: var(--inner-accent);
+}
+
+@media (max-width: 900px) {
+  .detail-alternate-item {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .detail-alternate-item:nth-child(even) {
+    direction: ltr;
+  }
+}
+
+.cyber-area-section {
+  position: relative;
+}
+.cyber-area-num {
+  position: absolute;
+  top: -1.5rem;
+  right: 0;
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  font-family: var(--font-title);
+  color: rgba(11, 17, 62, 0.03);
+  line-height: 1;
+  pointer-events: none;
+}
+.cyber-cap-num {
+  color: var(--inner-accent);
+}
