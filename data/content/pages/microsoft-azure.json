@@ -2,11 +2,84 @@
   "schemaVersion": 2,
   "pageId": "microsoft-azure",
   "family": "service",
-  "templateVariant": "outcome-led",
+  "templateVariant": "azure-service",
   "editorialStatus": "in_review",
-  "assets": [{ "assetId": "service_azure", "role": "hero", "alt": "Infraestructura cloud Microsoft Azure", "licenseStatus": "pending" }, { "assetId": "azure_security", "role": "content", "alt": "Seguridad de entornos cloud", "licenseStatus": "pending" }],
+  "assets": [
+    { "assetId": "service_azure", "role": "hero", "alt": "Infraestructura cloud Microsoft Azure", "licenseStatus": "pending" },
+    { "assetId": "azure_security", "role": "content", "alt": "Seguridad de entornos cloud", "licenseStatus": "pending" }
+  ],
   "locales": {
-    "es": { "path": "/microsoft-azure", "seo": { "title": "Microsoft Azure | i3e Informática", "description": "Entornos Azure gobernados, escalables y ajustados a tu operativa." }, "hero": { "eyebrow": "Microsoft Azure", "title": "Cloud preparado para crecer con control", "intro": "Diseñamos, migramos y gestionamos Azure con foco en rendimiento, seguridad y costes previsibles.", "assetId": "service_azure", "cta": { "label": "Hablar sobre Azure", "routeId": "contact" } }, "blocks": [{ "id": "outcomes", "type": "outcome_grid", "eyebrow": "Resultados", "title": "Más capacidad sin perder gobierno", "items": [{ "title": "Escalar", "summary": "Acompañamos el crecimiento con arquitectura preparada para nuevas cargas." }, { "title": "Gobernar", "summary": "Ordenamos identidades, permisos y políticas para mantener visibilidad." }, { "title": "Optimizar", "summary": "Ajustamos consumo y operación para decidir mejor sobre el coste." }] }, { "id": "capabilities", "type": "capability_grid", "eyebrow": "Capacidades", "title": "Un entorno cloud que encaja con tu realidad", "items": [{ "title": "Migración", "summary": "Planificación por fases, dependencias y continuidad." }, { "title": "Seguridad", "summary": "Controles cloud alineados con tus riesgos." , "assetId": "azure_security" }, { "title": "Operación", "summary": "Supervisión y soporte para mantener estabilidad." }] }], "cta": { "eyebrow": "Siguiente paso", "title": "Define una evolución cloud viable", "text": "Ordenamos el punto de partida y el siguiente movimiento.", "action": { "label": "Contactar", "routeId": "contact" } } },
-    "en": { "path": "/en/microsoft-azure", "seo": { "title": "Microsoft Azure | i3e IT", "description": "Governed, scalable Azure environments tailored to your operations." }, "hero": { "eyebrow": "Microsoft Azure", "title": "Cloud prepared to grow with control", "intro": "We design, migrate and manage Azure with focus on performance, security and predictable costs.", "assetId": "service_azure", "cta": { "label": "Discuss Azure", "routeId": "contact" } }, "blocks": [{ "id": "outcomes", "type": "outcome_grid", "eyebrow": "Outcomes", "title": "More capacity without losing governance", "items": [{ "title": "Scale", "summary": "We support growth with architecture ready for new workloads." }, { "title": "Govern", "summary": "We organize identities, permissions and policies for visibility." }, { "title": "Optimize", "summary": "We tune consumption and operations to make cost decisions clearer." }] }, { "id": "capabilities", "type": "capability_grid", "eyebrow": "Capabilities", "title": "A cloud environment that fits your reality", "items": [{ "title": "Migration", "summary": "Phased planning around dependencies and continuity." }, { "title": "Security", "summary": "Cloud controls aligned with your risks.", "assetId": "azure_security" }, { "title": "Operations", "summary": "Monitoring and support to maintain stability." }] }], "cta": { "eyebrow": "Next step", "title": "Define a viable cloud evolution", "text": "We organize your starting point and the next move.", "action": { "label": "Contact us", "routeId": "contact" } } }
+    "es": {
+      "path": "/microsoft-azure",
+      "seo": {
+        "title": "Microsoft Azure | i3e Informática",
+        "description": "Transformamos tu infraestructura en un entorno Azure flexible, bien gestionado y conectado con las necesidades reales de tu negocio o institución."
+      },
+      "hero": {
+        "eyebrow": "Microsoft Azure",
+        "title": "Microsoft Azure",
+        "intro": "Transformamos tu infraestructura en un entorno Azure flexible, bien gestionado y conectado con las necesidades reales de tu negocio o institución.",
+        "assetId": "service_azure",
+        "cta": { "label": "Solicitar información", "routeId": "contact" }
+      },
+      "blocks": [
+        {
+          "id": "capabilities",
+          "type": "capability_grid",
+          "eyebrow": "Capacidades Azure",
+          "title": "Una nube preparada para lo que viene",
+          "intro": "Desde la migración hasta la operación diaria, construimos un entorno cloud que aporta claridad, seguridad y margen para crecer.",
+          "items": [
+            { "title": "Infraestructura y migración a Azure", "summary": "Facilitamos tu paso a Azure con una migración ordenada, clara y hecha a tu medida." },
+            { "title": "Seguridad y cumplimiento en Microsoft Azure", "summary": "Protege tu infraestructura cloud con soluciones de seguridad avanzadas.", "assetId": "azure_security" },
+            { "title": "Modernización y desarrollo en la nube", "summary": "Aprovecha las capacidades de desarrollo y automatización de Azure." },
+            { "title": "Análisis de datos e inteligencia artificial", "summary": "Convierte los datos en información valiosa con Azure AI y Data Services." },
+            { "title": "Administración y servicios gestionados en Azure", "summary": "Supervisamos y gestionamos tu entorno Azure para que funcione con estabilidad, control y sin interrupciones." }
+          ]
+        }
+      ],
+      "cta": {
+        "eyebrow": "Siguiente paso",
+        "title": "Convierte Azure en una ventaja operativa",
+        "text": "Revisamos tu punto de partida y definimos una evolución cloud viable.",
+        "action": { "label": "Contactar", "routeId": "contact" }
+      }
+    },
+    "en": {
+      "path": "/en/microsoft-azure",
+      "seo": {
+        "title": "Microsoft Azure | i3e IT",
+        "description": "We transform your infrastructure into a flexible, well-managed Azure environment connected to the real needs of your business or institution."
+      },
+      "hero": {
+        "eyebrow": "Microsoft Azure",
+        "title": "Microsoft Azure",
+        "intro": "We transform your infrastructure into a flexible, well-managed Azure environment connected to the real needs of your business or institution.",
+        "assetId": "service_azure",
+        "cta": { "label": "Request information", "routeId": "contact" }
+      },
+      "blocks": [
+        {
+          "id": "capabilities",
+          "type": "capability_grid",
+          "eyebrow": "Azure capabilities",
+          "title": "A cloud prepared for what comes next",
+          "intro": "From migration to day-to-day operations, we build a cloud environment that brings clarity, security and room to grow.",
+          "items": [
+            { "title": "Infrastructure and migration to Azure", "summary": "We make your move to Azure orderly, clear and tailored to your needs." },
+            { "title": "Security and compliance in Microsoft Azure", "summary": "Protect your cloud infrastructure with advanced security solutions.", "assetId": "azure_security" },
+            { "title": "Modernization and cloud development", "summary": "Make the most of Azure development and automation capabilities." },
+            { "title": "Data analytics and artificial intelligence", "summary": "Turn data into valuable information with Azure AI and Data Services." },
+            { "title": "Azure administration and managed services", "summary": "We monitor and manage your Azure environment so it runs with stability, control and no interruptions." }
+          ]
+        }
+      ],
+      "cta": {
+        "eyebrow": "Next step",
+        "title": "Turn Azure into an operational advantage",
+        "text": "We review your starting point and define a viable cloud evolution.",
+        "action": { "label": "Contact us", "routeId": "contact" }
+      }
+    }
   }
 }

@@ -1,3 +1,4 @@
+import { assetPath } from "@/lib/public-path";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -15,18 +16,18 @@ type HeroNetworkService = {
 
 export const heroNetworkServices: Record<HeroLocale, readonly HeroNetworkService[]> = {
   es: [
-    { id: "m365", label: "Microsoft 365", detail: "Trabajo conectado", href: "/microsoft-365", icon: "/assets/i3e/arcticons-microsoft-365-2.svg" },
-    { id: "cyber", label: "Ciberseguridad", detail: "Riesgos bajo control", href: "/ciberseguridad", icon: "/assets/i3e/arcticons-security-2.svg" },
-    { id: "azure", label: "Microsoft Azure", detail: "Cloud escalable", href: "/microsoft-azure", icon: "/assets/i3e/arcticons-microsoft-azure-2.svg" },
-    { id: "infra", label: "Infraestructura IT", detail: "Operaci\u00f3n estable", href: "/infraestructuras-it", icon: "/assets/i3e/arcticons-serverbox-2.svg" },
-    { id: "compliance", label: "Compliance y certificaciones", detail: "Cumplimiento continuo", href: "/compliance-y-certificaciones", icon: "/assets/i3e/cert-2.svg" },
+    { id: "m365", label: "Microsoft 365", detail: "Trabajo conectado", href: "/microsoft-365", icon: assetPath("/assets/i3e/arcticons-microsoft-365-2.svg") },
+    { id: "cyber", label: "Ciberseguridad", detail: "Riesgos bajo control", href: "/ciberseguridad", icon: assetPath("/assets/i3e/arcticons-security-2.svg") },
+    { id: "azure", label: "Microsoft Azure", detail: "Cloud escalable", href: "/microsoft-azure", icon: assetPath("/assets/i3e/arcticons-microsoft-azure-2.svg") },
+    { id: "infra", label: "Infraestructura IT", detail: "Operaci\u00f3n estable", href: "/infraestructuras-it", icon: assetPath("/assets/i3e/arcticons-serverbox-2.svg") },
+    { id: "compliance", label: "Compliance y certificaciones", detail: "Cumplimiento continuo", href: "/compliance-y-certificaciones", icon: assetPath("/assets/i3e/cert-2.svg") },
   ],
   en: [
-    { id: "m365", label: "Microsoft 365", detail: "Connected work", href: "/en/microsoft-365", icon: "/assets/i3e/arcticons-microsoft-365-2.svg" },
-    { id: "cyber", label: "Cybersecurity", detail: "Risks under control", href: "/en/cybersecurity", icon: "/assets/i3e/arcticons-security-2.svg" },
-    { id: "azure", label: "Microsoft Azure", detail: "Scalable cloud", href: "/en/microsoft-azure", icon: "/assets/i3e/arcticons-microsoft-azure-2.svg" },
-    { id: "infra", label: "IT infrastructure", detail: "Stable operations", href: "/en/it-infrastructure", icon: "/assets/i3e/arcticons-serverbox-2.svg" },
-    { id: "compliance", label: "Compliance & certifications", detail: "Continuous compliance", href: "/en/compliance-and-certifications", icon: "/assets/i3e/cert-2.svg" },
+    { id: "m365", label: "Microsoft 365", detail: "Connected work", href: "/en/microsoft-365", icon: assetPath("/assets/i3e/arcticons-microsoft-365-2.svg") },
+    { id: "cyber", label: "Cybersecurity", detail: "Risks under control", href: "/en/cybersecurity", icon: assetPath("/assets/i3e/arcticons-security-2.svg") },
+    { id: "azure", label: "Microsoft Azure", detail: "Scalable cloud", href: "/en/microsoft-azure", icon: assetPath("/assets/i3e/arcticons-microsoft-azure-2.svg") },
+    { id: "infra", label: "IT infrastructure", detail: "Stable operations", href: "/en/it-infrastructure", icon: assetPath("/assets/i3e/arcticons-serverbox-2.svg") },
+    { id: "compliance", label: "Compliance & certifications", detail: "Continuous compliance", href: "/en/compliance-and-certifications", icon: assetPath("/assets/i3e/cert-2.svg") },
   ],
 };
 
@@ -65,7 +66,7 @@ export function HeroNetwork({ locale }: { locale: HeroLocale }) {
         <circle className="hero-network-hub-ring" cx="360" cy="334" r="48" />
       </svg>
       <div className="hero-network-hub">
-        <Image className="hero-network-logo" src="/assets/i3e/logo-i3e-25-300x198.webp" alt="i3e" width={92} height={62} sizes="92px" priority />
+        <Image className="hero-network-logo" src={assetPath("/assets/i3e/logo-i3e-25-300x198.webp")} alt="i3e" width={92} height={62} sizes="92px" priority />
         <small>{copy.description}</small>
       </div>
       {services.map((service) => (

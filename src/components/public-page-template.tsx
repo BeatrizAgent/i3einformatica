@@ -6,6 +6,7 @@ import { M365Hub } from "@/components/landing/m365-hub";
 import { PageHero } from "@/components/landing/page-hero";
 import { ServicesShowcase } from "@/components/landing/services-showcase";
 import { ApproachBand } from "@/components/landing/approach-band";
+import { AzurePage } from "@/components/landing/azure-page";
 import { CasesGrid } from "@/components/landing/cases-grid";
 import { ClientStrip } from "@/components/landing/client-strip";
 import { ExperienceBand } from "@/components/landing/experience-band";
@@ -71,8 +72,9 @@ function CasesTemplate({ page }: { page: PageRecord }) {
 }
 
 export function PublicPageTemplate({ page }: { page: PageRecord }) {
-  const family = page.id === "home" ? "home" : page.id === "m365" || page.id === "microsoft-365" ? "m365-hub" : page.id === "cases" || page.id === "success-stories" ? "cases" : "curated";
+  const family = page.id === "home" ? "home" : page.id === "microsoft-azure" ? "azure" : page.id === "m365" || page.id === "microsoft-365" ? "m365-hub" : page.id === "cases" || page.id === "success-stories" ? "cases" : "curated";
   if (family === "home") return <HomeTemplate page={page} />;
+  if (family === "azure") return <AzurePage page={page} />;
   if (family === "m365-hub") return <M365HubTemplate page={page} />;
   if (family === "cases") return <CasesTemplate page={page} />;
   return <CuratedTemplate page={page} />;

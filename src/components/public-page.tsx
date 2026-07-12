@@ -6,7 +6,7 @@ import type { PageRecord } from "@/lib/content/repository";
 export function PublicPage({ page, preview = false }: { page: PageRecord; preview?: boolean }) {
   const isHome = page.id === "home";
   return (
-    <div className={isHome ? "public-home" : "public-inner"}>
+    <div className={isHome ? "public-home" : `public-inner ${page.id === "cyber" || page.id === "cybersecurity" ? "page-cybersecurity" : ""}`}>
       {preview && <div className="preview-bar" role="status">Vista previa · contenido no indexable</div>}
       <SiteHeader page={page} />
       <main id="content" tabIndex={-1}><LandingMotionProvider><PublicPageTemplate page={page} /></LandingMotionProvider></main>

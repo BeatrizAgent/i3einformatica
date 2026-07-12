@@ -1,3 +1,4 @@
+import { assetPath } from "@/lib/public-path";
 import type { SiteVisual } from "@/lib/site-assets";
 
 export type TemplateFamily = "home" | "service" | "m365-hub" | "m365-detail" | "cases" | "company" | "contact" | "jobs" | "legal";
@@ -83,48 +84,48 @@ export const templateCopy = {
 
 export const pageMedia: Partial<Record<string, SiteVisual[]>> = {
   cyber: [
-    { src: "/assets/i3e/proteccion-2-min.webp", alt: "Protección ante amenazas digitales" },
-    { src: "/assets/i3e/evaluacion-min.webp", alt: "Evaluación de riesgos de ciberseguridad" },
-    { src: "/assets/i3e/planificacion-min.webp", alt: "Planificación de ciberseguridad" },
+    { src: assetPath("/assets/i3e/proteccion-2-min.webp"), alt: "Protección ante amenazas digitales" },
+    { src: assetPath("/assets/i3e/evaluacion-min.webp"), alt: "Evaluación de riesgos de ciberseguridad" },
+    { src: assetPath("/assets/i3e/planificacion-min.webp"), alt: "Planificación de ciberseguridad" },
   ],
   azure: [
-    { src: "/assets/i3e/infraestructura-migracion-min.webp", alt: "Migración de infraestructura a Microsoft Azure" },
-    { src: "/assets/i3e/seguridad-min.webp", alt: "Seguridad de entornos cloud" },
-    { src: "/assets/i3e/microsoft-azure-min.webp", alt: "Servicios Microsoft Azure" },
+    { src: assetPath("/assets/i3e/infraestructura-migracion-min.webp"), alt: "Migración de infraestructura a Microsoft Azure" },
+    { src: assetPath("/assets/i3e/seguridad-min.webp"), alt: "Seguridad de entornos cloud" },
+    { src: assetPath("/assets/i3e/microsoft-azure-min.webp"), alt: "Servicios Microsoft Azure" },
   ],
   infra: [
-    { src: "/assets/i3e/instalacion-min.webp", alt: "Instalación de infraestructura IT" },
-    { src: "/assets/i3e/soporte-min.webp", alt: "Soporte de infraestructura IT" },
-    { src: "/assets/i3e/insfraestructuras-it-min.webp", alt: "Infraestructuras IT empresariales" },
+    { src: assetPath("/assets/i3e/instalacion-min.webp"), alt: "Instalación de infraestructura IT" },
+    { src: assetPath("/assets/i3e/soporte-min.webp"), alt: "Soporte de infraestructura IT" },
+    { src: assetPath("/assets/i3e/insfraestructuras-it-min.webp"), alt: "Infraestructuras IT empresariales" },
   ],
   compliance: [
-    { src: "/assets/i3e/compliance-min.webp", alt: "Compliance tecnológico" },
-    { src: "/assets/i3e/implementacion-iso-min.webp", alt: "Implementación de ISO 27001" },
-    { src: "/assets/i3e/implementacion-normativas-min.webp", alt: "Implementación de normativas" },
+    { src: assetPath("/assets/i3e/compliance-min.webp"), alt: "Compliance tecnológico" },
+    { src: assetPath("/assets/i3e/implementacion-iso-min.webp"), alt: "Implementación de ISO 27001" },
+    { src: assetPath("/assets/i3e/implementacion-normativas-min.webp"), alt: "Implementación de normativas" },
   ],
   products: [
-    { src: "/assets/i3e/migracion-min.webp", alt: "Migración a Microsoft 365" },
-    { src: "/assets/i3e/migracion-sharepoint-min.webp", alt: "Microsoft 365 y SharePoint" },
-    { src: "/assets/i3e/copilot-min.webp", alt: "Microsoft Copilot" },
+    { src: assetPath("/assets/i3e/migracion-min.webp"), alt: "Migración a Microsoft 365" },
+    { src: assetPath("/assets/i3e/migracion-sharepoint-min.webp"), alt: "Microsoft 365 y SharePoint" },
+    { src: assetPath("/assets/i3e/copilot-min.webp"), alt: "Microsoft Copilot" },
   ],
   solutions: [
-    { src: "/assets/i3e/soluciones-1024x768.webp", alt: "Soluciones Microsoft 365" },
-    { src: "/assets/i3e/migracion-min.webp", alt: "Migración a Microsoft 365" },
+    { src: assetPath("/assets/i3e/soluciones-1024x768.webp"), alt: "Soluciones Microsoft 365" },
+    { src: assetPath("/assets/i3e/migracion-min.webp"), alt: "Migración a Microsoft 365" },
   ],
-  company: [{ src: "/assets/i3e/10.webp", alt: "Equipo de i3e Informática" }],
-  jobs: [{ src: "/assets/i3e/cultura-organizacional-empresarial.webp", alt: "Cultura organizacional de i3e" }],
+  company: [{ src: assetPath("/assets/i3e/10.webp"), alt: "Equipo de i3e Informática" }],
+  jobs: [{ src: assetPath("/assets/i3e/cultura-organizacional-empresarial.webp"), alt: "Cultura organizacional de i3e" }],
   contact: [
-    { src: "/assets/i3e/contacto-min.webp", alt: "Contacto con i3e Informática" },
-    { src: "/assets/i3e/hospi3.webp", alt: "Oficina i3e L'Hospitalet" },
-    { src: "/assets/i3e/madrid.webp", alt: "Oficina i3e Madrid" },
-    { src: "/assets/i3e/mataro2.webp", alt: "Oficina i3e Mataró" },
-    { src: "/assets/i3e/celra1-1024x1024.webp", alt: "Oficina i3e Celrà" },
+    { src: assetPath("/assets/i3e/contacto-min.webp"), alt: "Contacto con i3e Informática" },
+    { src: assetPath("/assets/i3e/hospi3.webp"), alt: "Oficina i3e L'Hospitalet" },
+    { src: assetPath("/assets/i3e/madrid.webp"), alt: "Oficina i3e Madrid" },
+    { src: assetPath("/assets/i3e/mataro2.webp"), alt: "Oficina i3e Mataró" },
+    { src: assetPath("/assets/i3e/celra1-1024x1024.webp"), alt: "Oficina i3e Celrà" },
   ],
 };
 
 export const m365HubCards: { product: TemplateCard; solutions: TemplateCard } = {
   product: {
-    src: "/assets/i3e/migracion-min.webp",
+    src: assetPath("/assets/i3e/migracion-min.webp"),
     alt: "Migración a Microsoft 365",
     title: { es: "Producto", en: "Product" },
     text: { es: "Microsoft 365 es una plataforma cloud que permite trabajar de forma coordinada, segura y eficiente. Configuramos y gestionamos cada entorno para responder a la gobernanza, seguridad documental y automatización de cada organización.", en: "Microsoft 365 is a cloud platform that enables coordinated, secure and efficient work. We configure and manage each environment around governance, document security and automation." },
@@ -132,7 +133,7 @@ export const m365HubCards: { product: TemplateCard; solutions: TemplateCard } = 
     href: { es: "/microsoft-365/producto", en: "/en/microsoft-365/microsoft-365-products" },
   },
   solutions: {
-    src: "/assets/i3e/soluciones-1024x768.webp",
+    src: assetPath("/assets/i3e/soluciones-1024x768.webp"),
     alt: "Soluciones Microsoft 365",
     title: { es: "Soluciones", en: "Solutions" },
     text: { es: "Configuramos, acompañamos y gestionamos tu entorno Microsoft 365 desde el inicio: permisos, seguridad y administración clara para escalar sin fricciones.", en: "We configure, support and manage your Microsoft 365 environment from the start: permissions, security and clear administration to scale without friction." },
@@ -142,21 +143,21 @@ export const m365HubCards: { product: TemplateCard; solutions: TemplateCard } = 
 };
 
 export const m365HubItems: TemplateCard[] = [
-  { src: "/assets/i3e/migracion-min.webp", alt: "Microsoft 365", title: { es: "Microsoft 365", en: "Microsoft 365" }, href: { es: "/microsoft-365/producto", en: "/en/microsoft-365/microsoft-365-products" } },
-  { src: "/assets/i3e/copilot-min.webp", alt: "Microsoft Copilot", title: { es: "Copilot", en: "Copilot" }, href: { es: "/microsoft-365/producto", en: "/en/microsoft-365/microsoft-365-products" } },
-  { src: "/assets/i3e/migracion-sharepoint-min.webp", alt: "Microsoft SharePoint", title: { es: "SharePoint", en: "SharePoint" }, href: { es: "/microsoft-365/producto", en: "/en/microsoft-365/microsoft-365-products" } },
-  { src: "/assets/i3e/soluciones-1024x768.webp", alt: "Teams y colaboración", title: { es: "Teams y colaboración", en: "Teams and collaboration" }, href: { es: "/microsoft-365/soluciones", en: "/en/microsoft-365/microsoft-365-solutions" } },
+  { src: assetPath("/assets/i3e/migracion-min.webp"), alt: "Microsoft 365", title: { es: "Microsoft 365", en: "Microsoft 365" }, href: { es: "/microsoft-365/producto", en: "/en/microsoft-365/microsoft-365-products" } },
+  { src: assetPath("/assets/i3e/copilot-min.webp"), alt: "Microsoft Copilot", title: { es: "Copilot", en: "Copilot" }, href: { es: "/microsoft-365/producto", en: "/en/microsoft-365/microsoft-365-products" } },
+  { src: assetPath("/assets/i3e/migracion-sharepoint-min.webp"), alt: "Microsoft SharePoint", title: { es: "SharePoint", en: "SharePoint" }, href: { es: "/microsoft-365/producto", en: "/en/microsoft-365/microsoft-365-products" } },
+  { src: assetPath("/assets/i3e/soluciones-1024x768.webp"), alt: "Teams y colaboración", title: { es: "Teams y colaboración", en: "Teams and collaboration" }, href: { es: "/microsoft-365/soluciones", en: "/en/microsoft-365/microsoft-365-solutions" } },
 ];
 
 export const caseCards: TemplateCard[] = [
-  { src: "/assets/i3e/toyota.webp", alt: "Caso de éxito Toyota Starbaix", title: { es: "Toyota Starbaix", en: "Toyota Starbaix" }, href: { es: "/casos-de-exito", en: "/en/success-stories" } },
-  { src: "/assets/i3e/adm-publica.webp", alt: "Caso de éxito de administración pública", title: { es: "Administración pública", en: "Public administration" }, href: { es: "/casos-de-exito", en: "/en/success-stories" } },
-  { src: "/assets/i3e/entidad-bancaria.webp", alt: "Caso de éxito de entidad bancaria", title: { es: "Gran entidad bancaria", en: "Major banking institution" }, href: { es: "/casos-de-exito", en: "/en/success-stories" } },
+  { src: assetPath("/assets/i3e/toyota.webp"), alt: "Caso de éxito Toyota Starbaix", title: { es: "Toyota Starbaix", en: "Toyota Starbaix" }, href: { es: "/casos-de-exito", en: "/en/success-stories" } },
+  { src: assetPath("/assets/i3e/adm-publica.webp"), alt: "Caso de éxito de administración pública", title: { es: "Administración pública", en: "Public administration" }, href: { es: "/casos-de-exito", en: "/en/success-stories" } },
+  { src: assetPath("/assets/i3e/entidad-bancaria.webp"), alt: "Caso de éxito de entidad bancaria", title: { es: "Gran entidad bancaria", en: "Major banking institution" }, href: { es: "/casos-de-exito", en: "/en/success-stories" } },
 ];
 
 export const contactLocations: TemplateCard[] = [
-  { src: "/assets/i3e/hospi3.webp", alt: "Oficina i3e L'Hospitalet", title: { es: "L'Hospitalet de Llobregat", en: "L'Hospitalet de Llobregat" }, text: { es: "C/ Crom 35-37, 5º · 08907 Barcelona", en: "C/ Crom 35-37, 5th floor · 08907 Barcelona" } },
-  { src: "/assets/i3e/madrid.webp", alt: "Oficina i3e Madrid", title: { es: "Madrid", en: "Madrid" }, text: { es: "Atención comercial y técnica", en: "Commercial and technical support" } },
-  { src: "/assets/i3e/mataro2.webp", alt: "Oficina i3e Mataró", title: { es: "Mataró", en: "Mataró" }, text: { es: "Soporte y servicios IT", en: "IT support and services" } },
-  { src: "/assets/i3e/celra1-1024x1024.webp", alt: "Oficina i3e Celrà", title: { es: "Celrà", en: "Celrà" }, text: { es: "Cobertura de servicios gestionados", en: "Managed-services coverage" } },
+  { src: assetPath("/assets/i3e/hospi3.webp"), alt: "Oficina i3e L'Hospitalet", title: { es: "L'Hospitalet de Llobregat", en: "L'Hospitalet de Llobregat" }, text: { es: "C/ Crom 35-37, 5º · 08907 Barcelona", en: "C/ Crom 35-37, 5th floor · 08907 Barcelona" } },
+  { src: assetPath("/assets/i3e/madrid.webp"), alt: "Oficina i3e Madrid", title: { es: "Madrid", en: "Madrid" }, text: { es: "Atención comercial y técnica", en: "Commercial and technical support" } },
+  { src: assetPath("/assets/i3e/mataro2.webp"), alt: "Oficina i3e Mataró", title: { es: "Mataró", en: "Mataró" }, text: { es: "Soporte y servicios IT", en: "IT support and services" } },
+  { src: assetPath("/assets/i3e/celra1-1024x1024.webp"), alt: "Oficina i3e Celrà", title: { es: "Celrà", en: "Celrà" }, text: { es: "Cobertura de servicios gestionados", en: "Managed-services coverage" } },
 ];

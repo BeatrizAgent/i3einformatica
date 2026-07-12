@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "assets": [
     { "id": "service_m365", "path": "/assets/i3e/migracion-min.webp", "role": "content", "licenseStatus": "pending" },
-    { "id": "service_cybersecurity", "path": "/assets/i3e/proteccion-2-min.webp", "role": "content", "sourceUrl": "https://www.i3einformatica.com/wp-content/uploads/2025/06/proteccion-2-min.jpg", "licenseStatus": "pending" },
+    { "id": "service_cybersecurity", "path": "/assets/i3e/generated/i3e-cybersecurity-hero.png", "role": "hero", "sourceUrl": "generated:openai-imagegen", "licenseStatus": "approved" },
     { "id": "service_azure", "path": "/assets/i3e/infraestructura-migracion-min.webp", "role": "content", "licenseStatus": "pending" },
     { "id": "service_infrastructure", "path": "/assets/i3e/instalacion-min.webp", "role": "content", "licenseStatus": "pending" },
     { "id": "service_compliance", "path": "/assets/i3e/implementacion-iso-min.webp", "role": "content", "licenseStatus": "pending" },

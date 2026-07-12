@@ -3,6 +3,7 @@ import { notFound, redirect } from "next/navigation";
 import { PublicPage } from "@/components/public-page";
 import { getEquivalent, getPage, getRuntimePage, pageHref, parsePublicPath, publishedPages } from "@/lib/content/repository";
 import { getPageContent } from "@/lib/page-content";
+import { publicUrl } from "@/lib/public-path";
 
 type Props = { params: Promise<{ segments?: string[] }> };
 
@@ -10,13 +11,15 @@ export function generateStaticParams() {
   return publishedPages.map((page) => ({ segments: pageHref(page).split("/").filter(Boolean) }));
 }
 
+export const dynamicParams = false;
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, path } = parsePublicPath((await params).segments);
   const page = await getRuntimePage(locale, path);
   if (!page) return { title: "Página no encontrada", robots: { index: false, follow: false } };
   const esHref = page.availableLocales?.es ?? (getEquivalent(page.id, "es") ? pageHref(getEquivalent(page.id, "es")!) : "/");
   const enHref = page.availableLocales?.en ?? (getEquivalent(page.id, "en") ? pageHref(getEquivalent(page.id, "en")!) : undefined);
-  const canonical = pageHref(page);
+  const canonical = publicUrl(pageHref(page));
   const curated = getPageContent(page.id, page.locale === "en" ? "en" : "es");
   const title = curated?.seo.title ?? page.title;
   const description = curated?.seo.description ?? page.description;

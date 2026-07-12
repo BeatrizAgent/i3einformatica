@@ -1,4 +1,5 @@
 import assetCatalog from "../../data/content/assets.json";
+import { assetPath } from "@/lib/public-path";
 import aboutUs from "../../data/content/pages/about-us.json";
 import complaints from "../../data/content/pages/complaints.json";
 import compliance from "../../data/content/pages/compliance.json";
@@ -120,7 +121,8 @@ export function getPageDocument(pageId: string): CuratedPageDocument | null {
 }
 
 export function getAsset(assetId: string) {
-  return assetCatalog.assets.find((asset) => asset.id === assetId) ?? null;
+  const asset = assetCatalog.assets.find((candidate) => candidate.id === assetId);
+  return asset ? { ...asset, path: assetPath(asset.path) } : null;
 }
 
 export function resolveAction(action: ContentAction, locale: ContentLocale) {

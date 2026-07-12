@@ -1,3 +1,4 @@
+import { assetPath } from "@/lib/public-path";
 import Image from "next/image";
 import Link from "next/link";
 import { MotionRevealItem, MotionStagger, ScrollReveal } from "@/components/landing/scroll-reveal";
@@ -6,16 +7,16 @@ import type { LocalizedText, TemplateCard } from "@/lib/page-template-data";
 type Locale = "es" | "en";
 
 const m365HubProductCards: { card: TemplateCard; icon: string }[] = [
-  { card: { src: "/assets/i3e/migracion-min.webp", alt: "Microsoft 365", title: { es: "Microsoft 365", en: "Microsoft 365" }, href: { es: "/microsoft-365/producto", en: "/en/microsoft-365/microsoft-365-products" } }, icon: "/assets/i3e/arcticons-microsoft-365-2.svg" },
-  { card: { src: "/assets/i3e/copilot-min.webp", alt: "Microsoft Copilot", title: { es: "Copilot", en: "Copilot" }, href: { es: "/microsoft-365/producto", en: "/en/microsoft-365/microsoft-365-products" } }, icon: "/assets/i3e/arcticons-microsoft-365-2.svg" },
-  { card: { src: "/assets/i3e/migracion-sharepoint-min.webp", alt: "Microsoft SharePoint", title: { es: "SharePoint", en: "SharePoint" }, href: { es: "/microsoft-365/producto", en: "/en/microsoft-365/microsoft-365-products" } }, icon: "/assets/i3e/arcticons-microsoft-365-2.svg" },
-  { card: { src: "/assets/i3e/soluciones-1024x768.webp", alt: "Teams y colaboración", title: { es: "Teams y colaboración", en: "Teams and collaboration" }, href: { es: "/microsoft-365/soluciones", en: "/en/microsoft-365/microsoft-365-solutions" } }, icon: "/assets/i3e/arcticons-microsoft-365-2.svg" },
+  { card: { src: assetPath("/assets/i3e/migracion-min.webp"), alt: "Microsoft 365", title: { es: "Microsoft 365", en: "Microsoft 365" }, href: { es: "/microsoft-365/producto", en: "/en/microsoft-365/microsoft-365-products" } }, icon: assetPath("/assets/i3e/arcticons-microsoft-365-2.svg") },
+  { card: { src: assetPath("/assets/i3e/copilot-min.webp"), alt: "Microsoft Copilot", title: { es: "Copilot", en: "Copilot" }, href: { es: "/microsoft-365/producto", en: "/en/microsoft-365/microsoft-365-products" } }, icon: assetPath("/assets/i3e/arcticons-microsoft-365-2.svg") },
+  { card: { src: assetPath("/assets/i3e/migracion-sharepoint-min.webp"), alt: "Microsoft SharePoint", title: { es: "SharePoint", en: "SharePoint" }, href: { es: "/microsoft-365/producto", en: "/en/microsoft-365/microsoft-365-products" } }, icon: assetPath("/assets/i3e/arcticons-microsoft-365-2.svg") },
+  { card: { src: assetPath("/assets/i3e/soluciones-1024x768.webp"), alt: "Teams y colaboración", title: { es: "Teams y colaboración", en: "Teams and collaboration" }, href: { es: "/microsoft-365/soluciones", en: "/en/microsoft-365/microsoft-365-solutions" } }, icon: assetPath("/assets/i3e/arcticons-microsoft-365-2.svg") },
 ];
 
 const m365HubSolutionCards: { card: TemplateCard; icon: string }[] = [
-  { card: { src: "/assets/i3e/proteccion-2-min.webp", alt: "Seguridad y cumplimiento Microsoft 365", title: { es: "Seguridad y cumplimiento Microsoft 365", en: "Microsoft 365 security and compliance" }, href: { es: "/microsoft-365/soluciones", en: "/en/microsoft-365/microsoft-365-solutions" } }, icon: "/assets/i3e/arcticons-security-2.svg" },
-  { card: { src: "/assets/i3e/analisis-min.webp", alt: "Consultoría y Asesoría Microsoft 365", title: { es: "Consultoría y Asesoría Microsoft 365", en: "Microsoft 365 consulting and advisory" }, href: { es: "/microsoft-365/soluciones", en: "/en/microsoft-365/microsoft-365-solutions" } }, icon: "/assets/i3e/arcticons-microsoft-365-2.svg" },
-  { card: { src: "/assets/i3e/servicios-gestionados-min.webp", alt: "Backup y recuperación Microsoft 365", title: { es: "Backup y recuperación Microsoft 365", en: "Microsoft 365 backup and recovery" }, href: { es: "/microsoft-365/soluciones", en: "/en/microsoft-365/microsoft-365-solutions" } }, icon: "/assets/i3e/arcticons-serverbox-2.svg" },
+  { card: { src: assetPath("/assets/i3e/proteccion-2-min.webp"), alt: "Seguridad y cumplimiento Microsoft 365", title: { es: "Seguridad y cumplimiento Microsoft 365", en: "Microsoft 365 security and compliance" }, href: { es: "/microsoft-365/soluciones", en: "/en/microsoft-365/microsoft-365-solutions" } }, icon: assetPath("/assets/i3e/arcticons-security-2.svg") },
+  { card: { src: assetPath("/assets/i3e/analisis-min.webp"), alt: "Consultoría y Asesoría Microsoft 365", title: { es: "Consultoría y Asesoría Microsoft 365", en: "Microsoft 365 consulting and advisory" }, href: { es: "/microsoft-365/soluciones", en: "/en/microsoft-365/microsoft-365-solutions" } }, icon: assetPath("/assets/i3e/arcticons-microsoft-365-2.svg") },
+  { card: { src: assetPath("/assets/i3e/servicios-gestionados-min.webp"), alt: "Backup y recuperación Microsoft 365", title: { es: "Backup y recuperación Microsoft 365", en: "Microsoft 365 backup and recovery" }, href: { es: "/microsoft-365/soluciones", en: "/en/microsoft-365/microsoft-365-solutions" } }, icon: assetPath("/assets/i3e/arcticons-serverbox-2.svg") },
 ];
 
 const productCopy = {
@@ -102,8 +103,8 @@ const footerCopy = {
 };
 
 const socialIcons = {
-  linkedin: "/assets/i3e/arcticons-microsoft-365-2.svg",
-  youtube: "/assets/i3e/arcticons-microsoft-365-2.svg",
+  linkedin: assetPath("/assets/i3e/arcticons-microsoft-365-2.svg"),
+  youtube: assetPath("/assets/i3e/arcticons-microsoft-365-2.svg"),
 };
 
 function t(value: LocalizedText, locale: Locale) {
@@ -139,7 +140,7 @@ function M365HubFooter({ locale }: { locale: Locale }) {
       <div className="shell m365-hub-footer-top">
         <div className="m365-hub-footer-brand">
           <span className="logo" aria-label="i3e Informática">
-            <Image src="/assets/i3e/logo-i3e-25.webp" alt="i3e Informática" width={128} height={84} />
+            <Image src={assetPath("/assets/i3e/logo-i3e-25.webp")} alt="i3e Informática" width={128} height={84} />
           </span>
           <p>{footerCopy.brand[locale]}</p>
         </div>
@@ -185,24 +186,24 @@ function M365HubFooter({ locale }: { locale: Locale }) {
         </div>
       </div>
       <div className="shell m365-hub-footer-certifications">
-        <Image src="/assets/i3e/iso_9001.webp" alt="ISO 9001" width={56} height={74} />
-        <Image src="/assets/i3e/iso_20000.webp" alt="ISO 20000-1" width={56} height={72} />
-        <Image src="/assets/i3e/certificaciones-iso.2.webp" alt="Certificaciones ISO" width={180} height={62} />
+        <Image src={assetPath("/assets/i3e/iso_9001.webp")} alt="ISO 9001" width={56} height={74} />
+        <Image src={assetPath("/assets/i3e/iso_20000.webp")} alt="ISO 20000-1" width={56} height={72} />
+        <Image src={assetPath("/assets/i3e/certificaciones-iso.2.webp")} alt="Certificaciones ISO" width={180} height={62} />
       </div>
     </footer>
   );
 }
 
 export function M365Hub({ locale, enabled }: { locale: Locale; enabled: boolean }) {
-  const productMedia = { src: "/assets/i3e/migracion-min.webp", alt: "Microsoft 365 Producto" };
-  const solutionsMedia = { src: "/assets/i3e/equipo-tecnico-1024x683.webp", alt: "Soluciones Microsoft 365" };
-  const implementMedia = { src: "/assets/i3e/edificios.webp", alt: "Edificios corporativos" };
+  const productMedia = { src: assetPath("/assets/i3e/migracion-min.webp"), alt: "Microsoft 365 Producto" };
+  const solutionsMedia = { src: assetPath("/assets/i3e/equipo-tecnico-1024x683.webp"), alt: "Soluciones Microsoft 365" };
+  const implementMedia = { src: assetPath("/assets/i3e/edificios.webp"), alt: "Edificios corporativos" };
 
   return (
     <div className="m365-hub-page">
       <section className="m365-hero" aria-label="Microsoft 365">
         <div className="m365-hero-background" aria-hidden="true">
-          <Image src="/assets/i3e/edificios.webp" alt="" fill priority sizes="100vw" />
+          <Image src={assetPath("/assets/i3e/edificios.webp")} alt="" fill priority sizes="100vw" />
           <div className="m365-hero-overlay" />
         </div>
         <div className="shell m365-hero-content">

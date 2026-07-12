@@ -6,11 +6,11 @@
   "editorialStatus": "in_review",
   "source": {
     "url": "https://www.i3einformatica.com/ciberseguridad/",
-    "retrievedAt": "2026-07-11",
-    "note": "Contenido y recursos recuperados de la página pública; validar licencias antes de publicar como definitivo."
+    "retrievedAt": "2026-07-12",
+    "note": "Contenido contrastado con la página pública. Recursos de terceros requieren validación de licencia antes de publicación definitiva."
   },
   "assets": [
-    { "assetId": "service_cybersecurity", "role": "hero", "alt": "Protección digital de infraestructura y sistemas", "licenseStatus": "pending" },
+    { "assetId": "service_cybersecurity", "role": "hero", "alt": "Infraestructura digital protegida por un escudo de ciberseguridad", "licenseStatus": "pending" },
     { "assetId": "cyber_assessment", "role": "content", "alt": "Evaluación y auditoría de seguridad", "licenseStatus": "pending" },
     { "assetId": "cyber_planning", "role": "content", "alt": "Planificación y estrategia de ciberseguridad", "licenseStatus": "pending" }
   ],
@@ -27,63 +27,99 @@
       },
       "blocks": [
         {
-          "id": "outcomes",
+          "id": "protection-detection-response",
           "type": "outcome_grid",
           "eyebrow": "Protección, detección y respuesta ante amenazas",
           "title": "Soluciones para identificar, mitigar y responder a ciberataques en tiempo real",
           "items": [
-            { "title": "Servicios gestionados de ciberseguridad", "summary": "Soluciones externas para garantizar la protección continua de la organización.", "assetId": "service_cybersecurity" },
-            { "title": "Evaluación y auditoría de seguridad", "summary": "Análisis y validación de la seguridad de sistemas y procesos.", "assetId": "cyber_assessment" },
-            { "title": "Formación y concienciación en ciberseguridad", "summary": "Capacitación para fortalecer la cultura de seguridad dentro de la empresa." },
-            { "title": "Planificación y estrategia de ciberseguridad", "summary": "Desarrollo de estrategias para mitigar riesgos y garantizar la continuidad del negocio.", "assetId": "cyber_planning" }
+            { "title": "Protección perimetral y de redes", "summary": "Implementamos firewalls de nueva generación, defensa frente a ataques DDoS y segmentación de tráfico para asegurar el perímetro y reducir el riesgo de intrusión." },
+            { "title": "Protección de endpoints y sistemas", "summary": "Desplegamos soluciones antivirus, antimalware y contra ransomware, adaptadas a entornos de movilidad y teletrabajo, con foco en amenazas persistentes." },
+            { "title": "Detección y respuesta ante incidentes", "summary": "Supervisamos tu entorno 24/7 para detectar anomalías, contener ataques en curso y realizar análisis forense digital cuando se requiere investigar su origen y alcance." }
+          ]
+        },
+        {
+          "id": "managed-services",
+          "type": "outcome_grid",
+          "eyebrow": "Servicios gestionados de ciberseguridad",
+          "title": "Protección continua para que tu organización pueda seguir operando",
+          "items": [
+            { "title": "Centro de Operaciones de Seguridad (SOC) 24/7", "summary": "Supervisamos amenazas en tiempo real, gestionamos eventos de seguridad y coordinamos la respuesta ante incidentes desde nuestro SOC. Integramos herramientas avanzadas de inteligencia de amenazas para actuar con rapidez y precisión.", "assetId": "service_cybersecurity" },
+            { "title": "Autenticación y control de identidad", "summary": "Implantamos autenticación multifactor, gestión segura de accesos y políticas Zero Trust para proteger frente a fraudes, suplantación y accesos no autorizados." },
+            { "title": "Mantenimiento y soporte en ciberseguridad", "summary": "Aplicamos gestión proactiva de vulnerabilidades, actualizamos y optimizamos las herramientas de seguridad y auditamos configuraciones críticas para evitar puntos débiles en el sistema." }
+          ]
+        },
+        {
+          "id": "assessment-audit",
+          "type": "outcome_grid",
+          "eyebrow": "Evaluación y auditoría de seguridad",
+          "title": "Conoce el riesgo real antes de decidir cómo reducirlo",
+          "items": [
+            { "title": "Pruebas de penetración (Pentesting)", "summary": "Simulamos ataques reales sobre redes, aplicaciones e infraestructuras para detectar vulnerabilidades y medir la capacidad de respuesta. Entregamos un informe técnico detallado con hallazgos y recomendaciones priorizadas.", "assetId": "cyber_assessment" },
+            { "title": "Auditorías de seguridad", "summary": "Revisamos configuraciones críticas, analizamos entornos cloud y on-premise, e incluimos dispositivos IoT e infraestructuras industriales. Validamos el cumplimiento normativo y proponemos acciones para reforzar el entorno." }
+          ]
+        },
+        {
+          "id": "security-awareness",
+          "type": "outcome_grid",
+          "eyebrow": "Formación y concienciación en ciberseguridad",
+          "title": "La seguridad también depende de las decisiones de cada persona",
+          "items": [
+            { "title": "Formación técnica en seguridad", "summary": "Capacitamos a equipos IT en ciberseguridad defensiva y ofensiva, con talleres prácticos, ejercicios de respuesta ante incidentes y sesiones de hacking ético adaptadas al entorno de cada organización." },
+            { "title": "Concienciación para empleados (Awareness)", "summary": "Diseñamos simulaciones de phishing, formaciones breves en buenas prácticas y sesiones interactivas para sensibilizar al personal y reducir errores que comprometan la seguridad." }
+          ]
+        },
+        {
+          "id": "security-planning",
+          "type": "outcome_grid",
+          "eyebrow": "Planificación y estrategia de ciberseguridad",
+          "title": "Una hoja de ruta operativa para mitigar riesgos y garantizar la continuidad",
+          "items": [
+            { "title": "Planes de ciberseguridad", "summary": "Definimos planes de acción adaptados al contexto de cada organización: evaluación de riesgos, diseño de estrategias y protocolos de continuidad ante crisis.", "assetId": "cyber_planning" },
+            { "title": "Gestión de vulnerabilidades y riesgos", "summary": "Realizamos análisis continuos para identificar puntos críticos, priorizamos acciones según impacto y ayudamos a mitigar amenazas emergentes de forma estructurada." }
           ]
         },
         {
           "id": "scope",
           "type": "split_media",
-          "eyebrow": "Alcance",
+          "eyebrow": "Siguiente paso",
           "title": "Refuerza la seguridad de tu organización",
-          "intro": "Combinamos evaluación, planificación y acompañamiento para convertir la seguridad en una capacidad operativa continua.",
+          "intro": "Te ayudamos a evaluar, mejorar y gestionar tu entorno de ciberseguridad con medidas adaptadas a tus riesgos reales y a la operativa de tu negocio.",
           "assetId": "cyber_planning",
-          "action": { "label": "Más información", "routeId": "contact" }
+          "action": { "label": "Solicitar información", "routeId": "contact" }
         }
       ],
-      "cta": { "eyebrow": "Siguiente paso", "title": "Refuerza la seguridad de tu organización", "text": "Ordenemos las prioridades de seguridad y el siguiente paso operativo.", "action": { "label": "Solicitar información", "routeId": "contact" } }
+      "cta": { "eyebrow": "Hablemos de tu entorno", "title": "Convierte la ciberseguridad en una capacidad operativa", "text": "Ordenemos las prioridades de seguridad y el siguiente paso para tu organización.", "action": { "label": "Solicitar información", "routeId": "contact" } }
     },
     "en": {
       "path": "/en/cybersecurity",
       "seo": { "title": "Cybersecurity | i3e IT", "description": "Security solutions designed to protect infrastructure, prevent threats and ensure business continuity." },
-      "hero": {
-        "eyebrow": "Cybersecurity",
-        "title": "Cybersecurity",
-        "intro": "Security solutions designed to protect infrastructure, prevent threats and ensure business continuity.",
-        "assetId": "service_cybersecurity",
-        "cta": { "label": "Request information", "routeId": "contact" }
-      },
+      "hero": { "eyebrow": "Cybersecurity", "title": "Cybersecurity", "intro": "Security solutions designed to protect infrastructure, prevent threats and ensure business continuity.", "assetId": "service_cybersecurity", "cta": { "label": "Request information", "routeId": "contact" } },
       "blocks": [
-        {
-          "id": "outcomes",
-          "type": "outcome_grid",
-          "eyebrow": "Protection, detection and response to threats",
-          "title": "Solutions to identify, mitigate and respond to cyberattacks in real time",
-          "items": [
-            { "title": "Managed cybersecurity services", "summary": "External solutions to ensure the organization's continuous protection.", "assetId": "service_cybersecurity" },
-            { "title": "Security assessment and audit", "summary": "Analysis and validation of the security of systems and processes.", "assetId": "cyber_assessment" },
-            { "title": "Cybersecurity training and awareness", "summary": "Training to strengthen the security culture within the company." },
-            { "title": "Cybersecurity planning and strategy", "summary": "Strategies to mitigate risks and ensure business continuity.", "assetId": "cyber_planning" }
-          ]
-        },
-        {
-          "id": "scope",
-          "type": "split_media",
-          "eyebrow": "Scope",
-          "title": "Strengthen your organization's security",
-          "intro": "We combine assessment, planning and support to turn security into a continuous operational capability.",
-          "assetId": "cyber_planning",
-          "action": { "label": "More information", "routeId": "contact" }
-        }
+        { "id": "protection-detection-response", "type": "outcome_grid", "eyebrow": "Protection, detection and response to threats", "title": "Solutions to identify, mitigate and respond to cyberattacks in real time", "items": [
+          { "title": "Perimeter and network protection", "summary": "We implement next-generation firewalls, DDoS protection and traffic segmentation to secure the perimeter and reduce intrusion risk." },
+          { "title": "Endpoint and system protection", "summary": "We deploy antivirus, antimalware and anti-ransomware solutions adapted to mobile and remote-work environments, with a focus on persistent threats." },
+          { "title": "Incident detection and response", "summary": "We monitor your environment 24/7 to detect anomalies, contain active attacks and perform digital forensics when their origin and scope need to be investigated." }
+        ] },
+        { "id": "managed-services", "type": "outcome_grid", "eyebrow": "Managed cybersecurity services", "title": "Continuous protection so your organization can keep operating", "items": [
+          { "title": "24/7 Security Operations Center (SOC)", "summary": "We monitor threats in real time, manage security events and coordinate incident response from our SOC. We integrate advanced threat-intelligence tools to act quickly and accurately.", "assetId": "service_cybersecurity" },
+          { "title": "Authentication and identity control", "summary": "We implement multifactor authentication, secure access management and Zero Trust policies to protect against fraud, impersonation and unauthorized access." },
+          { "title": "Cybersecurity maintenance and support", "summary": "We proactively manage vulnerabilities, update and optimize security tools, and audit critical configurations to prevent weak points in the system." }
+        ] },
+        { "id": "assessment-audit", "type": "outcome_grid", "eyebrow": "Security assessment and audit", "title": "Know the real risk before deciding how to reduce it", "items": [
+          { "title": "Penetration testing (Pentesting)", "summary": "We simulate real attacks on networks, applications and infrastructure to detect vulnerabilities and measure response capability. We deliver a detailed technical report with prioritized findings and recommendations.", "assetId": "cyber_assessment" },
+          { "title": "Security audits", "summary": "We review critical configurations, analyze cloud and on-premise environments, and include IoT devices and industrial infrastructure. We validate regulatory compliance and propose actions to strengthen the environment." }
+        ] },
+        { "id": "security-awareness", "type": "outcome_grid", "eyebrow": "Cybersecurity training and awareness", "title": "Security also depends on every person’s decisions", "items": [
+          { "title": "Technical security training", "summary": "We train IT teams in defensive and offensive cybersecurity through practical workshops, incident-response exercises and ethical-hacking sessions tailored to each organization." },
+          { "title": "Employee awareness", "summary": "We design phishing simulations, short best-practice training and interactive sessions to raise awareness and reduce security-compromising mistakes." }
+        ] },
+        { "id": "security-planning", "type": "outcome_grid", "eyebrow": "Cybersecurity planning and strategy", "title": "An operational roadmap to mitigate risks and ensure continuity", "items": [
+          { "title": "Cybersecurity plans", "summary": "We define action plans adapted to each organization: risk assessment, strategy design and crisis-continuity protocols.", "assetId": "cyber_planning" },
+          { "title": "Vulnerability and risk management", "summary": "We continuously analyze critical points, prioritize actions by impact and help mitigate emerging threats in a structured way." }
+        ] },
+        { "id": "scope", "type": "split_media", "eyebrow": "Next step", "title": "Strengthen your organization’s security", "intro": "We help you assess, improve and manage your cybersecurity environment with measures adapted to your real risks and business operations.", "assetId": "cyber_planning", "action": { "label": "Request information", "routeId": "contact" } }
       ],
-      "cta": { "eyebrow": "Next step", "title": "Strengthen your organization's security", "text": "Let us organize your security priorities and the next operational step.", "action": { "label": "Request information", "routeId": "contact" } }
+      "cta": { "eyebrow": "Let’s talk about your environment", "title": "Turn cybersecurity into an operational capability", "text": "Let us organize your security priorities and the next step for your organization.", "action": { "label": "Request information", "routeId": "contact" } }
     }
   }
 }

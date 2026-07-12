@@ -1,5 +1,7 @@
 "use client";
 
+import { assetPath } from "@/lib/public-path";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
@@ -22,7 +24,7 @@ type Locale = "es" | "en";
 const cases: CaseStudy[] = [
   {
     id: "toyota-starbaix",
-    image: { src: "/assets/i3e/toyota.webp", alt: "Toyota Starbaix" },
+    image: { src: assetPath("/assets/i3e/toyota.webp"), alt: "Toyota Starbaix" },
     title: { es: "Toyota Starbaix", en: "Toyota Starbaix" },
     description: {
       es: "Soporte informático integral a importante cadena de Concesionarios. Se realiza el soporte y transformación de los sistemas para conseguir optimizar sus procesos y su movilidad. Se instala y gestiona MDM. Consiguiendo un 70% de reducción de las incidencias. Instalación y gestión de red LAN, monitorización de servidores, firewalls y soporte a usuarios.",
@@ -38,7 +40,7 @@ const cases: CaseStudy[] = [
   },
   {
     id: "gran-entidad-bancaria",
-    image: { src: "/assets/i3e/entidad-bancaria.webp", alt: "Gran entidad Bancaria" },
+    image: { src: assetPath("/assets/i3e/entidad-bancaria.webp"), alt: "Gran entidad Bancaria" },
     title: { es: "Gran entidad Bancaria", en: "Major banking institution" },
     description: {
       es: "Despliegue de equipos nuevos, recogida de los equipos antiguos y destrucción de datos para entidad bancaria. Logística y gestión de parque incluido. Maquetación, entrega, explicación a usuario y despliegue 360.",
@@ -54,7 +56,7 @@ const cases: CaseStudy[] = [
   },
   {
     id: "administracion-publica",
-    image: { src: "/assets/i3e/adm-publica.webp", alt: "Administración pública" },
+    image: { src: assetPath("/assets/i3e/adm-publica.webp"), alt: "Administración pública" },
     title: { es: "Administración pública", en: "Public administration" },
     description: {
       es: "Modernización tecnológica de la infraestructura de una administración pública: migración a la nube, refuerzo de la seguridad y soporte continuado para garantizar la continuidad de los servicios.",
@@ -128,7 +130,7 @@ export function CasesHub({ locale }: { locale: Locale }) {
     <div className="cases-hub-page">
       <section className="cases-hero" aria-labelledby="cases-hero-title">
         <div className="cases-hero-background" aria-hidden="true">
-          <Image src="/assets/i3e/casos-de-exito-819x1024.webp" alt="" fill priority sizes="100vw" />
+          <Image src={assetPath("/assets/i3e/casos-de-exito-819x1024.webp")} alt="" fill priority sizes="100vw" />
           <div className="cases-hero-overlay" />
         </div>
         <div className="shell cases-hero-content">
@@ -203,7 +205,7 @@ export function CasesHub({ locale }: { locale: Locale }) {
         <div className="shell">
           <div className="cases-cta-banner">
             <div className="cases-cta-media">
-              <Image src="/assets/i3e/circuitos-min.webp" alt="" fill sizes="(max-width: 900px) 100vw, 40vw" />
+              <Image src={assetPath("/assets/i3e/circuitos-min.webp")} alt="" fill sizes="(max-width: 900px) 100vw, 40vw" />
             </div>
             <div className="cases-cta-copy">
               <h3>{t(copy.cta.title, locale)}</h3>

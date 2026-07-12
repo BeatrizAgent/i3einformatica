@@ -9,6 +9,10 @@ function value(item: Record<string, unknown>, key: string) {
   return typeof item[key] === "string" ? item[key] as string : "";
 }
 
+function values(item: Record<string, unknown>, key: string) {
+  return Array.isArray(item[key]) ? item[key].filter((entry): entry is string => typeof entry === "string") : [];
+}
+
 function blockItems(block: CuratedBlock) {
   return block.items ?? [];
 }
@@ -17,7 +21,7 @@ function ActionLink({ action, locale, className = "text-link" }: { action?: Cont
   if (!action) return null;
   const resolved = resolveAction(action, locale);
   if (!resolved) return null;
-  return <Link className={className} href={resolved.href}>{resolved.label} <span aria-hidden="true">→</span></Link>;
+  return <Link className={className} href={resolved.href}>{resolved.label} <span aria-hidden="true">-&gt;</span></Link>;
 }
 
 function CuratedImage({ pageId, assetId, alt, sizes = "(max-width: 760px) 100vw, 33vw" }: { pageId: string; assetId?: string; alt?: string; sizes?: string }) {
@@ -48,6 +52,7 @@ function CardGrid({ pageId, locale, block }: { pageId: string; locale: ContentLo
             <span className="curated-card-index" aria-hidden="true">0{index + 1}</span>
             <h3>{value(item, "title")}</h3>
             <p>{value(item, "summary")}</p>
+            {values(item, "details").length > 0 && <ul className="curated-card-list">{values(item, "details").map((detail) => <li key={detail}>{detail}</li>)}</ul>}
             <ActionLink action={item.action as ContentAction | undefined} locale={locale} />
           </div>
         </article>)}

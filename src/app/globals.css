@@ -28,6 +28,19 @@
 .public-inner .page-hero h1 { max-width: 14ch; font-size: clamp(2.8rem,5.3vw,4.8rem); line-height: 1.02; }
 .public-inner .page-hero .lead { max-width: 58ch; color: rgba(255,255,255,.82); }
 .public-inner .page-hero .hero-visual { border-color: rgba(255,255,255,.18); box-shadow: 0 1.5rem 4rem rgba(0,0,0,.24); }
+.page-cybersecurity .page-hero { min-height: clamp(36rem, 72vh, 48rem); }
+.page-cybersecurity .page-hero .hero-content { max-width: 46rem; padding-block: clamp(6rem, 11vw, 9rem); }
+.page-cybersecurity .page-hero .hero-visual { width: min(52vw, 52rem); aspect-ratio: 1.78; opacity: .96; }
+.page-cybersecurity .page-hero .hero-visual img { object-position: center; }
+.page-cybersecurity .curated-section:nth-of-type(even) { background: #fff; }
+.page-cybersecurity .curated-card-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.page-cybersecurity .curated-card { display: flex; flex-direction: column; }
+.page-cybersecurity .curated-card-copy { flex: 1; }
+.page-cybersecurity .curated-card-list { display: grid; gap: .55rem; padding: 0; margin: 1.1rem 0 0; list-style: none; }
+.page-cybersecurity .curated-card-list li { padding-left: 1rem; color: #4c5665; font-size: .94rem; line-height: 1.55; }
+.page-cybersecurity .curated-card-list li::before { position: absolute; margin-left: -1rem; color: var(--inner-accent); content: "-"; }
+.page-cybersecurity .curated-card:has(.curated-media) .curated-media { min-height: 13rem; }
+.page-cybersecurity .curated-section { content-visibility: visible; contain-intrinsic-size: auto; }
 .public-inner .curated-section, .public-inner .curated-section.section-muted { background: #f7f8fa; color: #28303b; }
 .public-inner .curated-section:nth-of-type(even) { background: #fff; }
 .public-inner .curated-heading { max-width: 44rem; }
@@ -48,13 +61,78 @@
 .public-inner .curated-cta { margin-top: 0; }
 .public-inner .form-card { border-color: #dfe4ea; box-shadow: 0 .8rem 2rem rgba(11,17,62,.06); }
 
+/* Microsoft Azure: dense blue editorial layout, with restrained motion and content-first cards. */
+.azure-page { overflow: clip; background: #12365f; color: #fff; }
+.azure-hero { position: relative; min-height: 27rem; display: flex; align-items: center; overflow: hidden; background: #0c2a4d; color: #fff; }
+.azure-hero-media, .azure-hero-shade { position: absolute; inset: 0; }
+.azure-hero-media { opacity: .34; }
+.azure-hero-media img { object-fit: cover; object-position: center 36%; filter: saturate(.72) brightness(.72); }
+.azure-hero-shade { background: linear-gradient(180deg, rgba(5, 20, 42, .45), rgba(9, 39, 72, .9)); }
+.azure-hero-inner { position: relative; z-index: 1; display: grid; justify-items: center; max-width: 48rem; padding-block: 4.5rem 3.5rem; text-align: center; }
+.azure-hero-mark { width: 2.6rem; height: 2.6rem; margin-bottom: 1rem; object-fit: contain; filter: brightness(0) saturate(100%) invert(75%) sepia(97%) saturate(1125%) hue-rotate(150deg) brightness(102%) contrast(93%); }
+.azure-hero-copy { max-width: 42rem; }
+.azure-hero h1 { max-width: none; margin: 0; font-size: clamp(2.4rem, 5vw, 4.2rem); line-height: .98; letter-spacing: -.055em; }
+.azure-hero .lead { max-width: 38rem; margin: 1rem auto 0; color: rgba(255,255,255,.84); font-size: clamp(.8rem, 1.2vw, .98rem); line-height: 1.55; }
+.azure-hero .hero-actions { justify-content: center; gap: .55rem; margin-top: 1.35rem; }
+.azure-hero .button { padding: .58rem .9rem; font-size: .62rem; }
+.azure-hero-link { padding: .5rem .85rem; border: 1px solid rgba(255,255,255,.52); color: #fff; font-size: .68rem; }
+.azure-section-heading { display: grid; justify-items: center; gap: .45rem; max-width: 52rem; margin: 0 auto 2rem; text-align: center; }
+.azure-page .azure-section-heading h2 { max-width: none; margin: 0; color: #fff; font-size: clamp(1.35rem, 2.6vw, 2.2rem); line-height: 1.08; letter-spacing: -.035em; }
+.azure-section-heading > p:last-child { max-width: 44rem; margin: 0; color: rgba(255,255,255,.82); font-size: .78rem; line-height: 1.55; }
+.azure-migration { background: #204a7a; }
+.azure-security { background: #173c68; }
+.azure-modernization { background: #15385f; }
+.azure-feature-layout, .azure-security-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .8rem; max-width: 58rem; margin-inline: auto; }
+.azure-feature-media, .azure-security-media { position: relative; min-height: 20rem; overflow: hidden; background: #0b2d52; }
+.azure-feature-media img, .azure-security-media img { object-fit: cover; }
+.azure-focus-stack, .azure-security-stack { display: grid; gap: .55rem; }
+.azure-focus-card, .azure-mini-card { min-width: 0; border: 1px solid rgba(206, 229, 251, .48); background: rgba(15, 55, 96, .28); }
+.azure-focus-card { padding: .9rem 1rem; }
+.azure-focus-card > span { color: var(--action-blue); font: 700 .58rem/1 var(--font-mono); letter-spacing: .08em; }
+.azure-focus-card h3, .azure-mini-card h3 { margin: .55rem 0 .35rem; color: #fff; font-size: .78rem; line-height: 1.2; }
+.azure-focus-card p, .azure-mini-card p { margin: 0; color: rgba(255,255,255,.82); font-size: .65rem; line-height: 1.45; }
+.azure-mini-grid, .azure-modernization-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .55rem; max-width: 58rem; margin: .8rem auto 0; }
+.azure-modernization-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: 0; }
+.azure-mini-card { min-height: 7rem; padding: .9rem 1rem; }
+.azure-security-layout { align-items: stretch; }
+.azure-security-media { order: 2; min-height: 22rem; }
+.azure-security-stack { order: 1; }
+.azure-cta { margin-top: 0; background: #0b2b50; }
+.azure-cta .cta-inner { border-top-color: rgba(206, 229, 251, .25); }
+.azure-cta h2 { color: #fff; }
+.azure-cta p:not(.eyebrow) { color: rgba(255,255,255,.78); }
+
 @media (max-width: 900px) {
+  .azure-hero, .azure-hero-inner { min-height: 0; }
+  .azure-hero-inner { padding-block: 4rem 3rem; }
+  .azure-feature-layout, .azure-security-layout { grid-template-columns: 1fr; }
+  .azure-security-media { order: 1; min-height: 18rem; }
+  .azure-security-stack { order: 2; }
+}
+@media (max-width: 600px) {
+  .azure-hero-media img { object-position: 62% center; }
+  .azure-hero-shade { background: linear-gradient(180deg, rgba(5, 20, 42, .45), rgba(9, 39, 72, .94)); }
+  .azure-hero-inner { padding-block: 3.5rem 2.75rem; }
+  .azure-hero h1 { font-size: clamp(2.5rem, 13vw, 4rem); }
+  .azure-hero .hero-actions { align-items: center; flex-direction: column; gap: .65rem; }
+  .azure-mini-grid, .azure-modernization-grid { grid-template-columns: 1fr 1fr; }
+  .azure-mini-card { min-height: 0; }
+}
+
+@media (max-width: 900px) {
+  .page-cybersecurity .page-hero { min-height: 0; }
+  .page-cybersecurity .page-hero .hero-content { max-width: none; padding-block: 4.5rem 2.5rem; }
+  .page-cybersecurity .page-hero .hero-visual { width: min(calc(100% - 4rem), 48rem); }
+  .page-cybersecurity .curated-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .public-inner .page-hero { min-height: 0; flex-direction: column; align-items: stretch; }
   .public-inner .page-hero.hero-with-visual .hero-content { padding-right: 0; padding-bottom: 3rem; }
   .public-inner .page-hero .hero-content { width: 100%; order: 1; }
   .public-inner .page-hero .hero-visual { position: relative; inset: auto; width: min(calc(100% - 4rem),42rem); margin: 0 auto 4rem; flex: none; order: 2; transform: none; }
 }
 @media (max-width: 600px) {
+  .page-cybersecurity .page-hero .hero-content { padding-block: 4rem 2rem; }
+  .page-cybersecurity .page-hero .hero-visual { width: calc(100% - 1.5rem); }
+  .page-cybersecurity .curated-card-grid { grid-template-columns: 1fr; }
   .public-inner .page-hero .hero-content { padding: 4.25rem 1.5rem 2.75rem; }
   .public-inner .page-hero h1 { font-size: clamp(2.35rem,12vw,3.25rem); }
   .public-inner .page-hero .hero-visual { width: calc(100% - 1.5rem); margin-bottom: 2.5rem; }
