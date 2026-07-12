@@ -27,7 +27,7 @@ for (const page of publishedPages) {
   if (/[\u00c3\u00c2\ufffd]/u.test(html)) errors.push(`${pageHref(page)}: mojibake in generated HTML`);
   for (const match of html.matchAll(/href="([^"]+)"/g)) {
     const href = match[1];
-    if (!href.startsWith("/") || href.startsWith("//") || href.startsWith("/#") || href.includes("#") || href.startsWith(`${basePath}/_next`) || href.startsWith(`${basePath}/assets`)) continue;
+    if (!href.startsWith("/") || href.startsWith("//") || href.startsWith("/#") || href.includes("#") || href.includes("favicon.ico") || href.startsWith(`${basePath}/_next`) || href.startsWith(`${basePath}/assets`)) continue;
     const normalized = href.replace(basePath, "").replace(/\/$/, "") || "/";
     if (!routeSet.has(normalized)) errors.push(`${pageHref(page)}: internal link has no generated route: ${href}`);
   }
