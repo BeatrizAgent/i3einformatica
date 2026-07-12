@@ -20,10 +20,12 @@ Contenido editorial vive en `data/content/pages/*.json`. Assets optimizados vive
 
 ```powershell
 pnpm content:validate
+pnpm encoding:check
 pnpm lint
 pnpm typecheck
 pnpm test
 pnpm build
+pnpm export:validate
 ```
 
 `pnpm build` crea `out/` mediante `output: "export"`.
@@ -38,4 +40,4 @@ NEXT_PUBLIC_BASE_PATH: /i3einformatica
 
 Para dominio propio, deja `NEXT_PUBLIC_BASE_PATH` vacío y añade `public/CNAME`.
 
-Los formularios muestran contacto por correo porque GitHub Pages no ejecuta backend. La persistencia y edición de contenido se podrán añadir después con un servicio externo.
+Los formularios de contacto y empleo abren el cliente de correo porque GitHub Pages no ejecuta backend. El canal de denuncias no recoge contenido ni promete anonimato: muestra una alternativa postal hasta aprobar infraestructura segura. La persistencia y edición de contenido se podrán añadir después con un servicio externo.

@@ -10,10 +10,11 @@ const expectedPageIds = [
   "privacy-policy", "cookie-policy", "legal-notice",
 ];
 const blockTypes = new Set(["outcome_grid", "capability_grid", "process_steps", "timeline", "split_media", "proof_grid", "logo_grid", "stats", "form", "locations", "rich_text", "cta"]);
-const badText = /[ÃÂ�]/;
+const badText = /[\u00c3\u00c2\ufffd]/u;
 const html = /<\/?[a-z][^>]*>/i;
 const errors: string[] = [];
 const warnings: string[] = [];
+const blockedPages = new Set<string>();
 
 function strings(value: unknown): string[] {
   if (typeof value === "string") return [value];
@@ -53,7 +54,10 @@ function checkBlock(block: CuratedBlock, locale: ContentLocale, context: string)
   }
   if (block.type === "proof_grid") {
     for (const item of block.items ?? []) {
-      if (item.approvalStatus !== "approved") warnings.push(`${context}: proof item is blocked until approved`);
+      if (item.approvalStatus !== "approved") {
+        warnings.push(`${context}: proof item is blocked until approved`);
+        blockedPages.add(context.split(".")[0]);
+      }
       for (const key of ["challenge", "approach", "result"]) {
         if (typeof item[key] !== "string" || !item[key]) errors.push(`${context}: proof item needs ${key}`);
       }
@@ -97,13 +101,13 @@ for (const pageId of expectedPageIds) {
     if (!existsSync(resolve(process.cwd(), "public", asset.path.replace(/^\//, "")))) errors.push(`${pageId}: missing asset file ${asset.path}`);
     if (asset.licenseStatus !== "approved") warnings.push(`${pageId}: asset ${assetId} is not publishable yet`);
   }
-  if (document.editorialStatus === "published" && warnings.some((warning) => warning.startsWith(`${pageId}:`))) errors.push(`${pageId}: published content has blocked editorial dependencies`);
+  if (document.editorialStatus === "published" && (blockedPages.has(pageId) || warnings.some((warning) => warning.startsWith(`${pageId}:`)))) errors.push(`${pageId}: published content has blocked editorial dependencies`);
 }
 
 const loadedIds = Object.keys(pageContentById).sort();
 if (JSON.stringify(loadedIds) !== JSON.stringify([...expectedPageIds].sort())) errors.push("page registry does not match the expected 16 pages");
 
-if (warnings.length) console.warn(`Content warnings (${warnings.length}):\n- ${warnings.join("\n- ")}`);
+if (warnings.length) console.info(`Editorial review backlog (${warnings.length}, excluded from published content):\n- ${warnings.join("\n- ")}`);
 if (errors.length) {
   console.error(`Content validation failed (${errors.length}):\n- ${errors.join("\n- ")}`);
   process.exitCode = 1;
