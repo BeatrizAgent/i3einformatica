@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { UiIcon } from "@/components/ui-icon";
 import type { Locale } from "@/lib/content/repository";
 import { assetPath } from "@/lib/public-path";
-
-const rightArrow = String.fromCharCode(0x2192);
 
 export function TeamCta({ locale }: { locale: Locale }) {
   const isSpanish = locale !== "en";
@@ -19,7 +18,7 @@ export function TeamCta({ locale }: { locale: Locale }) {
         <p className="eyebrow">{isSpanish ? "Equipo i3e" : "i3e team"}</p>
         <h2 id="team-cta-title">{content.title}</h2>
         <p>{content.text}</p>
-        <Link className="button button-light" href={content.href}>{content.label} <span aria-hidden="true">{rightArrow}</span></Link>
+        <Link className="button button-light" href={content.href}>{content.label} <UiIcon name="arrow-right" size={18} /></Link>
       </div>
     </section>
   );

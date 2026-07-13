@@ -3,6 +3,7 @@
 import Link from "next/link";
 import * as m from "motion/react-m";
 import { BrandIcon, type BrandIconName } from "@/components/brand-icon";
+import { UiIcon } from "@/components/ui-icon";
 import { useLandingMotionEnabled } from "@/components/landing/motion-provider";
 import type { Locale } from "@/lib/content/repository";
 import type { Capability } from "@/lib/site-assets";
@@ -30,7 +31,7 @@ export function CapabilityRail({ items, locale, enabled = true }: { items: Capab
           <Link className="capability-card" href={item.href[language]}>
             <BrandIcon name={(["microsoft365", "security", "azure", "serverbox", "shield"] as BrandIconName[])[index] ?? "microsoft"} size={48} tone="dark" />
             <span>{item.label[language]}</span>
-            <span className="capability-arrow" aria-hidden="true">↗</span>
+            <UiIcon name="arrow-up-right" className="capability-arrow" size={18} />
           </Link>
         </m.div>
       ))}

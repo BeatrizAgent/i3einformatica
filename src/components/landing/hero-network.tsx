@@ -67,7 +67,7 @@ export function HeroNetwork({ locale }: { locale: HeroLocale }) {
         <circle className="hero-network-hub-ring" cx="360" cy="334" r="48" />
       </svg>
       <div className="hero-network-hub">
-        <Image className="hero-network-logo" src={assetPath("/assets/i3e/logo-i3e-25-300x198.webp")} alt="i3e" width={92} height={62} sizes="92px" priority />
+        <Image className="hero-network-logo" src={assetPath("/assets/i3e/logo-i3e-25-300x198.webp")} alt="i3e" width={92} height={62} sizes="92px" />
         <small>{copy.description}</small>
       </div>
       {services.map((service) => (

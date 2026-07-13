@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { UiIcon } from "@/components/ui-icon";
 import type { Locale } from "@/lib/content/repository";
 import { caseCards, templateCopy } from "@/lib/page-template-data";
-
-const rightArrow = String.fromCharCode(0x2192);
 
 export function CasesGrid({ locale, showHeading = true, showLink = true }: { locale: Locale; showHeading?: boolean; showLink?: boolean }) {
   const language = locale === "en" ? "en" : "es";
@@ -31,13 +30,13 @@ export function CasesGrid({ locale, showHeading = true, showLink = true }: { loc
                 <div>
                   <span>{templateCopy.common.caseLabel[language]}</span>
                   <h3>{item.title[language]}</h3>
-                  <b aria-hidden="true">{rightArrow}</b>
+                  <UiIcon name="arrow-right" className="case-card-arrow" size={20} />
                 </div>
               </Link>
             </article>
           ))}
         </div>
-        {showLink && <Link className="text-link landing-cases-link" href={caseHref}>{copy.allCases[language]} {rightArrow}</Link>}
+        {showLink && <Link className="text-link landing-cases-link" href={caseHref}>{copy.allCases[language]} <UiIcon name="arrow-right" size={18} /></Link>}
       </div>
     </section>
   );

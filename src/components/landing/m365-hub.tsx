@@ -4,6 +4,7 @@ import { MotionRevealItem, MotionStagger, ScrollReveal } from "@/components/land
 import { getAsset, getPageContent, resolveAction } from "@/lib/page-content";
 import { TechnologyBand } from "@/components/landing/technology-band";
 import { BrandIcon, type BrandIconName } from "@/components/brand-icon";
+import { UiIcon } from "@/components/ui-icon";
 import { assetPath } from "@/lib/public-path";
 
 type Locale = "es" | "en";
@@ -87,7 +88,7 @@ export function M365Hub({ locale, enabled }: { locale: Locale; enabled: boolean 
                     : "We configure and govern the Microsoft 365 environment, tailoring it to your organization's document management, automations, and security regulations."}
                 </p>
                 <Link className="m365-link-arrow" href={productHref}>
-                  {locale === "es" ? "Ver productos" : "View products"} <span aria-hidden="true">&rarr;</span>
+                  {locale === "es" ? "Ver productos" : "View products"} <UiIcon name="arrow-right" size={18} />
                 </Link>
               </div>
             </ScrollReveal>
@@ -110,7 +111,7 @@ export function M365Hub({ locale, enabled }: { locale: Locale; enabled: boolean 
                     : "We support your digital change with specialized help and consulting: document security, access control, backup plans, and proactive adoption."}
                 </p>
                 <Link className="m365-link-arrow" href={solutionsHref}>
-                  {locale === "es" ? "Ver soluciones" : "View solutions"} <span aria-hidden="true">&rarr;</span>
+                  {locale === "es" ? "Ver soluciones" : "View solutions"} <UiIcon name="arrow-right" size={18} />
                 </Link>
               </div>
             </ScrollReveal>

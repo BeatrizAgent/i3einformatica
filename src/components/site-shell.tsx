@@ -3,6 +3,7 @@ import Image from "next/image";
 import { getEquivalent, locales, pageHref, type PageRecord } from "@/lib/content/repository";
 import { assetPath } from "@/lib/public-path";
 import { ReopenCookies } from "@/components/reopen-cookies";
+import { UiIcon } from "@/components/ui-icon";
 
 const nav = {
   es: {
@@ -23,7 +24,7 @@ function Navigation({ locale, mobile = false, currentHref }: { locale: "es" | "e
   const servicesActive = copy.services.some(([, href]) => isCurrent(href));
   return <nav aria-label={mobile ? (locale === "es" ? "Navegación móvil" : "Mobile navigation") : (locale === "es" ? "Navegación principal" : "Main navigation")}>
     <details className="services-menu">
-      <summary aria-current={servicesActive ? "page" : undefined}>{locale === "es" ? "Servicios" : "Services"}</summary>
+      <summary aria-current={servicesActive ? "page" : undefined}>{locale === "es" ? "Servicios" : "Services"}<UiIcon name="chevron-down" className="services-menu-icon" size={16} /></summary>
       <div className="services-menu-panel">{copy.services.map(([label, href]) => <Link key={href} href={href} aria-current={isCurrent(href) ? "page" : undefined}>{label}</Link>)}</div>
     </details>
     {copy.direct.map(([label, href]) => <Link key={href} href={href} aria-current={isCurrent(href) ? "page" : undefined}>{label}</Link>)}
@@ -45,7 +46,7 @@ export function SiteHeader({ page }: { page: PageRecord }) {
     <div className="shell header-inner">
       <Link href={page.locale === "es" ? "/" : `/${page.locale}`} className="brand"><Logo priority /></Link>
       <div className="desktop-navigation"><Navigation locale={shellLocale} currentHref={pageHref(page)} /></div>
-      <details className="mobile-menu"><summary aria-label={shellLocale === "es" ? "Abrir menú de navegación" : "Open navigation menu"}><span className="mobile-menu-label">{shellLocale === "es" ? "Menú" : "Menu"}</span><span className="mobile-menu-icon" aria-hidden="true" /></summary><Navigation locale={shellLocale} mobile currentHref={pageHref(page)} /></details>
+      <details className="mobile-menu"><summary aria-label={shellLocale === "es" ? "Abrir menú de navegación" : "Open navigation menu"}><span className="mobile-menu-label">{shellLocale === "es" ? "Menú" : "Menu"}</span><UiIcon name="menu" className="mobile-menu-icon" size={20} /></summary><Navigation locale={shellLocale} mobile currentHref={pageHref(page)} /></details>
       <div className="header-actions">
         <details className="language-switcher">
           <summary aria-label={shellLocale === "es" ? "Cambiar idioma" : "Change language"}>{page.locale.toUpperCase()}</summary>

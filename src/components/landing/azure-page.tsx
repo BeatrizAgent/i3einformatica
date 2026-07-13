@@ -4,6 +4,7 @@ import { getAsset, getPageContent, resolveAction } from "@/lib/page-content";
 import type { PageRecord } from "@/lib/content/repository";
 import { TechnologyBand } from "@/components/landing/technology-band";
 import { BrandIcon } from "@/components/brand-icon";
+import { UiIcon } from "@/components/ui-icon";
 import { assetPath } from "@/lib/public-path";
 
 type AzureLocale = "es" | "en";
@@ -58,7 +59,7 @@ export function AzurePage({ page }: { page: PageRecord }) {
               <div className="hero-actions">
                 <Link className="button" href={heroCta.href}>{heroCta.label}</Link>
                 <a className="text-link azure-hero-link" href="#mas-info">
-                  {locale === "es" ? "Más información" : "Learn more"}<span aria-hidden="true"> ↓</span>
+                  {locale === "es" ? "Más información" : "Learn more"}<UiIcon name="arrow-down" size={18} />
                 </a>
               </div>
             )}
