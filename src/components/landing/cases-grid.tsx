@@ -10,7 +10,7 @@ export function CasesGrid({ locale, showHeading = true, showLink = true }: { loc
   const copy = templateCopy.home;
   const caseHref = language === "es" ? "/casos-de-exito" : "/en/success-stories";
   return (
-    <section className="section landing-cases content-deferred-lg" aria-labelledby="landing-cases-title">
+    <section className="section landing-cases" aria-labelledby="landing-cases-title">
       <div className="shell">
         {showHeading && (
           <div className="landing-cases-heading">
