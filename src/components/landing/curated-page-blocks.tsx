@@ -4,6 +4,7 @@ import Link from "next/link";
 import { SubmissionForm } from "@/components/submission-form";
 import { AnimatedMetric } from "@/components/landing/animated-metric";
 import { ParallaxMedia } from "@/components/landing/parallax-media";
+import { UiIcon } from "@/components/ui-icon";
 import type { PageRecord } from "@/lib/content/repository";
 import { getAsset, getPageDocument, resolveAction, type ContentAction, type ContentLocale, type CuratedBlock, type CuratedPageLocale } from "@/lib/page-content";
 
@@ -23,7 +24,7 @@ function ActionLink({ action, locale, className = "text-link" }: { action?: Cont
   if (!action) return null;
   const resolved = resolveAction(action, locale);
   if (!resolved) return null;
-  return <Link className={className} href={resolved.href}>{resolved.label} <span aria-hidden="true">-&gt;</span></Link>;
+  return <Link className={className} href={resolved.href}>{resolved.label} <UiIcon name="arrow-right" size={18} /></Link>;
 }
 
 function CuratedImage({ pageId, assetId, alt, sizes = "(max-width: 760px) 100vw, 33vw", parallax = false }: { pageId: string; assetId?: string; alt?: string; sizes?: string; parallax?: boolean }) {
@@ -152,7 +153,7 @@ function Locations({ pageId, block, locale }: { pageId: string; block: CuratedBl
         <h3>{title}</h3>
         {address && <p className="location-address">{address}</p>}
         <p>{summary}</p>
-        {mapsUrl && <a className="text-link location-map-link" href={mapsUrl} target="_blank" rel="noopener noreferrer">{locale === "es" ? "Ver en Google Maps" : "View on Google Maps"} &rarr;</a>}
+        {mapsUrl && <a className="text-link location-map-link" href={mapsUrl} target="_blank" rel="noopener noreferrer">{locale === "es" ? "Ver en Google Maps" : "View on Google Maps"} <UiIcon name="arrow-up-right" size={18} /></a>}
       </div>
     </article>;
   })}</div></div></section>;

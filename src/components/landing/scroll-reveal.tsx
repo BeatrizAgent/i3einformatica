@@ -44,7 +44,7 @@ export function ScrollReveal({ children, className, delay = 0, enabled = true }:
     <m.div
       className={className}
       data-motion-reveal="true"
-      initial="hidden"
+      initial={false}
       whileInView="visible"
       viewport={viewport}
       variants={revealVariants}
@@ -62,7 +62,7 @@ export function MotionStagger({ children, className, enabled = true }: RevealPro
     <m.div
       className={className}
       data-motion-stagger="true"
-      initial="hidden"
+      initial={false}
       whileInView="visible"
       viewport={viewport}
       variants={staggerVariants}

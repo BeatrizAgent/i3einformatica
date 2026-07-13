@@ -1,9 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { UiIcon } from "@/components/ui-icon";
 import type { Locale } from "@/lib/content/repository";
 import { assetPath } from "@/lib/public-path";
-
-const rightArrow = String.fromCharCode(0x2192);
 
 export function ExperienceBand({ locale }: { locale: Locale }) {
   const language = locale === "en" ? "en" : "es";
@@ -33,7 +32,7 @@ export function ExperienceBand({ locale }: { locale: Locale }) {
           <p className="eyebrow">{content.eyebrow}</p>
           <h2 id="experience-title">{content.title}</h2>
           <p>{content.text}</p>
-          <Link className="experience-band-link" href={content.href}>{content.label} <span aria-hidden="true">{rightArrow}</span></Link>
+          <Link className="experience-band-link" href={content.href}>{content.label} <UiIcon name="arrow-right" size={18} /></Link>
         </div>
       </div>
     </section>

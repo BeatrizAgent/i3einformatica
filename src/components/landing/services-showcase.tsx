@@ -1,16 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BrandIcon } from "@/components/brand-icon";
+import { UiIcon } from "@/components/ui-icon";
 import type { Locale } from "@/lib/content/repository";
 import type { Service } from "@/components/landing/services-data";
-
-const rightArrow = String.fromCharCode(0x2192);
 
 export function ServicesShowcase({ items, locale }: { items: Service[]; locale: Locale }) {
   const language = locale === "en" ? "en" : "es";
 
   return (
-    <section className="services-showcase section content-deferred-xl" aria-labelledby="services-title">
+    <section className="services-showcase section" aria-labelledby="services-title">
       <div className="shell">
         <div className="services-heading">
           <p className="eyebrow">{language === "es" ? "Servicios" : "Services"}</p>
@@ -34,7 +33,7 @@ export function ServicesShowcase({ items, locale }: { items: Service[]; locale: 
                 <p className="service-card-result">{item.result[language]}</p>
                 <p>{item.text[language]}</p>
                 <Link className="service-card-link" href={item.href[language]}>
-                  {language === "es" ? "Descubrir servicio" : "Explore service"} <span aria-hidden="true">{rightArrow}</span>
+                  {language === "es" ? "Descubrir servicio" : "Explore service"} <UiIcon name="arrow-right" size={18} />
                 </Link>
               </div>
             </article>

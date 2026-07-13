@@ -8,6 +8,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { HeroNetwork, type HeroLocale } from "@/components/landing/hero-network";
 import { generatedLandingVisuals } from "@/lib/site-assets";
+import { UiIcon } from "@/components/ui-icon";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -50,16 +51,6 @@ export function HeroScene({ eyebrow, title, intro, locale, cta, secondaryCta }: 
         },
       });
 
-      gsap.to(".hero-scene-grid", {
-        yPercent: 12,
-        ease: "none",
-        scrollTrigger: {
-          trigger: root.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: 1,
-        },
-      });
     });
 
     return () => media.revert();
@@ -76,7 +67,7 @@ export function HeroScene({ eyebrow, title, intro, locale, cta, secondaryCta }: 
         <p className="lead hero-scene-intro">{intro}</p>
         <div className="hero-actions hero-scene-actions">
           <Link className="button" href={cta.href}>{cta.label}</Link>
-          <Link className="text-link" href={secondaryCta.href}>{secondaryCta.label} <span aria-hidden="true">→</span></Link>
+          <Link className="text-link" href={secondaryCta.href}>{secondaryCta.label} <UiIcon name="arrow-right" size={18} /></Link>
         </div>
       </div>
       <HeroNetwork locale={locale} />
