@@ -61,6 +61,15 @@ pnpm content:validate # validate JSON content, actions, and assets
 - **Fonts:** Space Grotesk (titles, `--font-title`) and Manrope (body, `--font-body`).
 - **Key colors:** surface `#f9f9fb`, nav-dark `#0B113E`, action-blue `#21CFF1`.
 
+## Documentation
+
+- `README.md` — Visión general, capturas, roadmap y comandos
+- `CONTRIBUTING.md` — Guía para contribuidores
+- `DESIGN.md` — Sistema de diseño y tokens
+- `LICENSE` — Licencia Apache 2.0
+- `docs/screenshots/` — Capturas del sitio para documentación
+- `docs/migration/` — Documentación de migración (referencia)
+
 ## Agent constraints
 
 - DO NOT commit `node_modules`, `.next`, `out`, `output`, `.codegraph`, `.playwright-cli`, or `.opencode/node_modules`.
